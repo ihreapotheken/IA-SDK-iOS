@@ -1,1 +1,1 @@
-# CardLink-iOS
+# IA SDK
