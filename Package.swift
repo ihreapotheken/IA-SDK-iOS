@@ -21,13 +21,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "IACore",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.0.5/IACore-0.0.5.xcframework.zip",
-            checksum: "f4cb3f9e729bde3f5e6ad39bba8a13d923ebf16eced6671abd556b3d63dbddc7"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.0.6/IACore-0.0.6.xcframework.zip",
+            checksum: "c8f3951e2e28ab25c9e3b27a61fd40a844e443501fd4f9379246770cacbd8ff2"
         ),
         .binaryTarget(
             name: "IAOverTheCounter",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.0.5/IAOverTheCounter-0.0.5.xcframework.zip",
-            checksum: "3845d47636a70d756cd1b88851e7d1b76cf39c1c6a051cbbcf4481f0126ba668"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.0.6/IAOverTheCounter-0.0.6.xcframework.zip",
+            checksum: "49f768b13062187ce8fb18451ce8c6e7bcba53d28a0528428afa778482f335a5"
         ),
         .target(
             name: "IAOverTheCounterWrapper",
