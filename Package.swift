@@ -78,7 +78,7 @@ let package = Package(
                 .target(name: "IAPharmacy"),
             ],
             path: "Sources/IAPharmacyWrapper"
-        )
+        ),
         
         // IACardLink
         .binaryTarget(
