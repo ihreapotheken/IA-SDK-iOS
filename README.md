@@ -31,7 +31,7 @@ To add the IA SDK to your Xcode project, follow these steps:
 
 # Initial setup and configuration
 1. **Import the required products**  
-`IAOverTheCounter` is selected because we want **Search** feature in our example app. `IAOrdering` is selected because we want **Cart** feature. `IACore` is always needed. `IAIntegrations` is needed to handle prerequisites.
+`IAOverTheCounter` is selected because we want **Product Search** feature in our example app. `IAOrdering` is selected because we want **Cart** feature. `IACore` is always needed. `IAIntegrations` is needed to handle prerequisites.
 
    ```swift
    import IACore
@@ -53,7 +53,7 @@ To add the IA SDK to your Xcode project, follow these steps:
 
 3. **Set up the product SDKs**  
    Next, call the `setup()` method for each product you plan to use. This step is required because products can be interconnected.  
-   For example, calling `IAOrderingSDK.setup()` makes the **Cart** feature (from `IAOrdering`) internally available to the **Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
+   For example, calling `IAOrderingSDK.setup()` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
 
    You can call these immediately after `IASDK.setup`:
 
@@ -98,7 +98,7 @@ To skip certain steps, see [Prerequisites](./docs/Prerequisites.md).
 
 
 # Example
-This is full code for example app that has **Search** feature on one tab and **Cart** feature on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
+This is full code for example app that has **Product Search** feature on one tab and **Cart** feature on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
 
 ```swift
 import SwiftUI
