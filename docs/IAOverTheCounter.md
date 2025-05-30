@@ -11,7 +11,7 @@ Contains features related to search and products:
 *   **Cart integration**: Cart is integrated into list and details if `IAOrdering` module is setup.
     
 
-# Product Search
+## Product Search
 
 `IAProductSearchScreen` is the starting point of a **Product Search** feature. It handles all flows automatically (search, details, inquiry, cart). Currently this is the only class that `IAOverTheCounter` exposes.
 
@@ -41,6 +41,6 @@ TabView {
 
 ```
 
-# To be implemented
+## To be implemented
 
 *   in the future `IAProductSearch` will accept Navigator as argument, this will allow it to be embedded into outside Navigation.
