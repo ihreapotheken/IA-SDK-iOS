@@ -13,7 +13,7 @@ Contains features related to cart, checkout, payment and thank you page:
 *   **Thank You page:** Overview of the order, users can provide their own thank you page (in future).
     
 
-# Cart
+## Cart
 
 `IACartScreen` is the starting point of a **Cart** feature. It handles all flows automatically (cart, checkout, payment, thank you). Currently this is the only class that `IAOrdering` exposes.
 
@@ -45,6 +45,6 @@ TabView {
 
 ```
 
-# To be implemented
+## To be implemented
 
 *   Thank you page: Users will be able to use their own.
