@@ -9,7 +9,7 @@
 
 In order to use IA SDK you will need API key with proper entitlements. Your API key is tied to your bundle ID(s).
 
-@TODO where to get it.
+@TODO How to get SDK key.
 
 # Installation
 

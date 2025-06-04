@@ -1,6 +1,6 @@
 # Prerequisites
 
-Before using any SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
+Before using any of hte SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
 
 ```swift
 try await IAIntegrationsSDK.Prerequisites.runPrerequisites(isAnimated: false)

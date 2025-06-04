@@ -41,6 +41,6 @@ TabView {
 
 ```
 
-## To be implemented
+### To be implemented
 
 *   in the future `IAProductSearch` will accept Navigator as argument, this will allow it to be embedded into outside Navigation.
