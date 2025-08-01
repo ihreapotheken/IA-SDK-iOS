@@ -42,4 +42,4 @@ TabView {
 ```
 
 ### Presentation
-Read [Presentation](./docs/Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
