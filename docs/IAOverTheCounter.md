@@ -24,9 +24,9 @@ Contains features related to search and products:
 
 ### Integration with other products
 
-*   **Cart**: Cart is integrated into list and details.
+*   **IAOrdering**: Cart is integrated into list and details.
     
-*   **RX**: Search product by scanning its code.
+*   **IAScanner**: Search product by scanning its code.
     
 
 ### Example
