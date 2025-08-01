@@ -140,7 +140,6 @@ final class ExampleAppViewModel: ObservableObject {
         IAIntegrationsSDK.register()
         IAOverTheCounterSDK.register()
         IAOrderingSDK.register(delegate: delegate)
-        IAPharmacySDK.registerPharmacyDetails()
         
         Task {
             await initializeSDK()
