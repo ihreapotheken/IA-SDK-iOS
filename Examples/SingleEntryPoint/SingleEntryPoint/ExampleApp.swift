@@ -1,6 +1,6 @@
 //
-//  SingleManualEntryPointApp.swift
-//  SingleManualEntryPoint
+//  ExampleApp.swift
+//  SingleEntryPoint
 //
 //  Created by Danijel Huis on 01.08.2025..
 //
@@ -11,8 +11,8 @@ import IAIntegrations
 import IAOverTheCounter
 
 @main
-struct SingleManualEntryPointApp: App {
-    @StateObject private var viewModel = HostAppViewModel()
+struct ExampleApp: App {
+    @StateObject private var viewModel = ExampleAppViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -33,7 +33,7 @@ struct SingleManualEntryPointApp: App {
 }
 
 @available(iOS 16.0, *)
-private extension SingleManualEntryPointApp {
+private extension ExampleApp {
     private func hostScreen1() -> some View {
         Text("Host screen 1")
     }

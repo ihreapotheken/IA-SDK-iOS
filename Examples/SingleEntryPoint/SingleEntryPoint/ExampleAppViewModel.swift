@@ -1,6 +1,6 @@
 //
-//  HostAppViewModel.swift
-//  SingleManualEntryPoint
+//  ExampleAppViewModel.swift
+//  SingleEntryPoint
 //
 //  Created by Danijel Huis on 01.08.2025..
 //
@@ -11,7 +11,7 @@ import IAIntegrations
 import IAOverTheCounter
 
 @MainActor
-final class HostAppViewModel: ObservableObject {
+final class ExampleAppViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var navigationPath: [Route] = []
     
@@ -20,9 +20,8 @@ final class HostAppViewModel: ObservableObject {
     }
     
     func setup() {
-        IASDK.configuration.apiKey = "something"
-        IASDK.configuration.clientID = "103"
-        IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
+        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
         
         IAIntegrationsSDK.register()
         IAOverTheCounterSDK.register()
