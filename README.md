@@ -90,6 +90,8 @@ To skip certain steps, see [Prerequisites](./docs/Prerequisites.md).
 
 [Style Configuration](./docs/StyleConfiguration.md)  
 
+[Presentation](./docs/Presentation.md)
+
 
 # Full example code
 This is full code for example app that has **Product Search** feature on one tab and **Cart** feature on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
