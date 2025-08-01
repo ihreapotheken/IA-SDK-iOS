@@ -7,7 +7,7 @@ All screens from IA SDK can be used in following manner:
 
 You need to specify `hostEmbedStyle`, this determines if SDK screens should show back button, dismiss button or no button in its navigation. Note that `hostEmbedStyle` doesn't actually push, present or embed, you are responsible for that, as with any other view.
 
-**IMPORTANT:** Before doing and of this, make sure IA SDK is fully initialized.
+**IMPORTANT:** Before doing any of this, make sure that IA SDK is fully initialized.
 
 ## Embed
 ````swift
