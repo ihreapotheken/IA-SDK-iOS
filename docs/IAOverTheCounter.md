@@ -41,6 +41,5 @@ TabView {
 
 ```
 
-### To be implemented
-
-*   in the future `IAProductSearch` will accept Navigator as argument, this will allow it to be embedded into outside Navigation.
+### Presentation
+Read [Presentation](./docs/Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
