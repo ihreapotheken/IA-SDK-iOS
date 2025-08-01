@@ -46,15 +46,15 @@ let package = Package(
         // IOSKit
         .binaryTarget(
             name: "IOSKit",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IOSKit-0.13.3-beta.xcframework.zip",
-            checksum: "0713f2ad197b162165651e85dcb33f6d88e7a4dbc0ebd98faa73d5d973084543"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IOSKit-0.13.4-beta.xcframework.zip",
+            checksum: "13e1183597de32189b522616308d4ebb257f9021120131455f61fc04d75eb8ca"
         ),
         
         // IACore
         .binaryTarget(
             name: "IACore",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IACore-0.13.3-beta.xcframework.zip",
-            checksum: "52868f6c4ae98ffe9b62b61fdc4fa8e3b004c45eb12ba670e2ffce6cbe0e223a"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IACore-0.13.4-beta.xcframework.zip",
+            checksum: "ea20e2b5be0499ee254c986467ee115c0b6300cc447038d5d4490e35fc3a3f1d"
         ),
         .target(
             name: "IACoreWrapper",
@@ -69,8 +69,8 @@ let package = Package(
         // IAOverTheCounter
         .binaryTarget(
             name: "IAOverTheCounter",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IAOverTheCounter-0.13.3-beta.xcframework.zip",
-            checksum: "c2fedb93cc128ffb79574be4b5f4c1692a27d27ccbc2566efeb1f4025d8853bd"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IAOverTheCounter-0.13.4-beta.xcframework.zip",
+            checksum: "4a303d4c43eaa0b73689f8434d489a9caa8ba5bfe45b416d57e7e589624ef70e"
         ),
         .target(
             name: "IAOverTheCounterWrapper",
@@ -85,8 +85,8 @@ let package = Package(
         // IAOrdering
         .binaryTarget(
             name: "IAOrdering",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IAOrdering-0.13.3-beta.xcframework.zip",
-            checksum: "c39469f9bc5011bd16ac3bcce54195b669f42f4ea9ef1c904f8c7e717b0590f9"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IAOrdering-0.13.4-beta.xcframework.zip",
+            checksum: "c2f8f67fe6b06a9de6e09e0b6804af2d63bb8ab026bb0edc242fb0f5b69033c7"
         ),
         .target(
             name: "IAOrderingWrapper",
@@ -101,8 +101,8 @@ let package = Package(
         // IAPharmacy
         .binaryTarget(
             name: "IAPharmacy",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IAPharmacy-0.13.3-beta.xcframework.zip",
-            checksum: "c9181f3e4b9ced7706cdda976a600b74e73eddc7249a4eae5ffe3fb4d89b7e20"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IAPharmacy-0.13.4-beta.xcframework.zip",
+            checksum: "2144a276ade1e6adc9477dce5e2f75d29a11ad77d218733db66a1117ec5bad7e"
         ),
         .target(
             name: "IAPharmacyWrapper",
@@ -117,8 +117,8 @@ let package = Package(
         // IACardLink
         .binaryTarget(
                 name: "IACardLink",
-                url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IACardLink-0.13.3-beta.xcframework.zip",
-                checksum: "ce3c8d4afd4c5f7b4af3495120f039f4fab381cd64f6f8c2069bbc77c601c462"
+                url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IACardLink-0.13.4-beta.xcframework.zip",
+                checksum: "785c09fff761126dd2c19fb3ca3915648744f95c6562529120d6f006dd67683e"
             ),
         .target(
             name: "IACardLinkWrapper",
@@ -134,8 +134,8 @@ let package = Package(
         // IAIntegrations
         .binaryTarget(
             name: "IAIntegrations",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IAIntegrations-0.13.3-beta.xcframework.zip",
-            checksum: "8bbdf46030d5af70f81789649ff34b29833a8d0db420558d0e0d197e7293e57c"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IAIntegrations-0.13.4-beta.xcframework.zip",
+            checksum: "dec068b9dbd01c727c9adba48c2202621f96ce25280582386370a7b335b0eced"
         ),
         .target(
             name: "IAIntegrationsWrapper",
@@ -150,8 +150,8 @@ let package = Package(
         // IAPrescription
         .binaryTarget(
             name: "IAPrescription",
-            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.3-beta/IAPrescription-0.13.3-beta.xcframework.zip",
-            checksum: "210b4fcd63ec379cc28352b72b5802e25b9474586fe3797112c094d48c1f6154"
+            url: "https://github.com/ihreapotheken/IA-SDK-iOS/releases/download/0.13.4-beta/IAPrescription-0.13.4-beta.xcframework.zip",
+            checksum: "9eab8d8de8584dabe9bbb29d7e175f9745672cd94bdd76aad35d87170c2a6215"
         ),
         .target(
             name: "IAPrescriptionWrapper",
