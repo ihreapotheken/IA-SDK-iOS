@@ -30,7 +30,7 @@ Contains features related to cart, checkout, payment and thank you page:
 
 *   **IAOverTheCounter**: Product recommendations.
     
-*   **IARX**: Scan prescriptions.
+*   **IAScanner**: Scan prescriptions.
     
 
 ### Example
