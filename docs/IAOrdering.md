@@ -45,6 +45,5 @@ TabView {
 
 ```
 
-### To be implemented
-
-*   Thank you page: Users will be able to use their own.
+### Presentation
+Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
