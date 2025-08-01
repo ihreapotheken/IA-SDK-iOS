@@ -24,9 +24,9 @@ Contains features related to search and products:
 
 ### Integration with other products
 
-*   **Cart**: Cart is integrated into list and details.
+*   **IAOrdering**: Cart is integrated into list and details.
     
-*   **RX**: Search product by scanning its code.
+*   **IAScanner**: Search product by scanning its code.
     
 
 ### Example
@@ -41,6 +41,5 @@ TabView {
 
 ```
 
-### To be implemented
-
-*   in the future `IAProductSearch` will accept Navigator as argument, this will allow it to be embedded into outside Navigation.
+### Presentation
+Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
