@@ -1,23 +1,22 @@
 # Prerequisites
 
-Before using any of hte SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
+Before using any of the SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
 
 ```swift
-try await IAIntegrationsSDK.Prerequisites.runPrerequisites(isAnimated: false)
-
+let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))
 ```
 
-This will present a screen consisting of three steps:
+Among other things, this will start the prerequisites flow if needed, it consists of three separate screens:
 
-*   **Legal Opt-In (mandatory):** The user must opt in to use the SDK.
-    
-*   **Onboarding (optional):** An introductory onboarding screen shown only once.
-    
-*   **Pharmacy (mandatory):** Most products require a pharmacy to be set. You can either:
-    
+*   **Legal Opt-In (mandatory):** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes.
+
+*   **Onboarding (optional):** An introductory onboarding screen, shown only once.
+
+*   **Pharmacy (mandatory):** All products require a pharmacy to be set. You can either:
+
     *   Manually provide a pharmacy identifier to the IA SDK, or
-        
-    *   If you’re using the `IAPharmacy` product, allow users to search for pharmacies via the **Pharmacy Finder** feature. You will have to call `IAPharmacySDK.setup()` in your SDK setup.
+    
+    *   Let Prerequisites present **ApoFinder** feature (not yet available). This will allow user to select pharmacy from list or map.
         
 
 To skip certain steps, use the following code:
