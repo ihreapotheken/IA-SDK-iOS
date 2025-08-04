@@ -30,5 +30,5 @@ TabView {
 * **IAIntegrations**: 
   * Scanning process can be started from the start screen.
 * **IAOverTheCounter**: 
-  *Scanning process can be started from the product details screen.
+  * Scanning process can be started from the product details screen.
 
