@@ -1,37 +1,27 @@
 # IAOverTheCounter
 
-Contains features related to search and products:
+This module provides features related to search and products.
 
-*   **Search screen**: Search bar with list of products, allows filtering and sorting.
-    
-*   **Product details**: Displays details of a selected product.
-    
-*   **Product inquiry**: Enables user to send E-Mail to pharmacies and inquiry about the product.
-    
-*   **Cart integration**: Cart is integrated into list and details if `IAOrdering` module is setup.
-    
+* **Search screen**: Search bar with list of products, allows filtering and sorting.
 
-## Product Search
+* **Product details**: Displays details of a selected product.
 
-`IAProductSearchScreen` is the starting point of a **Product Search** feature. It handles all flows automatically (search, details, inquiry, cart). Currently this is the only class that `IAOverTheCounter` exposes.
+* **Product inquiry**: Enables the user to send an email to pharmacies and inquire about the product.
 
-### **Notes**
-
-*   `IAProductSearchScreen` is a SwiftUI view that you can e.g., put in a tab view or present it. By default it is embedded into a navigation bar and handles its own navigation.
-    
-*   It uses pharmacy identifier from prerequisites flow.
+* **Cart integration**: The cart is integrated into the list and details if the `IAOrdering` module is set up.
     
 
-### Integration with other products
+## IAProductSearchScreen
 
-*   **IAOrdering**: Cart is integrated into list and details.
-    
-*   **IAScanner**: Search product by scanning its code.
-    
+* `IAProductSearchScreen` is the primary component exposed by the `IAOverTheCounter` module. 
+* It handles searching, filtering, and displaying detailed product information, all in one seamless flow. 
+* Allow users to send inquiries to pharmacies about the product.
 
+* It uses pharmacy identifier from prerequisites flow.
+    
 ### Example
 
-`IAProductSearchScreen` inside a SwiftUI TabView. This is all you need to call (other than setup code and prerequisites).
+`IAProductSearchScreen` inside a SwiftUI TabView.
 
 ```javascript
 TabView {   
@@ -40,6 +30,12 @@ TabView {
 }
 
 ```
+> [!NOTE]
+> Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
 
-### Presentation
-Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+## Interaction with other products
+
+**IAOverTheCounter** is used by:
+* **IAOrdering**: It shows recommended products on multiple screens. Users have the option to search products from the cart screen.
+* **IAIntegrations**: Users can start the search process from the start screen. The start screen also shows recommended products.
+

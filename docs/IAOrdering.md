@@ -1,49 +1,47 @@
 # IAOrdering
 
-Contains features related to cart, checkout, payment and thank you page:
+This module provides features for cart management, checkout, payment processing, and the thank you page.
 
-*   **Empty cart screen:** When cart is empty it shows recommended products and products of the month. It allows user to add products and prescriptions.
+* **Empty cart screen:** When the cart is empty it shows recommended products and products of the month. It allows users to add products and prescriptions.
     
-*   **Cart screen:** Overview of all products and prescriptions in the cart, including cost section.
+* **Cart screen:** Overview of all products and prescriptions in the cart, including cost section.
     
-*   **Checkout screen:** Delivery and payment options, product overview, prescription overview and cost section.
+* **Checkout screen:** Delivery and payment options, product overview, prescription overview, and the cost section.
     
-*   **PayPal payment:** In-App PayPal integration.
+* **PayPal payment:** In-app PayPal integration.
     
-*   **Thank You page:** Overview of the order, users can provide their own thank you page (in future).
-    
-
-## Cart
-
-`IACartScreen` is the starting point of a **Cart** feature. It handles all flows automatically (cart, checkout, payment, thank you). Currently this is the only class that `IAOrdering` exposes.
-
-### **Notes**
-
-*   `IACartScreen` is a SwiftUI view that you can e.g., put in a tab view or present it. By default it is embedded into a navigation bar and handles its own navigation.
-    
-*   It uses pharmacy identifier from prerequisites flow.
-    
-*   It is reactive and communicates with other products, e.g., adding product from **Product Search** feature will automatically add it to cart.
+* **Thank You screen:** Overview of the order, users can provide their own thank you screen (not yet available).
     
 
-### Integration with other products
+## IACartScreen
 
-*   **IAOverTheCounter**: Product recommendations.
-    
-*   **IAScanner**: Scan prescriptions.
-    
+* The `IACartScreen` is the primary component exposed by the `IAOrdering` module. 
+* It provides a complete, self-managed flow for cart, checkout, and payment. The screen is reactive and integrates seamlessly with other modules—when a product is added to the cart elsewhere in the app, the cart screen automatically reflects the update.
+* It uses pharmacy identifier from prerequisites flow.
+  
 
 ### Example
 
-`IACartScreen` inside a SwiftUI TabView. This is all you need to call (other than setup code and prerequisites).
+`IACartScreen` inside a SwiftUI TabView.
 
 ```javascript
 TabView {   
     IACartScreen()
-        .tabItem { Text("Search") }
+        .tabItem { Text("Cart") }
 }
 
 ```
 
-### Presentation
-Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+> [!NOTE]
+> Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+
+## Interaction with other products
+
+**IAOrdering** is used by:
+  * **IAOverTheCounter**: Products can be added to cart from the products search screen or the product details screen. Also product search screen shows the cart icon.
+  * **IAScanner**: Automatically adds prescriptions to cart after scanning is finished.
+  * **IACardLink**: Automatically adds prescriptions to cart after scanning is finished.
+  * **IAPharmacy**: Shows the cart icon.
+  * **IAIntegrations**: Start screen shows the cart icon.
+
+  
