@@ -40,6 +40,6 @@ TabView {
   * Shows recommended products on cart and thank you screens. 
   * Users can start the search process from the cart screen.
 * **IAIntegrations**: 
-  * Shows recommended products on the cart screen.
+  * Shows recommended products on the start screen.
   * Users can start the search process from the start screen. 
 
