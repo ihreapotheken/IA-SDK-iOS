@@ -36,6 +36,10 @@ TabView {
 ## Interaction with other products
 
 **IAOverTheCounter** is used by:
-* **IAOrdering**: It shows recommended products on multiple screens. Users have the option to search products from the cart screen.
-* **IAIntegrations**: Users can start the search process from the start screen. The start screen also shows recommended products.
+* **IAOrdering**: 
+  * Shows recommended products on cart and thank you screens. 
+  * Users can start the search process from the cart screen.
+* **IAIntegrations**: 
+  * Shows recommended products on the cart screen.
+  * Users can start the search process from the start screen. 
 

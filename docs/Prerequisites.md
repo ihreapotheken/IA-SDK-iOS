@@ -1,6 +1,6 @@
 # Prerequisites
 
-Before using any of the SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
+Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 
 ```swift
 let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))

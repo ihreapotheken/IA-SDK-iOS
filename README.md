@@ -38,8 +38,7 @@ To add the IA SDK to your Xcode project, follow these steps:
 
 # Usage
 1. **Import the required products**  
-`IAOverTheCounter` is imported because we want **Product Search** feature in our example app. `IAOrdering` is imported because we want **Cart** feature. `IACore` is always needed. `IAIntegrations` is needed to handle prerequisites (legal, onboarding). We won't use other packages in this example.
-
+First you need to import the modules that you will be using. `IACore` and `IAIntegrations` are mandatory, others are optional. In this example we will be using product search from `IAOverTheCounter` and cart from `IAOrdering`.
 ```swift
 import IACore
 import IAIntegrations
@@ -48,8 +47,8 @@ import IAOrdering
 ```
 
 2. **Setup and register**  
-First you need to enter you API key and client ID. 
-Next, call the `register()` method for each product you plan to use. This step is required because products can be interconnected. For example, calling `IAOrderingSDK.register()` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
+Next, you need to enter you API key and client ID. 
+Then call the `register()` method for each product you plan to use. This step is required because products can be interconnected. For example, calling `IAOrderingSDK.register()` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
 ```swift
 IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
 IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
@@ -59,8 +58,11 @@ IAIntegrationsSDK.register()
 IAOverTheCounterSDK.register()
 IAOrderingSDK.register(delegate: delegate)
 ```
+> [!IMPORTANT]
+> Don't forget to set your API key and client ID.
+
 3. **Initialize**  
-Before using any SDK features, you must ensure that required conditions are met. Call the following line once your UI is ready:
+Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 ```
 let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))
 ```
@@ -91,7 +93,7 @@ To skip certain steps, see [Prerequisites](./docs/Prerequisites.md).
 [Presentation](./docs/Presentation.md)
 
 # Full example code
-This is full code for example app that has **Product Search** feature on one tab and **Cart** feature on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
+This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
 
 ```swift
 import SwiftUI

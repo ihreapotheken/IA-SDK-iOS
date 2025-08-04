@@ -38,10 +38,16 @@ TabView {
 ## Interaction with other products
 
 **IAOrdering** is used by:
-  * **IAOverTheCounter**: Products can be added to cart from the products search screen or the product details screen. Also product search screen shows the cart icon.
-  * **IAScanner**: Automatically adds prescriptions to cart after scanning is finished.
-  * **IACardLink**: Automatically adds prescriptions to cart after scanning is finished.
-  * **IAPharmacy**: Shows the cart icon.
-  * **IAIntegrations**: Start screen shows the cart icon.
+* **IAOverTheCounter**: 
+  * Products can be added to cart from the products search screen and the product details screen. 
+  * Product search screen shows the cart button.
+* **IAScanner**: 
+  * Automatically adds prescriptions to cart after scanning is finished.
+* **IACardLink**: 
+  * Automatically adds prescriptions to cart after scanning is finished.
+* **IAPharmacy**: 
+  * Pharmacy details screen shows the cart icon.
+* **IAIntegrations**:
+  * Start screen shows the cart icon.
 
   

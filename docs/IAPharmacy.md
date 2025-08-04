@@ -26,6 +26,8 @@ TabView {
 ## Interaction with other products
 
 **IAPharmacyScreen** is used by:
-* **IAOrdering**: On the cart screen, users can tap on the pharmacy bar at the top, this will open the pharmacy details screen.
-* **IAIntegrations**: On the start screen, users can tap on the pharmacy header, this will open the pharmacy details screen.
+* **IAOrdering**: 
+  * On the cart screen, users can tap on the pharmacy bar at the top, this will open the pharmacy details screen.
+* **IAIntegrations**: 
+  * On the start screen, users can tap on the pharmacy header, this will open the pharmacy details screen.
 

@@ -25,7 +25,10 @@ TabView {
 ## Interaction with other products
 
 **IAScanner** is used by:
-* **IAOrdering**: Scanning process can be started from the cart screen.
-* **IAIntegrations**: Scanning process can be started from the start screen.
-* **IAOverTheCounter**: Scanning process can be started from the product details screen.
+* **IAOrdering**: 
+  * Scanning process can be started from the cart screen.
+* **IAIntegrations**: 
+  * Scanning process can be started from the start screen.
+* **IAOverTheCounter**: 
+  *Scanning process can be started from the product details screen.
 
