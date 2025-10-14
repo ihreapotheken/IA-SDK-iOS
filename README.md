@@ -37,7 +37,10 @@ To add the IA SDK to your Xcode project, follow these steps:
     
 
 # Usage
-1. **Import the required products**  
+1. **Set bundle identifier**
+First you need to set your bundle identifier in the Build Settings of your target. This is important because API key is tied only to your bundle identifier.
+
+2. **Import the required products**  
 First you need to import the modules that you will be using. `IACore` and `IAIntegrations` are mandatory, others are optional. In this example we will be using product search from `IAOverTheCounter` and cart from `IAOrdering`.
 ```swift
 import IACore
@@ -46,25 +49,43 @@ import IAOverTheCounter
 import IAOrdering
 ```
 
-2. **Setup and register**  
+3. **Register modules and basic setup**  
+
 Next, you need to enter you API key and client ID. 
-Then call the `register()` method for each product you plan to use. This step is required because products can be interconnected. For example, calling `IAOrderingSDK.register()` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
+Then call the `register()` method for each product you plan to use. This step is required because products can be interconnected. For example, registering `ordering` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
 ```swift
 IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
 IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-IASDK.delegate = delegate
     
-IAIntegrationsSDK.register()
-IAOverTheCounterSDK.register()
-IAOrderingSDK.register(delegate: delegate)
+IASDK.register([
+    .integrations, 
+    .overTheCounter,
+    .ordering,
+    .apofinder
+])
 ```
 > [!IMPORTANT]
 > Don't forget to set your API key and client ID.
 
-3. **Initialize**  
+4. **Initialize**  
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 ```
-let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))
+let options = IASDKInitializationOptions(
+    prerequisitesOptions: .init(
+        shouldShowIndicator: true, 
+        isCancellable: false, 
+        isAnimated: true, 
+        shouldRunLegal: true, 
+        shouldRunOnboarding: true, 
+        shouldRunApofinder: true
+    )
+)
+let result = try await IASDK.initialize(options: options)
+if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
+    navigationPath.append(.iaStartScreen)
+} else {
+    errorMessage = "Initialization failed..."
+}   
 ```
 This will:
 * Validate your API key
@@ -74,11 +95,11 @@ This will:
     
     *   **Onboarding (optional):** An introductory onboarding screen, shown only once.
     
-    *   **Pharmacy (mandatory):** All products require a pharmacy to be set. You can either:
+    *   **Apofinder (mandatory):** All products require a pharmacy to be set. You can either:
     
         *   Manually provide a pharmacy identifier to the IA SDK, or
         
-        *   Let Prerequisites present **ApoFinder** feature (not yet available). This will allow user to select pharmacy from list or map.
+        *   Let Prerequisites present **Apofinder**. This will allow user to select pharmacy from list or map.
 
 To skip certain steps, see [Prerequisites](./docs/Prerequisites.md).
 
