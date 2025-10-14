@@ -21,8 +21,8 @@ final class ExampleIASDKDelegate {
 }
 
 extension ExampleIASDKDelegate: SDKDelegate {
-    // Example: How to override default behavior. In this case, instead of presenting the cart (default behavior), 
-    // we will switch to cart tab.
+    // Example (override behavior): How to override default behavior. In this case, instead of presenting the cart (default behavior), 
+    // we will switch to cart tab in our example app.
     func cartButtonWillOpenCartScreen() -> WillOpenResult {
         viewModel?.selectedTab = .cart
         return .handled

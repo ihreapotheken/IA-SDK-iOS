@@ -21,7 +21,7 @@ struct MainExampleApp: App {
         appearance.configureWithOpaqueBackground()
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
-    
+       
     var body: some Scene {
         WindowGroup {
             if viewModel.isLoaded {                    
@@ -73,7 +73,7 @@ private extension MainExampleApp {
                     Task { await viewModel.resetPrerequisitesAndExit() }
                 }
             }
-            // Example: How to push any IA SDK screen.
+            // Example (Push): How to push any IA SDK screen.
             .navigationDestination(for: MoreScreenRoute.self) { route in
                 switch route {
                 case .search:
@@ -83,7 +83,7 @@ private extension MainExampleApp {
                         }))
                 }
             }
-            // Example: How to present any IA SDK screen.
+            // Example (Present): How to present any IA SDK screen.
             .fullScreenCover(item: $viewModel.moreActiveSheet) { tag in
                 switch tag {
                 case .search:

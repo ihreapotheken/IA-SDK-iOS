@@ -42,7 +42,10 @@ final class ExampleAppViewModel: ObservableObject {
                 prerequisitesOptions: .init(
                     shouldShowIndicator: true, 
                     isCancellable: false, 
-                    isAnimated: true
+                    isAnimated: true, 
+                    shouldRunLegal: true, 
+                    shouldRunOnboarding: true, 
+                    shouldRunApofinder: true
                 )
             )
             let result = try await IASDK.initialize(options: options)

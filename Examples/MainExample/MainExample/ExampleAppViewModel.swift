@@ -28,7 +28,6 @@ final class ExampleAppViewModel: ObservableObject {
         assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
         IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
         IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-        IASDK.delegate = delegate
         
         IASDK.register([
             .integrations,
@@ -39,6 +38,7 @@ final class ExampleAppViewModel: ObservableObject {
             .prescription
         ])
         
+        // Example (setup delegate): 
         IASDK.setDelegates(
             sdk: delegate,
             ordering: delegate,
