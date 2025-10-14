@@ -1,0 +1,42 @@
+//
+//  IASDKDelegate.swift
+//  MainExample
+//
+//  Created by Danijel Huis on 01.08.2025..
+//
+
+import Foundation
+import IACore
+import IAIntegrations
+import IAOverTheCounter
+import IAOrdering
+
+@MainActor
+final class ExampleIASDKDelegate {
+    private weak var viewModel: ExampleAppViewModel?
+    
+    init(viewModel: ExampleAppViewModel? = nil) {
+        self.viewModel = viewModel
+    }
+}
+
+extension ExampleIASDKDelegate: SDKDelegate {
+    // Example: How to override default behavior. In this case, instead of presenting the cart (default behavior), 
+    // we will switch to cart tab.
+    func cartButtonWillOpenCartScreen() -> WillOpenResult {
+        viewModel?.selectedTab = .cart
+        return .handled
+    }
+}
+
+extension ExampleIASDKDelegate: OrderingDelegate {
+
+}
+
+extension ExampleIASDKDelegate: PrescriptionDelegate {
+    
+}
+
+extension ExampleIASDKDelegate: CardLinkDelegate {
+    
+}

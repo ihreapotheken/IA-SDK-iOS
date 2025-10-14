@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CA391E92E9E4728006A496D /* ExampleAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */; };
 		0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */; };
 		0CB5A9362E3D2AFF00A881E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */; };
 		0CB5A9392E3D2B2C00A881E8 /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0CB5A9382E3D2B2C00A881E8 /* IACardLink */; };
@@ -15,14 +16,15 @@
 		0CB5A93F2E3D2B2C00A881E8 /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0CB5A93E2E3D2B2C00A881E8 /* IAOverTheCounter */; };
 		0CB5A9412E3D2B2C00A881E8 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0CB5A9402E3D2B2C00A881E8 /* IAPharmacy */; };
 		0CB5A9432E3D2B2C00A881E8 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0CB5A9422E3D2B2C00A881E8 /* IAPrescription */; };
-		0CB5A94D2E3D2C1A00A881E8 /* IASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A94C2E3D2C1A00A881E8 /* IASDKDelegate.swift */; };
+		0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAppViewModel.swift; sourceTree = "<group>"; };
 		0CB5A9222E3D2AF900A881E8 /* MainExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
-		0CB5A94C2E3D2C1A00A881E8 /* IASDKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IASDKDelegate.swift; sourceTree = "<group>"; };
+		0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleIASDKDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,8 @@
 			children = (
 				0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */,
 				0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */,
-				0CB5A94C2E3D2C1A00A881E8 /* IASDKDelegate.swift */,
+				0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */,
+				0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */,
 			);
 			path = MainExample;
 			sourceTree = "<group>";
@@ -149,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA391E92E9E4728006A496D /* ExampleAppViewModel.swift in Sources */,
 				0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */,
-				0CB5A94D2E3D2C1A00A881E8 /* IASDKDelegate.swift in Sources */,
+				0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +289,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H83W6SQ2K;
+				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -298,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ia.sdk.MainExample;
+				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -313,7 +317,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H83W6SQ2K;
+				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -326,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ia.sdk.MainExample;
+				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,7 +367,7 @@
 			repositoryURL = "https://github.com/ihreapotheken/IA-SDK-iOS";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "0.13.7-beta";
+				minimumVersion = "0.17.6-beta";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

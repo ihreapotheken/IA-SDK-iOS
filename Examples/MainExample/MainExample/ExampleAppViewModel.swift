@@ -1,42 +1,58 @@
 //
 //  ExampleAppViewModel.swift
-//  SingleEntryPoint
+//  MainExample
 //
-//  Created by Danijel Huis on 01.08.2025..
+//  Created by Danijel Huis on 14.10.2025..
 //
 
 import Foundation
-import IACore
 import Combine
-import IAOrdering
+import IACore
 import IAIntegrations
 import IAOverTheCounter
+import IAPrescription
+import IAOrdering
+import IAPharmacy
 
-@MainActor
+@MainActor @available(iOS 16.0, *)
 final class ExampleAppViewModel: ObservableObject {
+    @Published var isLoaded = false
     @Published var errorMessage: String?
-    @Published var navigationPath: [Route] = []
+    @Published var selectedTab: ExampleTab = .start
+    @Published var moreNavigationPath: [MoreScreenRoute] = []
+    @Published var moreActiveSheet: MoreActiveSheet?
+
+    private lazy var delegate = ExampleIASDKDelegate(viewModel: self)
     
     init() {
-        setup()
-    }
-    
-    func setup() {
         assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
         IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
         IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+        IASDK.delegate = delegate
         
         IASDK.register([
-            .integrations, 
+            .integrations,
             .overTheCounter,
             .ordering,
-            .apofinder
+            .apofinder, 
+            .pharmacyDetails,
+            .prescription
         ])
+        
+        IASDK.setDelegates(
+            sdk: delegate,
+            ordering: delegate,
+            prescription: delegate,
+            cardLink: delegate
+        )        
+        Task {
+            await initializeSDK()
+        }
     }
     
     func initializeSDK() async {
         errorMessage = nil
-
+                
         do {
             let options = IASDKInitializationOptions(
                 prerequisitesOptions: .init(
@@ -47,24 +63,40 @@ final class ExampleAppViewModel: ObservableObject {
             )
             let result = try await IASDK.initialize(options: options)
             if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
-                navigationPath.append(.iaStartScreen)
+                isLoaded = true
             } else {
                 errorMessage = "Initialization result failed didAgreeToLegalNotice:\(result.prerequisitesResult.didAgreeToLegalNotice), pharmacy: \(result.prerequisitesResult.pharmacyID)"
-            }            
+            }
         } catch {
             errorMessage = "Error\n\(error)"
         }
     }
     
-    func pop() {
-        _ = navigationPath.popLast()
-    }
-    
-    func resetPrerequisites() async {
+    func resetPrerequisitesAndExit() async {
         try? await IAIntegrationsSDK.Prerequisites.resetAllPrerequisites()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Allow user defaults to save
+            exit(0)
+        }
     }
 }
 
-enum Route: Hashable {
-    case iaStartScreen
+// MARK: - Supporting types -
+
+enum ExampleTab {
+    case start
+    case cart
+    case pharmacy
+    case more
+}
+
+enum MoreScreenRoute: Hashable {
+    case search
+}
+
+enum MoreActiveSheet: Identifiable {
+    case search
+    
+    var id: Self {
+        self
+    }
 }
