@@ -5,8 +5,10 @@
 //  Created by Danijel Huis on 01.08.2025..
 //
 
+import Foundation
 import IACore
 import Combine
+import IAOrdering
 import IAIntegrations
 import IAOverTheCounter
 
@@ -20,20 +22,35 @@ final class ExampleAppViewModel: ObservableObject {
     }
     
     func setup() {
+        assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
         IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
         IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
         
-        IAIntegrationsSDK.register()
-        IAOverTheCounterSDK.register()
+        IASDK.register([
+            .integrations, 
+            .overTheCounter,
+            .ordering,
+            .apofinder
+        ])
     }
     
     func startSDK() async {
-        
         do {
-            let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: true))
-            if result.didAgreeToLegalNotice, result.pharmacyID != nil {
+            let options = IASDKInitializationOptions(
+                prerequisitesOptions: .init(
+                    shouldShowIndicator: true, 
+                    isCancellable: false, 
+                    isAnimated: true
+                )
+            )
+            let result = try await IASDK.initialize(options: options)
+            if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
                 navigationPath.append(.iaStartScreen)
+            } else {
+                errorMessage = "Initialization result failed didAgreeToLegalNotice:\(result.prerequisitesResult.didAgreeToLegalNotice), pharmacy: \(result.prerequisitesResult.pharmacyID)"
             }
+            
+            print(result.preloadResult)
         } catch {
             errorMessage = "Error\n\(error)"
         }
@@ -44,7 +61,6 @@ final class ExampleAppViewModel: ObservableObject {
     }
     
     func resetPrerequisitesAndPharmacy() async {
-        IASDK.Pharmacy.setPharmacyID(nil)
         try? await IAIntegrationsSDK.Prerequisites.resetAllPrerequisites()
     }
 }
