@@ -7,16 +7,15 @@ let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true
 ```
 
 Among other things, this will start the prerequisites flow if needed, it consists of three separate screens:
-
-    *   **Legal Opt-In (mandatory):** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes.
+*   **Legal Opt-In (mandatory):** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes.
     
-    *   **Onboarding (optional):** An introductory onboarding screen, shown only once.
+*   **Onboarding (optional):** An introductory onboarding screen, shown only once.
     
-    *   **Apofinder (mandatory):** All products require a pharmacy to be set. You can either:
+*   **Apofinder (mandatory):** All products require a pharmacy to be set. You can either:
     
-        *   Manually provide a pharmacy identifier to the IA SDK, or
+      *   Manually provide a pharmacy identifier to the IA SDK, or
         
-        *   Let Prerequisites present **Apofinder**. This will allow user to select pharmacy from list or map.
+      *   Let Prerequisites present **Apofinder**. This will allow user to select pharmacy from list or map.
 
 
 To skip certain steps, use the following code:
