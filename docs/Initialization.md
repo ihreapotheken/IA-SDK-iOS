@@ -3,7 +3,22 @@
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 
 ```swift
-let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))
+let options = IASDKInitializationOptions(
+    prerequisitesOptions: .init(
+        shouldShowIndicator: true, 
+        isCancellable: true, 
+        isAnimated: true, 
+        shouldRunLegal: true, 
+        shouldRunOnboarding: true, 
+        shouldRunApofinder: true
+    )
+)
+let result = try await IASDK.initialize(options: options)
+if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
+    navigationPath.append(.iaStartScreen)
+} else {
+    errorMessage = "Initialization failed..."
+} 
 ```
 
 Among other things, this will start the prerequisites flow if needed, it consists of three separate screens:
