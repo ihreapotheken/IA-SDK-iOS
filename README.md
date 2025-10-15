@@ -38,7 +38,7 @@ To add the IA SDK to your Xcode project, follow these steps:
     
 
 # Usage
-1. **Set bundle identifier**
+1. **Set bundle identifier**  
 You need to set your bundle identifier in the target’s Build Settings, as the API key is linked specifically to that identifier.
 
 2. **Import the required products**  
@@ -73,7 +73,7 @@ Before using any SDK features, you must ensure that required conditions are met.
 let options = IASDKInitializationOptions(
     prerequisitesOptions: .init(
         shouldShowIndicator: true, 
-        isCancellable: false, 
+        isCancellable: true, 
         isAnimated: true, 
         shouldRunLegal: true, 
         shouldRunOnboarding: true, 
