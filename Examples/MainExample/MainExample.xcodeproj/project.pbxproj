@@ -13,22 +13,28 @@
 		0C4D2C802E9E918A00240575 /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C7F2E9E918A00240575 /* IAOverTheCounter */; };
 		0C4D2C822E9E918A00240575 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C812E9E918A00240575 /* IAPharmacy */; };
 		0C4D2C842E9E918A00240575 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C832E9E918A00240575 /* IAPrescription */; };
-		0C4D2C872E9E91C400240575 /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C862E9E91C400240575 /* IACardLink */; };
-		0C4D2C892E9E91C400240575 /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C882E9E91C400240575 /* IAIntegrations */; };
-		0C4D2C8B2E9E91C400240575 /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C8A2E9E91C400240575 /* IAOrdering */; };
-		0C4D2C8D2E9E91C400240575 /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C8C2E9E91C400240575 /* IAOverTheCounter */; };
-		0C4D2C8F2E9E91C400240575 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C8E2E9E91C400240575 /* IAPharmacy */; };
-		0C4D2C912E9E91C400240575 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4D2C902E9E91C400240575 /* IAPrescription */; };
 		0C54BA0B2E9E8CEC0050178E /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA0A2E9E8CEC0050178E /* IACardLink */; };
 		0C54BA0D2E9E8CEC0050178E /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA0C2E9E8CEC0050178E /* IAIntegrations */; };
 		0C54BA0F2E9E8CEC0050178E /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA0E2E9E8CEC0050178E /* IAOrdering */; };
 		0C54BA112E9E8CEC0050178E /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA102E9E8CEC0050178E /* IAOverTheCounter */; };
 		0C54BA132E9E8CEC0050178E /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA122E9E8CEC0050178E /* IAPharmacy */; };
 		0C54BA152E9E8CEC0050178E /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C54BA142E9E8CEC0050178E /* IAPrescription */; };
+		0C888F522E9F0E8800B8B708 /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F512E9F0E8800B8B708 /* IACardLink */; };
+		0C888F542E9F0E8800B8B708 /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F532E9F0E8800B8B708 /* IAIntegrations */; };
+		0C888F562E9F0E8800B8B708 /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F552E9F0E8800B8B708 /* IAOrdering */; };
+		0C888F582E9F0E8800B8B708 /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F572E9F0E8800B8B708 /* IAOverTheCounter */; };
+		0C888F5A2E9F0E8800B8B708 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F592E9F0E8800B8B708 /* IAPharmacy */; };
+		0C888F5C2E9F0E8800B8B708 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F5B2E9F0E8800B8B708 /* IAPrescription */; };
 		0CA391E92E9E4728006A496D /* ExampleAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */; };
 		0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */; };
 		0CB5A9362E3D2AFF00A881E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */; };
 		0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */; };
+		0CD039622E9FDEBC00A8DF76 /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD039612E9FDEBC00A8DF76 /* IACardLink */; };
+		0CD039642E9FDEBC00A8DF76 /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD039632E9FDEBC00A8DF76 /* IAIntegrations */; };
+		0CD039662E9FDEBC00A8DF76 /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD039652E9FDEBC00A8DF76 /* IAOrdering */; };
+		0CD039682E9FDEBC00A8DF76 /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD039672E9FDEBC00A8DF76 /* IAOverTheCounter */; };
+		0CD0396A2E9FDEBC00A8DF76 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD039692E9FDEBC00A8DF76 /* IAPharmacy */; };
+		0CD0396C2E9FDEBC00A8DF76 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0CD0396B2E9FDEBC00A8DF76 /* IAPrescription */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,24 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD039662E9FDEBC00A8DF76 /* IAOrdering in Frameworks */,
+				0CD039682E9FDEBC00A8DF76 /* IAOverTheCounter in Frameworks */,
 				0C4D2C7E2E9E918A00240575 /* IAOrdering in Frameworks */,
+				0CD039622E9FDEBC00A8DF76 /* IACardLink in Frameworks */,
 				0C4D2C822E9E918A00240575 /* IAPharmacy in Frameworks */,
+				0CD039642E9FDEBC00A8DF76 /* IAIntegrations in Frameworks */,
 				0C54BA152E9E8CEC0050178E /* IAPrescription in Frameworks */,
 				0C54BA0F2E9E8CEC0050178E /* IAOrdering in Frameworks */,
 				0C54BA132E9E8CEC0050178E /* IAPharmacy in Frameworks */,
 				0C4D2C7A2E9E918A00240575 /* IACardLink in Frameworks */,
-				0C4D2C912E9E91C400240575 /* IAPrescription in Frameworks */,
-				0C4D2C8B2E9E91C400240575 /* IAOrdering in Frameworks */,
-				0C4D2C8D2E9E91C400240575 /* IAOverTheCounter in Frameworks */,
+				0C888F5C2E9F0E8800B8B708 /* IAPrescription in Frameworks */,
+				0C888F562E9F0E8800B8B708 /* IAOrdering in Frameworks */,
+				0C888F582E9F0E8800B8B708 /* IAOverTheCounter in Frameworks */,
 				0C4D2C842E9E918A00240575 /* IAPrescription in Frameworks */,
 				0C4D2C802E9E918A00240575 /* IAOverTheCounter in Frameworks */,
+				0CD0396A2E9FDEBC00A8DF76 /* IAPharmacy in Frameworks */,
 				0C54BA0B2E9E8CEC0050178E /* IACardLink in Frameworks */,
-				0C4D2C892E9E91C400240575 /* IAIntegrations in Frameworks */,
-				0C4D2C872E9E91C400240575 /* IACardLink in Frameworks */,
+				0C888F542E9F0E8800B8B708 /* IAIntegrations in Frameworks */,
+				0CD0396C2E9FDEBC00A8DF76 /* IAPrescription in Frameworks */,
+				0C888F522E9F0E8800B8B708 /* IACardLink in Frameworks */,
 				0C54BA0D2E9E8CEC0050178E /* IAIntegrations in Frameworks */,
 				0C54BA112E9E8CEC0050178E /* IAOverTheCounter in Frameworks */,
 				0C4D2C7C2E9E918A00240575 /* IAIntegrations in Frameworks */,
-				0C4D2C8F2E9E91C400240575 /* IAPharmacy in Frameworks */,
+				0C888F5A2E9F0E8800B8B708 /* IAPharmacy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +138,18 @@
 				0C4D2C7F2E9E918A00240575 /* IAOverTheCounter */,
 				0C4D2C812E9E918A00240575 /* IAPharmacy */,
 				0C4D2C832E9E918A00240575 /* IAPrescription */,
-				0C4D2C862E9E91C400240575 /* IACardLink */,
-				0C4D2C882E9E91C400240575 /* IAIntegrations */,
-				0C4D2C8A2E9E91C400240575 /* IAOrdering */,
-				0C4D2C8C2E9E91C400240575 /* IAOverTheCounter */,
-				0C4D2C8E2E9E91C400240575 /* IAPharmacy */,
-				0C4D2C902E9E91C400240575 /* IAPrescription */,
+				0C888F512E9F0E8800B8B708 /* IACardLink */,
+				0C888F532E9F0E8800B8B708 /* IAIntegrations */,
+				0C888F552E9F0E8800B8B708 /* IAOrdering */,
+				0C888F572E9F0E8800B8B708 /* IAOverTheCounter */,
+				0C888F592E9F0E8800B8B708 /* IAPharmacy */,
+				0C888F5B2E9F0E8800B8B708 /* IAPrescription */,
+				0CD039612E9FDEBC00A8DF76 /* IACardLink */,
+				0CD039632E9FDEBC00A8DF76 /* IAIntegrations */,
+				0CD039652E9FDEBC00A8DF76 /* IAOrdering */,
+				0CD039672E9FDEBC00A8DF76 /* IAOverTheCounter */,
+				0CD039692E9FDEBC00A8DF76 /* IAPharmacy */,
+				0CD0396B2E9FDEBC00A8DF76 /* IAPrescription */,
 			);
 			productName = MainExample;
 			productReference = 0CB5A9222E3D2AF900A881E8 /* MainExample.app */;
@@ -162,7 +180,7 @@
 			mainGroup = 0CB5A9192E3D2AF900A881E8;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */,
+				0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0CB5A9232E3D2AF900A881E8 /* Products */;
@@ -342,7 +360,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.demo.sdkv2.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -372,7 +390,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.demo.sdkv2.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -404,7 +422,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */ = {
+		0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ihreapotheken/IA-SDK-iOS";
 			requirement = {
@@ -439,36 +457,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = IAPrescription;
 		};
-		0C4D2C862E9E91C400240575 /* IACardLink */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IACardLink;
-		};
-		0C4D2C882E9E91C400240575 /* IAIntegrations */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IAIntegrations;
-		};
-		0C4D2C8A2E9E91C400240575 /* IAOrdering */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IAOrdering;
-		};
-		0C4D2C8C2E9E91C400240575 /* IAOverTheCounter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IAOverTheCounter;
-		};
-		0C4D2C8E2E9E91C400240575 /* IAPharmacy */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IAPharmacy;
-		};
-		0C4D2C902E9E91C400240575 /* IAPrescription */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0C4D2C852E9E91C400240575 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
-			productName = IAPrescription;
-		};
 		0C54BA0A2E9E8CEC0050178E /* IACardLink */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = IACardLink;
@@ -491,6 +479,60 @@
 		};
 		0C54BA142E9E8CEC0050178E /* IAPrescription */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = IAPrescription;
+		};
+		0C888F512E9F0E8800B8B708 /* IACardLink */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IACardLink;
+		};
+		0C888F532E9F0E8800B8B708 /* IAIntegrations */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAIntegrations;
+		};
+		0C888F552E9F0E8800B8B708 /* IAOrdering */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAOrdering;
+		};
+		0C888F572E9F0E8800B8B708 /* IAOverTheCounter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAOverTheCounter;
+		};
+		0C888F592E9F0E8800B8B708 /* IAPharmacy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAPharmacy;
+		};
+		0C888F5B2E9F0E8800B8B708 /* IAPrescription */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IAPrescription;
+		};
+		0CD039612E9FDEBC00A8DF76 /* IACardLink */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
+			productName = IACardLink;
+		};
+		0CD039632E9FDEBC00A8DF76 /* IAIntegrations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
+			productName = IAIntegrations;
+		};
+		0CD039652E9FDEBC00A8DF76 /* IAOrdering */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
+			productName = IAOrdering;
+		};
+		0CD039672E9FDEBC00A8DF76 /* IAOverTheCounter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
+			productName = IAOverTheCounter;
+		};
+		0CD039692E9FDEBC00A8DF76 /* IAPharmacy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
+			productName = IAPharmacy;
+		};
+		0CD0396B2E9FDEBC00A8DF76 /* IAPrescription */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CD039602E9FDEBB00A8DF76 /* XCRemoteSwiftPackageReference "IA-SDK-iOS" */;
 			productName = IAPrescription;
 		};
 /* End XCSwiftPackageProductDependency section */
