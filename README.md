@@ -1,7 +1,7 @@
 IA SDK is iOS SDK that helps integrate IhreApotheken into your app by providing plug-and-play UI and communication with backend services.
 
 The SDK consists of the following swift packages:
-* **IAIntegrations**: Legal, onboarding, start screen, ApoFinder (pharmacy search with list and map).
+* **IAIntegrations**: Legal, onboarding, start screen, Apofinder (pharmacy search with list and map).
 * **IAOverTheCounter**: Product search, product details, inquiry.
 * **IAOrdering**: Cart, checkout, payment.
 * **IAPharmacy**: Pharmacy details.
