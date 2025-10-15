@@ -1,4 +1,4 @@
-# Prerequisites
+# Initialization
 
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 
