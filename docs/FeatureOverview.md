@@ -1,6 +1,6 @@
 # Feature overview
 
-### IACore
+## IACore
 - IASDK.register
 - IASDK.initialize
 - IASDK.setDelegates
@@ -10,7 +10,7 @@
 - IASDK.Pharmacy.setPharmacyID
 - IASDK.Pharmacy.getPharmacyID
 
-### IAIntegrations
+## IAIntegrations
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.integrations**
   - Mandatory, contains various features used in SDK
@@ -27,7 +27,7 @@
 - IAIntegrationsSDK.Prerequisites.resetLegalDisclaimer
 - IAIntegrationsSDK.Prerequisites.setIsOnboardingShown
 
-### IAOverTheCounter
+## IAOverTheCounter
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.overTheCounter**
   - product grids (products of the month, current offers etc.) are shown on *IACartScreen* and *IAStartScreen*.
@@ -36,7 +36,7 @@
 #### Screens
 - **IAProductSearchScreen**: Product search with filters.
 
-### IAOrdering
+## IAOrdering
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.ordering**
   - user can add products to cart. Cart button is displayed on product list, grids and details.
@@ -51,7 +51,7 @@
 - IAOrderingSDK.deleteCart
 - IAOrderingSDK.getCartDetails
 
-### IAPharmacy
+## IAPharmacy
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.pharmacyDetails**
   - *IAPharmacyScreen* can be opened from *IAStartScreen* and *IACartScreen*
@@ -59,7 +59,7 @@
 #### Screens
 - **IAPharmacyScreen**: Pharmacy details
 
-### IAPrescription
+## IAPrescription
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.prescription**
   - User can add prescriptions to the cart (scan and take photo). Accessible from *IAStartScreen* , *IACartScreen* and product details.
@@ -67,7 +67,7 @@
 #### Screens
 - **IAScannerScreen**: Take photo of prescription or scan E-Prescription.
 
-### IACardLink
+## IACardLink
 #### Modules that can be registered in IASDK.register
 - **IASDKModule.cardLink**
   - User can scan electronic health cards and add prescriptions to the cart. Accessible from *IAStartScreen* , *IACartScreen* and product details.
