@@ -35,7 +35,10 @@ To add the IA SDK to your Xcode project, follow these steps:
     > ⚠️ You need to select only package products that you will use and for which your API key has entitlements.
 
     ![](docs/resources/installation_2.png)
-    
+
+# Project setup
+1. If you are using apofinder then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
+2. If you are using CardLink then @TODO (Redirect to CardLink docs).
 
 # Usage
 1. **Set bundle identifier**  
