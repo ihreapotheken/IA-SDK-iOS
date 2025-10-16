@@ -4,7 +4,7 @@ This module contains following features:
 * **Prerequisites**: Explained [here](./Prerequisites.md) in more details.
 * **Start screen**: Serves as home screen for major IhreApotheken features. Users can:
   * Search and filter products ([IAOverTheCounter](./IAOverTheCounter.md)) 
-  * Scan prescriptions ([IAScanner](./IAScanner.md)) 
+  * Scan prescriptions ([IAPrescription](./IAPrescription.md)) 
   * Open the cart ([IAOrdering](./IAOrdering.md)) 
   * Open pharmacy details ([IAPharmacy](./IAPharmacy.md)) 
   * See product recommendations ([IAOverTheCounter](./IAOverTheCounter.md))
