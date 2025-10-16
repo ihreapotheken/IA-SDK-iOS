@@ -109,11 +109,12 @@ To skip certain steps, see [Initialization](./docs/Initialization.md).
 # Features
 [All modules and features](./docs/FeatureOverview.md)  
 [Initialization](./docs/Initialization.md)  
+[IAIntegrations](./docs/IAIntegrations.md)  
 [IAOverTheCounter](./docs/IAOverTheCounter.md)  
 [IAOrdering](./docs/IAOrdering.md)  
 [IAPharmacy](./docs/IAPharmacy.md)  
-[IAPrescription](./docs/IAPrescription.md)  
-[IAIntegrations](./docs/IAIntegrations.md)  
+[IAPrescription](./docs/IAPrescription.md)
+[IACardlink](./docs/IACardLink.md)
 [Presentation](./docs/Presentation.md)
 
 # Full example code
