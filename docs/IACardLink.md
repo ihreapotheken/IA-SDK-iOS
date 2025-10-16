@@ -32,7 +32,8 @@ CardLink uses NFC, you will need to add some permissions to the host app so that
 
 #### Localization
 You will need to add **LocalizableNFC.xcstrings** file to your main target and define strings that SDK displays during the scanning process. Example of this file is 
-![here](resources/LocalizableNFC.xcstrings)
+[here](resources/LocalizableNFC.xcstrings)
+
 ## Authentication key
 Set authentication key before calling *CardLink.start* method:
 ```swift
