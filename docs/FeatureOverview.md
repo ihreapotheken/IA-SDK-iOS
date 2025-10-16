@@ -1,6 +1,7 @@
 # All modules and features
 
 ## IACore
+- IASDK.configuration: struct on which you can set various options like apiKey, clientID, footer options, initializationType etc. 
 - IASDK.register
 - IASDK.initialize
 - IASDK.setDelegates
