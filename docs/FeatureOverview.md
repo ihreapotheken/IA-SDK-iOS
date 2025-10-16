@@ -45,7 +45,7 @@
   - recent orders section is shown on *IAStartScreen*
 
 ### Screens
-- **IACartScreen**: Cart, checkout, thank you etc.
+- IACartScreen: Cart, checkout, thank you etc.
 
 ### Other
 - IAOrderingSDK.deleteCart
@@ -57,7 +57,7 @@
   - *IAPharmacyScreen* can be opened from *IAStartScreen* and *IACartScreen*
 
 ### Screens
-- **IAPharmacyScreen**: Pharmacy details
+- IAPharmacyScreen: Pharmacy details
 
 ## IAPrescription
 ### Modules that can be registered in IASDK.register
@@ -65,7 +65,7 @@
   - User can add prescriptions to the cart (scan and take photo). Accessible from *IAStartScreen* , *IACartScreen* and product details.
 
 ### Screens
-- **IAScannerScreen**: Take photo of prescription or scan E-Prescription.
+- IAScannerScreen: Take photo of prescription or scan E-Prescription.
 
 ## IACardLink
 ### Modules that can be registered in IASDK.register
