@@ -34,7 +34,7 @@
   - product search and product details are accessible from *IAStartScreen*, *IACartScreen* etc.
 
 ### Screens
-- **IAProductSearchScreen**: Product search with filters.
+- IAProductSearchScreen: Product search with filters.
 
 ## IAOrdering
 ### Modules that can be registered in IASDK.register
