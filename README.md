@@ -6,7 +6,7 @@ The SDK consists of the following swift packages:
 * **IAOrdering**: Cart, checkout, payment.
 * **IAPharmacy**: Pharmacy details.
 * **IAPrescription**: Prescription scanner.
-* **CardLink**: Scanning prescriptions from electornic health cards.
+* **IACardLink**: Scanning prescriptions from electornic health cards.
 
 To use IA SDK, you will need an API key and Client ID. The API key is bound to specific app Bundle ID(s) and comes with a set of entitlements. Each entitlement enables access to certain features or services within the SDK.
 
