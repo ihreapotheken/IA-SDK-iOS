@@ -41,7 +41,7 @@ TabView {
 * **IAOverTheCounter**: 
   * Products can be added to cart from the products search screen and the product details screen. 
   * Product search screen shows the cart button.
-* **IAScanner**: 
+* **IAPrescription**: 
   * Automatically adds prescriptions to cart after scanning is finished.
 * **IACardLink**: 
   * Automatically adds prescriptions to cart after scanning is finished.

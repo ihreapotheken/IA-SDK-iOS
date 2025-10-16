@@ -1,4 +1,4 @@
-# IAScanner
+# IAPrescription
 
 This module contains following features:
 * **Scanner screen**: Lets users upload a photo of a prescription or scan an electronic prescription to add it to the cart.
@@ -24,7 +24,7 @@ TabView {
 
 ## Interaction with other products
 
-**IAScanner** is used by:
+**IAPrescription** is used by:
 * **IAOrdering**: 
   * Scanning process can be started from the cart screen.
 * **IAIntegrations**: 
