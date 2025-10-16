@@ -43,8 +43,8 @@ private extension ExampleApp {
             VStack(spacing: 20) {
                 Text("This is view defined in host app that starts IA SDK.")
                 
-                Button("Start IA SDK") {
-                    Task { await viewModel.startSDK() }
+                Button("Initialize IA SDK") {
+                    Task { await viewModel.initializeSDK() }
                 }
                 
                 if let errorMessage = viewModel.errorMessage {
@@ -56,7 +56,7 @@ private extension ExampleApp {
                 Spacer()
                 
                 Button("Reset Prerequisites") {
-                    Task { await viewModel.resetPrerequisitesAndPharmacy() }
+                    Task { await viewModel.resetPrerequisites() }
                 }
             }
             .padding()

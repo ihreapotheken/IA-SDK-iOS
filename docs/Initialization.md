@@ -1,23 +1,37 @@
-# Prerequisites
+# Initialization
 
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready:
 
 ```swift
-let result = try await IASDK.initialize(options: .init(shouldShowIndicator: true, isCancellable: false, isAnimated: false))
+let options = IASDKInitializationOptions(
+    prerequisitesOptions: .init(
+        shouldShowIndicator: true, 
+        isCancellable: true, 
+        isAnimated: true, 
+        shouldRunLegal: true, 
+        shouldRunOnboarding: true, 
+        shouldRunApofinder: true
+    )
+)
+let result = try await IASDK.initialize(options: options)
+if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
+    navigationPath.append(.iaStartScreen)
+} else {
+    errorMessage = "Initialization failed..."
+} 
 ```
 
 Among other things, this will start the prerequisites flow if needed, it consists of three separate screens:
-
 *   **Legal Opt-In (mandatory):** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes.
-
-*   **Onboarding (optional):** An introductory onboarding screen, shown only once.
-
-*   **Pharmacy (mandatory):** All products require a pharmacy to be set. You can either:
-
-    *   Manually provide a pharmacy identifier to the IA SDK, or
     
-    *   Let Prerequisites present **ApoFinder** feature (not yet available). This will allow user to select pharmacy from list or map.
+*   **Onboarding (optional):** An introductory onboarding screen, shown only once.
+    
+*   **Apofinder (mandatory):** All products require a pharmacy to be set. You can either:
+    
+      *   Manually provide a pharmacy identifier to the IA SDK, or
         
+      *   Let Prerequisites present **Apofinder**. This will allow user to select pharmacy from list or map.
+
 
 To skip certain steps, use the following code:
 
