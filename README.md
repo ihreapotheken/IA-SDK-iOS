@@ -104,7 +104,7 @@ This will:
 To skip certain steps, see [Initialization](./docs/Initialization.md).
 
 # Features
-
+[All modules and features](./docs/FeatureOverview.md)  
 [Initialization](./docs/Initialization.md)  
 [IAOverTheCounter](./docs/IAOverTheCounter.md)  
 [IAOrdering](./docs/IAOrdering.md)  
