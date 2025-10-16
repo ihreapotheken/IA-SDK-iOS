@@ -38,7 +38,7 @@ To add the IA SDK to your Xcode project, follow these steps:
 
 # Project setup
 1. If you are using apofinder then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
-2. If you are using CardLink then @TODO (Redirect to CardLink docs).
+2. If you are using CardLink then please read [IACardlink](./docs/IACardLink.md)
 
 # Usage
 1. **Set bundle identifier**  
