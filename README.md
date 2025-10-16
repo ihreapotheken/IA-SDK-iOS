@@ -109,7 +109,7 @@ To skip certain steps, see [Initialization](./docs/Initialization.md).
 [IAOverTheCounter](./docs/IAOverTheCounter.md)  
 [IAOrdering](./docs/IAOrdering.md)  
 [IAPharmacy](./docs/IAPharmacy.md)  
-[IAScanner](./docs/IAScanner.md)  
+[IAPrescription](./docs/IAPrescription.md)  
 [IAIntegrations](./docs/IAIntegrations.md)  
 [Presentation](./docs/Presentation.md)
 
