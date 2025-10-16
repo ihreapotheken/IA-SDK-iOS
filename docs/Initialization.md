@@ -44,4 +44,7 @@ IAIntegrationsSDK.Prerequisites.setIsOnboardingShown(true)
 
 // Manually sets the pharmacy ID. Pass `nil` to clear it.
 IASDK.Pharmacy.setPharmacyID(12345)
+
+// Sets pharmacy ID to nil, resets legal documents and onboarding flags.
+IAIntegrationsSDK.Prerequisites.resetAllPrerequisites()
 ```
