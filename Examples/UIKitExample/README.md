@@ -1,6 +1,6 @@
-## DemoUIKitExample
+## UIKitExample
 
-DemoUIKitExample is an UIKit application that showcases how to integrate IhreApotheken IA SDK modules inside a classic UITabBarController setup.
+UIKitExample is an UIKit application that showcases how to integrate IhreApotheken IA SDK modules inside a classic UITabBarController setup.
 
 Initialization: UIKitExampleViewModel configures the IA SDK (API key, client ID, module registration) and runs IASDK.initialize.
 

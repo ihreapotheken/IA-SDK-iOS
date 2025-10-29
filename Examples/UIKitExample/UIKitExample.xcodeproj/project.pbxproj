@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1E7E812EB26B2D008FA2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7E752EB26B2D008FA2F1 /* AppDelegate.swift */; };
+		0C1E7E822EB26B2D008FA2F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7E7C2EB26B2D008FA2F1 /* SceneDelegate.swift */; };
+		0C1E7E832EB26B2D008FA2F1 /* UIKitExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7E7D2EB26B2D008FA2F1 /* UIKitExampleViewController.swift */; };
+		0C1E7E842EB26B2D008FA2F1 /* UIKItExampleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7E7E2EB26B2D008FA2F1 /* UIKItExampleDelegate.swift */; };
+		0C1E7E852EB26B2D008FA2F1 /* UIKitExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E7E7F2EB26B2D008FA2F1 /* UIKitExampleViewModel.swift */; };
+		0C1E7E862EB26B2D008FA2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1E7E762EB26B2D008FA2F1 /* Assets.xcassets */; };
+		0C1E7E882EB26B2D008FA2F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1E7E792EB26B2D008FA2F1 /* LaunchScreen.storyboard */; };
+		0C1E7E892EB26B2D008FA2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1E7E7B2EB26B2D008FA2F1 /* Main.storyboard */; };
 		0C717CD92EAFBCC600E3C16D /* IACardLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CD82EAFBCC600E3C16D /* IACardLink */; };
 		0C717CDB2EAFBCC600E3C16D /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CDA2EAFBCC600E3C16D /* IAIntegrations */; };
 		0C717CDD2EAFBCC600E3C16D /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CDC2EAFBCC600E3C16D /* IAOrdering */; };
@@ -16,29 +24,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C717CBF2EAFBABF00E3C16D /* DemoUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C1E7E752EB26B2D008FA2F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0C1E7E762EB26B2D008FA2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C1E7E772EB26B2D008FA2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C1E7E782EB26B2D008FA2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C1E7E7A2EB26B2D008FA2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C1E7E7C2EB26B2D008FA2F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0C1E7E7D2EB26B2D008FA2F1 /* UIKitExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExampleViewController.swift; sourceTree = "<group>"; };
+		0C1E7E7E2EB26B2D008FA2F1 /* UIKItExampleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKItExampleDelegate.swift; sourceTree = "<group>"; };
+		0C1E7E7F2EB26B2D008FA2F1 /* UIKitExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExampleViewModel.swift; sourceTree = "<group>"; };
+		0C1E7E8C2EB26F6C008FA2F1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0C717CBF2EAFBABF00E3C16D /* UIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0C717CD12EAFBAC000E3C16D /* Exceptions for "DemoUIKitExample" folder in "DemoUIKitExample" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 0C717CBE2EAFBABF00E3C16D /* DemoUIKitExample */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		0C717CC12EAFBABF00E3C16D /* DemoUIKitExample */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0C717CD12EAFBAC000E3C16D /* Exceptions for "DemoUIKitExample" folder in "DemoUIKitExample" target */,
-			);
-			path = DemoUIKitExample;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0C717CBC2EAFBABF00E3C16D /* Frameworks */ = {
@@ -57,10 +54,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1E7E802EB26B2D008FA2F1 /* UIKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E7E8A2EB26B33008FA2F1 /* Resources */,
+				0C1E7E752EB26B2D008FA2F1 /* AppDelegate.swift */,
+				0C1E7E7C2EB26B2D008FA2F1 /* SceneDelegate.swift */,
+				0C1E7E7D2EB26B2D008FA2F1 /* UIKitExampleViewController.swift */,
+				0C1E7E7F2EB26B2D008FA2F1 /* UIKitExampleViewModel.swift */,
+				0C1E7E7E2EB26B2D008FA2F1 /* UIKItExampleDelegate.swift */,
+			);
+			path = UIKitExample;
+			sourceTree = "<group>";
+		};
+		0C1E7E8A2EB26B33008FA2F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E7E762EB26B2D008FA2F1 /* Assets.xcassets */,
+				0C1E7E772EB26B2D008FA2F1 /* Info.plist */,
+				0C1E7E792EB26B2D008FA2F1 /* LaunchScreen.storyboard */,
+				0C1E7E7B2EB26B2D008FA2F1 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0C717CB62EAFBABF00E3C16D = {
 			isa = PBXGroup;
 			children = (
-				0C717CC12EAFBABF00E3C16D /* DemoUIKitExample */,
+				0C1E7E8C2EB26F6C008FA2F1 /* README.md */,
+				0C1E7E802EB26B2D008FA2F1 /* UIKitExample */,
 				0C717CC02EAFBABF00E3C16D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,7 +90,7 @@
 		0C717CC02EAFBABF00E3C16D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C717CBF2EAFBABF00E3C16D /* DemoUIKitExample.app */,
+				0C717CBF2EAFBABF00E3C16D /* UIKitExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C717CBE2EAFBABF00E3C16D /* DemoUIKitExample */ = {
+		0C717CBE2EAFBABF00E3C16D /* UIKitExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C717CD22EAFBAC000E3C16D /* Build configuration list for PBXNativeTarget "DemoUIKitExample" */;
+			buildConfigurationList = 0C717CD22EAFBAC000E3C16D /* Build configuration list for PBXNativeTarget "UIKitExample" */;
 			buildPhases = (
 				0C717CBB2EAFBABF00E3C16D /* Sources */,
 				0C717CBC2EAFBABF00E3C16D /* Frameworks */,
@@ -88,10 +110,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				0C717CC12EAFBABF00E3C16D /* DemoUIKitExample */,
-			);
-			name = DemoUIKitExample;
+			name = UIKitExample;
 			packageProductDependencies = (
 				0C717CD82EAFBCC600E3C16D /* IACardLink */,
 				0C717CDA2EAFBCC600E3C16D /* IAIntegrations */,
@@ -101,7 +120,7 @@
 				0C717CE22EAFBCC600E3C16D /* IAPrescription */,
 			);
 			productName = DemoUIKitExample;
-			productReference = 0C717CBF2EAFBABF00E3C16D /* DemoUIKitExample.app */;
+			productReference = 0C717CBF2EAFBABF00E3C16D /* UIKitExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C717CBA2EAFBABF00E3C16D /* Build configuration list for PBXProject "DemoUIKitExample" */;
+			buildConfigurationList = 0C717CBA2EAFBABF00E3C16D /* Build configuration list for PBXProject "UIKitExample" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -136,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C717CBE2EAFBABF00E3C16D /* DemoUIKitExample */,
+				0C717CBE2EAFBABF00E3C16D /* UIKitExample */,
 			);
 		};
 /* End PBXProject section */
@@ -146,6 +165,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1E7E862EB26B2D008FA2F1 /* Assets.xcassets in Resources */,
+				0C1E7E882EB26B2D008FA2F1 /* LaunchScreen.storyboard in Resources */,
+				0C1E7E892EB26B2D008FA2F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,10 +178,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1E7E812EB26B2D008FA2F1 /* AppDelegate.swift in Sources */,
+				0C1E7E822EB26B2D008FA2F1 /* SceneDelegate.swift in Sources */,
+				0C1E7E832EB26B2D008FA2F1 /* UIKitExampleViewController.swift in Sources */,
+				0C1E7E842EB26B2D008FA2F1 /* UIKItExampleDelegate.swift in Sources */,
+				0C1E7E852EB26B2D008FA2F1 /* UIKitExampleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0C1E7E792EB26B2D008FA2F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C1E7E782EB26B2D008FA2F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0C1E7E7B2EB26B2D008FA2F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C1E7E7A2EB26B2D008FA2F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0C717CD32EAFBAC000E3C16D /* Debug */ = {
@@ -172,7 +218,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DemoUIKitExample/Info.plist;
+				INFOPLIST_FILE = UIKitExample/Resources/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Do you want to give the permission for the camera usage?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -208,7 +254,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DemoUIKitExample/Info.plist;
+				INFOPLIST_FILE = UIKitExample/Resources/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Do you want to give the permission for the camera usage?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -358,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C717CBA2EAFBABF00E3C16D /* Build configuration list for PBXProject "DemoUIKitExample" */ = {
+		0C717CBA2EAFBABF00E3C16D /* Build configuration list for PBXProject "UIKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C717CD52EAFBAC000E3C16D /* Debug */,
@@ -367,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C717CD22EAFBAC000E3C16D /* Build configuration list for PBXNativeTarget "DemoUIKitExample" */ = {
+		0C717CD22EAFBAC000E3C16D /* Build configuration list for PBXNativeTarget "UIKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C717CD32EAFBAC000E3C16D /* Debug */,
@@ -383,8 +429,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ihreapotheken/IA-SDK-iOS";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = "0.17.12-beta";
+				kind = exactVersion;
+				version = "0.17.14-beta";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

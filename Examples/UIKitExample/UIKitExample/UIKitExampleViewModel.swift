@@ -1,6 +1,6 @@
 //
 //  UIKitExampleViewModel.swift
-//  DemoUIKitExample
+//  UIKitExample
 //
 //  Created by Saša Brezovac on 27.10.2025..
 //
@@ -20,10 +20,16 @@ final class UIKitExampleViewModel: ObservableObject {
     private lazy var sdkDelegate = UIKitExampleDelegate(viewModel: self)
     
     init() {
+        setupSDK()
+    }
+    
+    private func setupSDK() {
         assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
+        IASDK.setEnvironment(.staging)
+        IASDK.Pharmacy.setPharmacyID(2163)
         IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
         IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-        
+
         IASDK.register([
             .integrations,
             .overTheCounter,
@@ -39,9 +45,6 @@ final class UIKitExampleViewModel: ObservableObject {
             prescription: sdkDelegate,
             cardLink: sdkDelegate
         )
-        Task {
-            await initializeSDK()
-        }
     }
 
     func initializeSDK() async {
@@ -51,9 +54,9 @@ final class UIKitExampleViewModel: ObservableObject {
                     shouldShowIndicator: true,
                     isCancellable: false,
                     isAnimated: true,
-                    shouldRunLegal: false,
-                    shouldRunOnboarding: false,
-                    shouldRunApofinder: false
+                    shouldRunLegal: true,
+                    shouldRunOnboarding: true,
+                    shouldRunApofinder: true
                 )
             )
             let result = try await IASDK.initialize(options: options)

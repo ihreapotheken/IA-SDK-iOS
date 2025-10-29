@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  DemoUIKitExample
+//  UIKitExample
 //
 //  Created by Saša Brezovac on 27.10.2025..
 //
@@ -14,7 +14,7 @@ import IAOrdering
 import IAPrescription
 import IACardLink
 
-final class TabBarController: UITabBarController {
+final class UIKitExampleViewController: UITabBarController {
     @ObservedObject var viewModel = UIKitExampleViewModel()
     
     init() {
@@ -31,7 +31,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.isHidden = true
-        
+
         viewModel.onStateChange = { [weak self] isLoaded, errorMessage in
             guard let self else { return }
             if isLoaded {
@@ -39,6 +39,10 @@ final class TabBarController: UITabBarController {
             } else if let errorMessage {
                 self.createErrorController(message: errorMessage)
             }
+        }
+        
+        Task {
+            await viewModel.initializeSDK()
         }
     }
     

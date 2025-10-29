@@ -1,6 +1,6 @@
 //
 //  UIKItExampleDelegate.swift
-//  DemoUIKitExample
+//  UIKitExample
 //
 //  Created by Saša Brezovac on 27.10.2025..
 //

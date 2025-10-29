@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  DemoUIKitExample
+//  UIKitExample
 //
 //  Created by Saša Brezovac on 27.10.2025..
 //
@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = TabBarController()
+        window.rootViewController = UIKitExampleViewController()
         window.makeKeyAndVisible()
         self.window = window
     }
