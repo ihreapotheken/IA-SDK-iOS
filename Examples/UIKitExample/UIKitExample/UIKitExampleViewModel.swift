@@ -24,11 +24,18 @@ final class UIKitExampleViewModel: ObservableObject {
     }
     
     private func setupSDK() {
-        assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
+        // Validate that SharedConfig.xcconfig has been properly configured.
+        precondition(
+            Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String != "ENTER YOUR API KEY HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String != "ENTER YOUR CLIENT ID HERE",
+            "Please configure SharedConfig.xcconfig with your bundle identifier, API key, and client ID."
+        )
+        
         IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
+        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
         IASDK.Pharmacy.setPharmacyID(2163)
-        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
 
         IASDK.register([
             .integrations,
@@ -49,18 +56,13 @@ final class UIKitExampleViewModel: ObservableObject {
 
     func initializeSDK() async {
         do {
-            let options = IASDKInitializationOptions(
-                prerequisitesOptions: .init(
-                    shouldShowIndicator: true,
-                    isCancellable: false,
-                    isAnimated: true,
-                    shouldRunLegal: true,
-                    shouldRunOnboarding: true,
-                    shouldRunApofinder: true
-                )
+            let prerequisitesOptions = IASDKPrerequisitesOptions(
+                shouldShowIndicator: true,
+                isCancellable: false,
+                isAnimated: true,
             )
-            let result = try await IASDK.initialize(options: options)
-            print("result: \(result)")
+            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled. 
+            let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
             onStateChange?(true, nil)
         } catch {
             onStateChange?(false, "Error\n\(error)")
