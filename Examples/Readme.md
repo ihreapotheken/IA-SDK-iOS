@@ -7,7 +7,8 @@ How to setup example project:
 - IASDK_API_KEY: $(IASDK_API_KEY)
 - IASDK_CLIEND_ID: $(IASDK_CLIENT_ID)
 6. Tap on project -> Select project -> Info: Set all configurations to SharedConfiguration.xcconfig
-7. Use following code:
+7. Target -> Build Settings -> Search "Bundle product identifier", select row and delete it. That will make it use value from SharedConfiguration.
+8. Use following code:
 ```
 precondition(
     Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
