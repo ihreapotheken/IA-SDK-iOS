@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Readme.md">
+   </FileRef>
+   <FileRef
       location = "group:MainExample/MainExample.xcodeproj">
    </FileRef>
    <FileRef
@@ -12,5 +15,8 @@
    </FileRef>
    <FileRef
       location = "group:UIKitExample/UIKitExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InitializationTest/InitializationTest.xcodeproj">
    </FileRef>
 </Workspace>
