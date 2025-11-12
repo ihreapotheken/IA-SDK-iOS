@@ -40,6 +40,8 @@ final class ExampleAppViewModel: ObservableObject {
             .ordering,
             .apofinder
         ])
+        
+        IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
     }
     
     func initializeSDK() async {
