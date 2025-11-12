@@ -7,10 +7,6 @@
    <FileRef
       location = "group:SingleEntryPoint/SingleEntryPoint.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:Resources"
-      name = "Resources">
-   </Group>
    <FileRef
       location = "group:OrderingOnlyExample/OrderingOnlyExample.xcodeproj">
    </FileRef>
