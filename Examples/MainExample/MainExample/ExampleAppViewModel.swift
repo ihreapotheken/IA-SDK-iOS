@@ -34,6 +34,7 @@ final class ExampleAppViewModel: ObservableObject {
         )
         
         IASDK.setEnvironment(.staging)
+        IASDK.Pharmacy.setPharmacyID(2163)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
         
