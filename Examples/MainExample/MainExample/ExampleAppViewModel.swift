@@ -32,11 +32,7 @@ final class ExampleAppViewModel: ObservableObject {
             Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String != "ENTER YOUR CLIENT ID HERE",
             "Please configure SharedConfig.xcconfig with your bundle identifier, API key, and client ID."
         )
-        
-        IASDK.setEnvironment(.staging)
-        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
-        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
-        
+         
         IASDK.register([
             .integrations,
             .overTheCounter,
@@ -54,6 +50,9 @@ final class ExampleAppViewModel: ObservableObject {
             cardLink: delegate
         )      
         
+        IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
+        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
         IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
         
         Task {
