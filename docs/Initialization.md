@@ -50,6 +50,21 @@ IASDK.configuration.initializationType = .automatic(
 With this configuration, the initialize function will run automatically when you display any SDK screen.
 However, it’s important to note that automatic initialization only occurs when a screen is presented. If you call any SDK function that requires initialization or prerequisites before showing a screen, an error will be thrown.
 
+## Common scenarios
+Here we will cover some common scenarios and how to best handle initialization and prerequisites.
+
+**Scenario 1:** IA SDK is vital part of your app and you don't mind that prerequisites screens are run when app starts.  
+Simply run *initialize* function with *prerequsitesOptions* at start. You can then use IA SDK screens and functions as you wish.  
+If something fails, you must handle it at start.
+
+**Scenario 2:** You run IA SDK from single entry point and don't use any IA SDK functions before.  
+In this case you can run *initialize* function with *prerequsitesOptions* just before you enter part of your app where IA SDK is used.  
+If something fails you can handle at SDK entry point, not at the start of your app.
+
+**Scenario 3:** You run IA SDK from single entry point but you might call some IA SDK functions before it.  
+This depends, functions that don't require pharmacy to be set can be called before prerequisites is run. In that case you can run *initialize* without *prerequisitesOptions* at start and then call *initialize* with *prerequisitesOptions* before you enter part of your app where IA SDK is used. If you intend to run functions that require pharmacy to be set, you must call *initialize* with *prerequisitesOptions* at start.
+
+
 ## Other
 To skip certain steps, use the following code:
 
