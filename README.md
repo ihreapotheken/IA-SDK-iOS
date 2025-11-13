@@ -95,9 +95,9 @@ To learn more about initialization, see [Initialization](./docs/Initialization.m
 [IAOverTheCounter](./docs/IAOverTheCounter.md)  
 [IAOrdering](./docs/IAOrdering.md)  
 [IAPharmacy](./docs/IAPharmacy.md)  
-[IAPrescription](./docs/IAPrescription.md)
-[IACardlink](./docs/IACardLink.md)
-[Presentation](./docs/Presentation.md)
+[IAPrescription](./docs/IAPrescription.md)  
+[IACardlink](./docs/IACardLink.md)  
+[Presentation](./docs/Presentation.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
