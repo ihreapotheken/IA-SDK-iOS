@@ -37,13 +37,25 @@ This design allows flexibility: in some cases, you may want to initialize the SD
 
 Regardless of how many times you call initialize, the SDK initialization runs only once, while the prerequisites flow runs every time it’s triggered.
 
+## Automatic initialization
+You can enable automatic initialization by setting the following configuration option:
+```
+IASDK.configuration.initializationType = .automatic(
+    options: .init(
+        shouldShowIndicator: true,
+        prerequisitesOptions: prerequisitesOptions
+    )
+)
+```
+With this configuration, the initialize function will run automatically when you display any SDK screen.
+However, it’s important to note that automatic initialization only occurs when a screen is presented. If you call any SDK function that requires initialization or prerequisites before showing a screen, an error will be thrown.
 
 ## Other
 To skip certain steps, use the following code:
 
 ```swift
 // Mark the legal documents as not accepted.
-IASDK.Prerequisites.resetLegalDisclaimer(true)
+IASDK.Prerequisites.resetLegalDisclaimer()
 
 // Marks the onboarding step as completed so it won't be shown again.
 IASDK.Prerequisites.setIsOnboardingShown(true)
