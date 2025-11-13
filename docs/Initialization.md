@@ -63,7 +63,7 @@ If something fails you can handle at SDK entry point, not at the start of your a
 Note: There might be few simple functions that you can call before initialization is run but those are exceptions. 
 
 **Scenario 3:** You run IA SDK from single entry point but you might call some IA SDK functions before it.  
-In this case you can run *initialize* function without *prerequsitesOptions* at start of your app. Then, just before you enter part of your app where IA SDK is used, call *initialize* again with *prerequsitesOptions* set.
+In this case you can run *initialize* function without *prerequsitesOptions* at start of your app. Then, just before you enter part of your app where IA SDK is used, call *initialize* again with *prerequsitesOptions* set.  
 Note: This should be true for most functions, but if some function requires pharmacy to be set then you will have to call *initialize* with *prerequsitesOptions* before.
 
 
