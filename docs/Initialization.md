@@ -35,7 +35,7 @@ The prerequisites flow runs only if *prerequisitesOptions* is provided. However,
 
 This design allows flexibility: in some cases, you may want to initialize the SDK first and present the prerequisites screens later. In such cases, you can call initialize twice — first without prerequisitesOptions, and then again with them.
 
-Regardless of how many times you call initialize, the SDK initialization runs only once, while the prerequisites flow runs every time it’s triggered.
+Regardless of how many times you call initialize, the SDK initialization runs only once, while the prerequisites flow runs every time it’s triggered (screens are presented only if needed, first time or something changed).
 
 ## Automatic initialization
 You can enable automatic initialization by setting the following configuration option:
