@@ -18,9 +18,9 @@ Calling *initialize* will do the following:
 * Validate your API key and fetch entitlements for modules.
 * Fetch remote configuration (your legal data, feature flags, remote colors etc.)
 * Present prerequisites screens (only if *prerequisitesOptions* is set):
-    *   **Onboarding (optional):** An introductory onboarding screen, shown only once. Onboarding is optional, you can set *shouldRunOnboarding* to skip it.
-    *   **Legal Opt-In (mandatory):** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes. Legal screens are optional, you can set *shouldRunLegal* to skip it.
-    *   **Apofinder (mandatory):** SDK require a pharmacy to be set. It cannot run without one. You can provide pharmacy in two ways:
+    *   **Onboarding:** An introductory onboarding screen, shown only once. Onboarding is optional, you can set *shouldRunOnboarding* to skip it.
+    *   **Legal Opt-In:** The user must opt in to use the SDK. This is presented first time and when version of some legal document changes. Legal screens are optional, you can set *shouldRunLegal* to skip it.
+    *   **Apofinder:** SDK require a pharmacy to be set. It cannot run without one. You can provide pharmacy in two ways:
         *   Manually provide a pharmacy identifier to the IA SDK before you call initialize, it will be fetched and validated as part of prerequisites.
         *   Let Prerequisites present **Apofinder**. This will allow user to select pharmacy from list or map.
 * Preload data, e.g. it will preload Cart so that it is available on all screens.
@@ -31,7 +31,7 @@ The initialization process can be divided into two key parts:
 - Prerequisites: A flow of screens that runs only when necessary. While onboarding and legal steps are optional, this phase ensures that the pharmacy is set — which is mandatory.
 
 *IASDK.initialize* function handles both initialization and prerequisites.
-The prerequisites flow runs only if *prerequisitesOptions* is provided. However, it’s important to note that you must call initialize with *prerequisitesOptions* before using the SDK, even if you initialized it earlier without them.
+The prerequisites flow runs only if *prerequisitesOptions* is provided. However, it’s important to note that **you always must call initialize with *prerequisitesOptions* before using the SDK, even if you initialized it earlier without them**.
 
 This design allows flexibility: in some cases, you may want to initialize the SDK first and present the prerequisites screens later. In such cases, you can call initialize twice — first without prerequisitesOptions, and then again with them.
 
