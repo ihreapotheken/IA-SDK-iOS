@@ -1,6 +1,6 @@
 IA SDK is iOS SDK that helps integrate IhreApotheken into your app by providing plug-and-play UI and communication with backend services.
 
-The SDK consists of the following swift packages:
+The SDK consists of the following modules:
 * **IAIntegrations**: Legal, onboarding, start screen, Apofinder (pharmacy search with list and map).
 * **IAOverTheCounter**: Product search, product details, inquiry.
 * **IAOrdering**: Cart, checkout, payment.
@@ -45,7 +45,7 @@ To add the IA SDK to your Xcode project, follow these steps:
 You need to set your bundle identifier in the target’s Build Settings, as the API key is linked specifically to that identifier.
 
 2. **Import the required products**  
-Then you need to import the modules that you will be using. `IACore` and `IAIntegrations` are mandatory, others are optional. In this example we will be using product search from `IAOverTheCounter` and cart from `IAOrdering`.
+In order to use the modules you have to import them. `IACore` and `IAIntegrations` are mandatory, others are optional. In this example we will be using product search from `IAOverTheCounter` and cart from `IAOrdering`.
 ```swift
 import IACore
 import IAIntegrations
@@ -54,12 +54,9 @@ import IAOrdering
 ```
 
 3. **Register modules and basic setup**  
-Next, you need to enter you API key and client ID. 
-Then call the `register()` method for each product you plan to use. This step is required because products can be interconnected. For example, registering `ordering` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
-```swift
-IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-    
+The first step is to register all the modules you plan to use. This must be done before calling any functions or presenting any screens.  The registration function is synchronous, so we recommend running it immediately when the app starts.
+This step is required because products can be interconnected. For example, registering `ordering` makes the **Cart** feature (from `IAOrdering`) internally available to the **Product Search** feature (from `IAOverTheCounter`), enabling features like a cart button on the search screen.
+```swift    
 IASDK.register([
     .integrations, 
     .overTheCounter,
@@ -68,25 +65,34 @@ IASDK.register([
 ])
 ```
 > [!IMPORTANT]
-> Don't forget to set your API key and client ID.
+> Make sure to call register before anything else.
 
-4. **Initialize**  
-Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. If you call this at start of the app or if you have a single entry point from where you present IA SDK, you can set *isCancellable* to false and user won't be able to pass the prerequisites UI.
+4. **Basic setup**  
+Next, you need to enter you API key, client ID and other things you might need. We suggest doing this right after you call register.
+```swift
+IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
+IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+IASDK.setEnvironment(.staging)
+IASDK.Pharmacy.setPharmacyID(2163)        // If you have pharmacy ID, you can set it before you call initialize, otherwise initialize will show Apofinder (if enabled).
+IASDK.setSingleDelegate(sdkDelegate)      // If you use delegate, 
 ```
-let options = IASDKInitializationOptions(
-    prerequisitesOptions: .init(
-        shouldShowIndicator: true, 
-        isCancellable: false, 
-        isAnimated: true, 
-        shouldRunLegal: true, 
-        shouldRunOnboarding: true, 
-        shouldRunApofinder: true
-    )
+
+5. **Initialize**  
+Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. This will fetch all required data and enable your modules for running.
+```
+let prerequisitesOptions = IASDKPrerequisitesOptions(
+    shouldShowIndicator: true, 
+    isCancellable: false, 
+    isAnimated: true,
+    shouldRunLegal: true,
+    shouldRunOnboarding: true, 
+    shouldRunApofinder: true
 )
-let result = try await IASDK.initialize(options: options)
+let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
 navigationPath.append(.iaStartScreen)
 ```
-To learn more about initialization, see [Initialization](./docs/Initialization.md).
+> [!TIP]
+> To learn more about initialization, see [Initialization](./docs/Initialization.md).
 
 # Features
 [All modules and features](./docs/FeatureOverview.md)  
@@ -95,9 +101,10 @@ To learn more about initialization, see [Initialization](./docs/Initialization.m
 [IAOverTheCounter](./docs/IAOverTheCounter.md)  
 [IAOrdering](./docs/IAOrdering.md)  
 [IAPharmacy](./docs/IAPharmacy.md)  
-[IAPrescription](./docs/IAPrescription.md)
-[IACardlink](./docs/IACardLink.md)
-[Presentation](./docs/Presentation.md)
+[IAPrescription](./docs/IAPrescription.md)  
+[IACardlink](./docs/IACardLink.md)  
+[Presentation](./docs/Presentation.md)  
+[SDK Interaction](./docs/Interaction.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
@@ -112,7 +119,7 @@ import IAPrescription
 
 @main
 struct MainExampleApp: App {
-    @StateObject private var viewModel = ExampleAppViewModel()
+    @StateObject private var viewModel = ExampleAppViewModel2()
     
     var body: some Scene {
         WindowGroup {
@@ -135,15 +142,11 @@ struct MainExampleApp: App {
 }
 
 @MainActor
-final class ExampleAppViewModel: ObservableObject {
+final class ExampleAppViewModel2: ObservableObject {
     @Published var isLoaded = false
     @Published var errorMessage: String?
     
-    
     init() {
-        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-        
         IASDK.register([
             .integrations, 
             .overTheCounter,
@@ -151,7 +154,11 @@ final class ExampleAppViewModel: ObservableObject {
             .apofinder,
             .prescription
         ])
-        
+
+        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
+        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+        IASDK.setEnvironment(.staging)
+
         Task {
             await initializeSDK()
         }
@@ -159,17 +166,16 @@ final class ExampleAppViewModel: ObservableObject {
     
     func initializeSDK() async {
         do {
-            let options = IASDKInitializationOptions(
-                prerequisitesOptions: .init(
-                    shouldShowIndicator: true, 
-                    isCancellable: false, 
-                    isAnimated: true, 
-                    shouldRunLegal: true, 
-                    shouldRunOnboarding: true, 
-                    shouldRunApofinder: true
-                )
+            let prerequisitesOptions = IASDKPrerequisitesOptions(
+                shouldShowIndicator: true, 
+                isCancellable: false, 
+                isAnimated: true, 
+                shouldRunLegal: true, 
+                shouldRunOnboarding: true, 
+                shouldRunApofinder: true
             )
-            let result = try await IASDK.initialize(options: options)
+            
+            let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
             isLoaded = true // We don't have to check result because isCancellable is false, otherwise you need to check result.didAgreeToLegalNotice and result.pharmacyID
         } catch {
             errorMessage = "Error\n\(error)"
