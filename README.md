@@ -104,6 +104,7 @@ navigationPath.append(.iaStartScreen)
 [IAPrescription](./docs/IAPrescription.md)  
 [IACardlink](./docs/IACardLink.md)  
 [Presentation](./docs/Presentation.md)  
+[Appearance](./docs/Appearance.md)  
 [SDK Interaction](./docs/Interaction.md)  
 
 # Full example code
