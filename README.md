@@ -105,7 +105,8 @@ navigationPath.append(.iaStartScreen)
 [IACardlink](./docs/IACardLink.md)  
 [Presentation](./docs/Presentation.md)  
 [Appearance](./docs/Appearance.md)  
-[SDK Interaction](./docs/Interaction.md)  
+[SDK Interaction](./docs/Interaction.md)
+[Error Codes](./docs/IAErrorCodes.md)
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
