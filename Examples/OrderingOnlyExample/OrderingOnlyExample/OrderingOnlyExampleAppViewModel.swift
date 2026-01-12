@@ -12,12 +12,11 @@ import IACore
 import IAIntegrations
 import IAOrdering
 
-
-@MainActor @available(iOS 16.0, *)
 final class OrderingOnlyExampleAppViewModel: ObservableObject {
+
     @Published var isLoaded = false
     @Published var errorMessage: String?
-    @Published var selectedTab: OrderingOnlyExampleTab = .start
+    @Published var selectedTab: ExampleTab = .start
     @Published private(set) var images: [Data] = []
     
     private lazy var delegate = OrderingOnlyExampleIASDKDelegate(viewModel: self)
@@ -38,16 +37,13 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
         ])
         
         // Example (setup delegate):
-        IASDK.setDelegates(
-            sdk: delegate,
-            ordering: delegate
-        )
+        IASDK.setDelegate(delegate)
         
         IASDK.setEnvironment(.staging)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
-        IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
-        
+        IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
+
         Task {
             await initializeSDK()
         }
@@ -58,12 +54,13 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
         
         do {            
             let prerequisitesOptions = IASDKPrerequisitesOptions(
-                shouldShowIndicator: true, 
                 isCancellable: false, 
                 isAnimated: true, 
             )
+
+            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled.
             let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled. 
+
             isLoaded = true
         } catch {
             errorMessage = "Error\n\(error)"
@@ -72,6 +69,7 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
     
     func resetPrerequisitesAndExit() async {
         try? await IASDK.Prerequisites.resetAllPrerequisites()
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Allow user defaults to save
             exit(0)
         }
@@ -79,44 +77,30 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
     
     func addPrescription() async {
         loadPrescriptionFromAssetsAndQueue()
+
         do {
             try await IAOrderingSDK.transferPrescriptions(images: images, orderID: orderId)
-            _ = delegate.cartButtonWillOpenCartScreen()
         } catch {
             print("error: \(error)")
         }
-    }
-    
-    func goToCart() {
-        self.selectedTab = .cart
     }
 }
 
 // MARK: - Load image from the Assests -
 
-extension OrderingOnlyExampleAppViewModel {
-    private func addImage(_ image: UIImage) {
-        guard let pngData = image.pngData() else {
-            print("Failed to convert UIImage to PNG data.")
-            return
-        }
-        images.append(pngData)
-    }
-    
+private extension OrderingOnlyExampleAppViewModel {
+
     private func loadPrescriptionFromAssetsAndQueue() {
         guard let image = UIImage(named: "prescription") else {
             print("Asset 'prescription' image not found.")
             return
         }
-        addImage(image)
+
+        guard let pngData = image.pngData() else {
+            print("Failed to convert UIImage to PNG data.")
+            return
+        }
+
+        images.append(pngData)
     }
 }
-
-// MARK: - Supporting types -
-
-enum OrderingOnlyExampleTab {
-    case start
-    case cart
-}
-
-

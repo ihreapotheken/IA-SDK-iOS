@@ -45,7 +45,7 @@ private extension ExampleApp {
         NavigationStack(path: $viewModel.navigationPath) {
             VStack(spacing: 16) {
                 VStack(spacing: 16) {
-                    Text("This Screen is defined in the Host App that starts IA SDK.")
+                    Text("This Screen is defined in the Host App that starts IA SDK")
 
                     Button("Initialize IA SDK & Open Start Screen") {
                         Task { await viewModel.initializeSDKAndOpenStartScreen() }

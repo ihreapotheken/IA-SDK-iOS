@@ -16,7 +16,7 @@ final class ExampleIASDKDelegate {
     
     private weak var viewModel: ExampleAppViewModel?
     
-    init(viewModel: ExampleAppViewModel? = nil) {
+    init(viewModel: ExampleAppViewModel?) {
         self.viewModel = viewModel
     }
 }

@@ -83,7 +83,7 @@ private extension MainExampleApp {
                     Text("Miscellaneous")
                         .bold()
 
-                    Button("Reset Prerequisites and Exit Application") {
+                    Button("Reset Prerequisites & Exit Application") {
                         Task { await viewModel.resetPrerequisitesAndExit() }
                     }
                 }

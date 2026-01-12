@@ -15,8 +15,10 @@ import IAPrescription
 import IACardLink
 
 final class UIKitExampleViewController: UITabBarController {
-    @ObservedObject var viewModel = UIKitExampleViewModel()
-    
+
+    private let viewModel = UIKitExampleViewModel()
+    private var didSetupTabBarController = false
+
     init() {
         super.init(nibName: nil, bundle: nil)
         let appearance = UITabBarAppearance()
@@ -32,86 +34,68 @@ final class UIKitExampleViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.isHidden = true
 
-        viewModel.onStateChange = { [weak self] isLoaded, errorMessage in
-            guard let self else { return }
-            if isLoaded {
-                self.createTabBarController()
-            } else if let errorMessage {
-                self.createErrorController(message: errorMessage)
-            }
-        }
-        
+        setupUpdateCallbacks()
+
         Task {
             await viewModel.initializeSDK()
+            self.setupTabBarContorller()
         }
-    }
-    
-    private func createTabBarController() {
-        guard viewControllers?.isEmpty ?? true else { return }
-        self.tabBar.isHidden = false
-        
-        let startViewController = UIHostingController(rootView: IAStartScreen())
-        let startNavigationController = UINavigationController(rootViewController: startViewController)
-        startNavigationController.tabBarItem = UITabBarItem(title: "Start", image: nil, selectedImage: nil)
-        startNavigationController.setNavigationBarHidden(true, animated: false)
-        
-        let searchViewController = UIHostingController(rootView: IAProductSearchScreen())
-        let searchNavigationController = UINavigationController(rootViewController: searchViewController)
-        searchNavigationController.tabBarItem = UITabBarItem(title: "Search", image: nil, selectedImage: nil)
-        searchNavigationController.setNavigationBarHidden(true, animated: false)
-        
-        let orderingViewController = UIHostingController(rootView: IACartScreen())
-        let orderingNavigationController = UINavigationController(rootViewController: orderingViewController)
-        orderingNavigationController.tabBarItem = UITabBarItem(title: "Cart", image: nil, selectedImage: nil)
-        orderingNavigationController.setNavigationBarHidden(true, animated: false)
-        
-        let pharmacyViewController = UIHostingController(rootView: IAPharmacyScreen())
-        let pharmacyNavigationController = UINavigationController(rootViewController: pharmacyViewController)
-        pharmacyNavigationController.tabBarItem = UITabBarItem(title: "Pharmacy", image: nil, selectedImage: nil)
-        pharmacyNavigationController.setNavigationBarHidden(true, animated: false)
-       
-        let scannerViewController = UIHostingController(rootView: IAScannerScreen(type: .prescription))
-        let scannerNavigationController = UINavigationController(rootViewController: scannerViewController)
-        scannerNavigationController.tabBarItem = UITabBarItem(title: "Scanner", image: nil, selectedImage: nil)
-        scannerNavigationController.setNavigationBarHidden(true, animated: false)
-        
-        viewControllers = [
-            startNavigationController,
-            searchNavigationController,
-            orderingNavigationController,
-            pharmacyNavigationController,
-            scannerNavigationController
-        ]
-    }
-    
-    private func createErrorController(message: String) {
-        self.tabBar.isHidden = true
-        
-        let hostingController = UIHostingController(rootView: ErrorView(message: message))
-        guard let hostingView = hostingController.view else { return }
-        hostingView.frame = view.bounds
-        hostingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        hostingView.backgroundColor = .clear
-        
-        addChild(hostingController)
-        view.addSubview(hostingView)
-        hostingController.didMove(toParent: self)
     }
 }
 
-private struct ErrorView: View {
-    let message: String
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            Text(message)
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
-            Spacer()
+private extension UIKitExampleViewController {
+
+    func setupUpdateCallbacks() {
+        viewModel.onCurrentTabUpdated = { [weak self] in
+            self?.tabBarController?.selectedIndex = self?.viewModel.currentTab.rawValue ?? 0
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemBackground))
+
+        viewModel.onIsLoadedUpdated = { [weak self] in
+            guard self?.viewModel.isLoaded == true,
+                  self?.didSetupTabBarController == false else { return }
+
+            self?.setupTabBarContorller()
+        }
+
+        viewModel.onErrorMessageUpdated = { [weak self] in
+            self?.showErrorAlert()
+        }
+    }
+
+    func setupTabBarContorller() {
+        guard !didSetupTabBarController else { return }
+
+        self.overrideUserInterfaceStyle = .light
+        self.tabBar.tintColor = .red
+        self.viewControllers = [
+            createController(for: .start, content: IAStartScreen()),
+            createController(for: .search, content: IAProductSearchScreen()),
+            createController(for: .cart, content: IACartScreen()),
+            createController(for: .pharmacy, content: IAPharmacyScreen()),
+            createController(for: .scanner, content: IAScannerScreen(type: .prescription))
+        ]
+
+        self.tabBar.isHidden = false
+        didSetupTabBarController = true
+    }
+
+    func createController(for tab: ExampleTab, content: some View) -> UIViewController {
+        let controller = UIHostingController(rootView: content)
+        controller.overrideUserInterfaceStyle = .light
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.tabBarItem = .init(title: tab.title, image: .init(systemName: tab.systemImageName), selectedImage: nil)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.overrideUserInterfaceStyle = .light
+
+        return navigationController
+    }
+
+    func showErrorAlert() {
+        guard let errorMessage = viewModel.errorMessage,
+              !errorMessage.isEmpty else { return }
+
+        let alertVC = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        self.present(alertVC, animated: true)
     }
 }

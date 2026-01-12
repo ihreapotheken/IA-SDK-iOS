@@ -13,18 +13,28 @@ import IAOrdering
 
 @MainActor
 final class UIKitExampleDelegate {
+
     private weak var viewModel: UIKitExampleViewModel?
     
-    init(viewModel: UIKitExampleViewModel? = nil) {
+    init(viewModel: UIKitExampleViewModel?) {
         self.viewModel = viewModel
     }
 }
 
-extension UIKitExampleDelegate: SDKDelegate { }
+extension UIKitExampleDelegate: SDKDelegate {
 
-extension UIKitExampleDelegate: OrderingDelegate { }
+    func sdkWillNavigateToTarget(_ navigationTarget: IANavigationTarget, decisionHandler: @escaping (HandlingDecision) -> Void) {
+        switch navigationTarget {
+        case .cart:
+            viewModel?.setCurrentTab(.cart)
+            decisionHandler(.handled)
 
-extension UIKitExampleDelegate: PrescriptionDelegate { }
+        case .pharmacyDetails:
+            viewModel?.setCurrentTab(.pharmacy)
+            decisionHandler(.handled)
 
-extension UIKitExampleDelegate: CardLinkDelegate { }
-
+        default:
+            decisionHandler(.performDefault)
+        }
+    }
+}
