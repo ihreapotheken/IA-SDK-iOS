@@ -13,6 +13,7 @@ import IAOrdering
 
 @MainActor
 final class ExampleIASDKDelegate {
+    
     private weak var viewModel: ExampleAppViewModel?
     
     init(viewModel: ExampleAppViewModel? = nil) {
@@ -21,22 +22,12 @@ final class ExampleIASDKDelegate {
 }
 
 extension ExampleIASDKDelegate: SDKDelegate {
-    // Example (override behavior): How to override default behavior. In this case, instead of presenting the cart (default behavior), 
+
+    // Example (override behavior): How to override default behavior.
+    // In this case, instead of presenting the cart (default behavior),
     // we will switch to cart tab in our example app.
     func cartButtonWillOpenCartScreen() -> HandlingDecision {
         viewModel?.selectedTab = .cart
         return .handled
     }
-}
-
-extension ExampleIASDKDelegate: OrderingDelegate {
-
-}
-
-extension ExampleIASDKDelegate: PrescriptionDelegate {
-    
-}
-
-extension ExampleIASDKDelegate: CardLinkDelegate {
-    
 }

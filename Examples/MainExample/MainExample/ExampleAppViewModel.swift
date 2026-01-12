@@ -14,8 +14,9 @@ import IAPrescription
 import IAOrdering
 import IAPharmacy
 
-@MainActor @available(iOS 16.0, *)
+@MainActor
 final class ExampleAppViewModel: ObservableObject {
+
     @Published var isLoaded = false
     @Published var errorMessage: String?
     @Published var selectedTab: ExampleTab = .start
@@ -42,20 +43,15 @@ final class ExampleAppViewModel: ObservableObject {
             .prescription
         ])
         
-        // Example (setup delegate): 
-        IASDK.setDelegates(
-            sdk: delegate,
-            ordering: delegate,
-            prescription: delegate,
-            cardLink: delegate
-        )      
+        // Example (setup delegate):
+        IASDK.setDelegate(delegate)
         
         IASDK.setEnvironment(.staging)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
-        IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
-        
+
         Task {
+            try? await IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
             await initializeSDK()
         }
     }
@@ -65,7 +61,6 @@ final class ExampleAppViewModel: ObservableObject {
                 
         do {
             let prerequisitesOptions = IASDKPrerequisitesOptions(
-                shouldShowIndicator: true, 
                 isCancellable: false, 
                 isAnimated: true,
                 shouldRunLegal: true,
@@ -73,7 +68,8 @@ final class ExampleAppViewModel: ObservableObject {
                 shouldRunApofinder: true
             )
             let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-            // Example: This is just an example how to handle result if you set IASDKPrerequisitesOptions.isCancellable to true. Otherwise no need to check.
+            // Example: This is just an example how to handle result if you set IASDKPrerequisitesOptions.isCancellable to true.
+            // Otherwise no need to check.
             if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
                 isLoaded = true
             } else {
@@ -93,13 +89,6 @@ final class ExampleAppViewModel: ObservableObject {
 }
 
 // MARK: - Supporting types -
-
-enum ExampleTab {
-    case start
-    case cart
-    case pharmacy
-    case more
-}
 
 enum MoreScreenRoute: Hashable {
     case search
