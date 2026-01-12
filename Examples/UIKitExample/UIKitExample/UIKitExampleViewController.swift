@@ -96,6 +96,7 @@ private extension UIKitExampleViewController {
               !errorMessage.isEmpty else { return }
 
         let alertVC = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alertVC.addAction(.init(title: "OK", style: .default))
         self.present(alertVC, animated: true)
     }
 }

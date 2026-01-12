@@ -17,7 +17,6 @@ import IAPharmacy
 @MainActor
 final class UIKitExampleViewModel {
 
-    var onStateChange: ((_ isLoaded: Bool, _ errorMessage: String?) -> Void)?
     var onCurrentTabUpdated: (() -> Void)?
     var onIsLoadedUpdated: (() -> Void)?
     var onErrorMessageUpdated: (() -> Void)?
@@ -59,9 +58,10 @@ final class UIKitExampleViewModel {
             // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled. 
             let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
 
-            onStateChange?(true, nil)
+            self.isLoaded = true
+            self.errorMessage = nil
         } catch {
-            onStateChange?(false, "Error\n\(error)")
+            self.errorMessage = "Error\n\(error.localizedDescription)"
         }
     }
 }
