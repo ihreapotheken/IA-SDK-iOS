@@ -115,11 +115,11 @@
 		0CB5A9332E3D2AFF00A881E8 /* MainExample */ = {
 			isa = PBXGroup;
 			children = (
-				1582B95E2F14EBBA00F59501 /* Utils */,
 				0C2F75FF2EC4B14F00C13E96 /* Info.plist */,
 				0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */,
 				0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */,
 				0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */,
+				1582B95E2F14EBBA00F59501 /* Utils */,
 			);
 			path = MainExample;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@
 		0CB5A9062E3D27A600A881E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5A9022E3D27A600A881E8 /* Assets.xcassets */; };
 		0CB5A9082E3D27A600A881E8 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9042E3D27A600A881E8 /* ExampleApp.swift */; };
 		0CB5A9172E3D282700A881E8 /* ExampleAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9162E3D282700A881E8 /* ExampleAppViewModel.swift */; };
+		1582BA2B2F1509D200F59501 /* View+ExampleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582BA2A2F1509D200F59501 /* View+ExampleTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0CB5A9042E3D27A600A881E8 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		0CB5A9162E3D282700A881E8 /* ExampleAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAppViewModel.swift; sourceTree = "<group>"; };
 		0CB5A9182E3D287400A881E8 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		1582BA2A2F1509D200F59501 /* View+ExampleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ExampleTab.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +74,17 @@
 				0C2F76002EC4B1CC00C13E96 /* Info.plist */,
 				0CB5A9042E3D27A600A881E8 /* ExampleApp.swift */,
 				0CB5A9162E3D282700A881E8 /* ExampleAppViewModel.swift */,
+				1582BA292F1509D000F59501 /* Utils */,
 			);
 			path = SingleEntryPoint;
+			sourceTree = "<group>";
+		};
+		1582BA292F1509D000F59501 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1582BA2A2F1509D200F59501 /* View+ExampleTab.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			files = (
 				0CB5A9172E3D282700A881E8 /* ExampleAppViewModel.swift in Sources */,
 				0CB5A9082E3D27A600A881E8 /* ExampleApp.swift in Sources */,
+				1582BA2B2F1509D200F59501 /* View+ExampleTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +305,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H83W6SQ2K;
+				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SingleEntryPoint/Info.plist;
@@ -324,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H83W6SQ2K;
+				DEVELOPMENT_TEAM = QB8H6S7PA4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SingleEntryPoint/Info.plist;

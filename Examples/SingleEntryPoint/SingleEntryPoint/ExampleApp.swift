@@ -12,65 +12,76 @@ import IAOverTheCounter
 
 @main
 struct ExampleApp: App {
+
     @StateObject private var viewModel = ExampleAppViewModel()
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                hostScreen1()
-                    .tabItem { Image(systemName: "house.fill") }
+            TabView(selection: $viewModel.currentTab) {
+                genericScreen(id: 1)
+                    .tab(.tab1)
                 
-                hostScreen2()
-                    .tabItem { Image(systemName: "pills.circle") }
-                
-                hostScreen3()
-                    .tabItem { Image(systemName: "gearshape.fill") }
+                hostScreen
+                    .tab(.tab2)
+
+                genericScreen(id: 3)
+                    .tab(.tab3)
             }
             .toolbarBackground(.visible, for: .tabBar)
             .toolbarBackground(.gray, for: .tabBar)
+            .preferredColorScheme(.light)
+            .tint(.red)
         }
     }
 }
 
-@available(iOS 16.0, *)
 private extension ExampleApp {
-    private func hostScreen1() -> some View {
-        Text("Host screen 1")
+
+    func genericScreen(id: Int) -> some View {
+        Text("Host Screen #\(id)")
     }
     
-    private func hostScreen2() -> some View {
+    var hostScreen: some View {
         NavigationStack(path: $viewModel.navigationPath) {
-            VStack(spacing: 20) {
-                Text("This is view defined in host app that starts IA SDK.")
-                
-                Button("Initialize IA SDK") {
-                    Task { await viewModel.initializeSDK() }
+            VStack(spacing: 16) {
+                VStack(spacing: 16) {
+                    Text("This Screen is defined in the Host App that starts IA SDK.")
+
+                    Button("Initialize IA SDK & Open Start Screen") {
+                        Task { await viewModel.initializeSDKAndOpenStartScreen() }
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.red)
+                    }
                 }
-                
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.red)
-                }
-                
-                Spacer()
-                
-                Button("Reset Prerequisites") {
-                    Task { await viewModel.resetPrerequisites() }
+                .frame(maxHeight: .infinity)
+
+                Divider()
+
+                VStack(spacing: 16) {
+                    Text("Miscellaneous")
+                        .bold()
+                    
+                    Button("Reset Prerequisites") {
+                        Task { await viewModel.resetPrerequisites() }
+                    }
                 }
             }
-            .padding()
+            .padding(16)
+            .multilineTextAlignment(.center)
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .iaStartScreen:
                     IAStartScreen()
-                        .hostEmbedStyle(.navigation(onDismiss: { viewModel.pop() }))
+                        .hostEmbedStyle(.navigation(onDismiss: {
+                            viewModel.pop()
+                        }))
                 }
             }
         }
-    }
-    
-    private func hostScreen3() -> some View {
-        Text("Host screen 3")
     }
 }

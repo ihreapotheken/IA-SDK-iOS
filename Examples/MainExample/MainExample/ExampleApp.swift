@@ -62,27 +62,34 @@ private extension MainExampleApp {
     var moreScreen: some View {
         NavigationStack(path: $viewModel.moreNavigationPath) {
             VStack(spacing: 16) {
-                Text("Navigation")
-                    .bold()
+                VStack(spacing: 16) {
+                    Text("Tap on any of these Buttons to navigate to the corespoding Screens")
 
-                Button("Push Search Screen") {
-                    viewModel.moreNavigationPath.append(.search)
-                }
+                    Button("Push Search Screen") {
+                        viewModel.moreNavigationPath.append(.search)
+                    }
+                    .buttonStyle(.borderedProminent)
 
-                Button("Present Search Screen") {
-                    viewModel.moreActiveSheet = .search
+                    Button("Present Search Screen") {
+                        viewModel.moreActiveSheet = .search
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
+                .frame(maxHeight: .infinity)
 
                 Divider()
 
-                Text("Miscellaneous")
-                    .bold()
+                VStack(spacing: 16) {
+                    Text("Miscellaneous")
+                        .bold()
 
-                Button("Reset Prerequisites and Exit Application") {
-                    Task { await viewModel.resetPrerequisitesAndExit() }
+                    Button("Reset Prerequisites and Exit Application") {
+                        Task { await viewModel.resetPrerequisitesAndExit() }
+                    }
                 }
             }
             .padding(16)
+            .multilineTextAlignment(.center)
             // Example (Push): How to push any IA SDK screen.
             .navigationDestination(for: MoreScreenRoute.self) { route in
                 switch route {
