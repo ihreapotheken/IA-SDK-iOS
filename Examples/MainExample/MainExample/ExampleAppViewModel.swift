@@ -49,9 +49,9 @@ final class ExampleAppViewModel: ObservableObject {
         IASDK.setEnvironment(.staging)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
+        IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
 
         Task {
-            try? await IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
             await initializeSDK()
         }
     }
@@ -67,10 +67,13 @@ final class ExampleAppViewModel: ObservableObject {
                 shouldRunOnboarding: true, 
                 shouldRunApofinder: true
             )
+
             let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+
             // Example: This is just an example how to handle result if you set IASDKPrerequisitesOptions.isCancellable to true.
             // Otherwise no need to check.
-            if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
+            if let prerequisitesResult = result.prerequisitesResult,
+               !prerequisitesResult.isCancelled {
                 isLoaded = true
             } else {
                 errorMessage = "Initialization cancelled."
