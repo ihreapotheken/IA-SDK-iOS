@@ -14,6 +14,7 @@
 		0C2F75F02EC4A0A800C13E96 /* OrderingOnlyExampleIASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F75E92EC4A0A800C13E96 /* OrderingOnlyExampleIASDKDelegate.swift */; };
 		0C8630212EA90AD70053CB49 /* IAOrdering in Frameworks */ = {isa = PBXBuildFile; productRef = 0C8630202EA90AD70053CB49 /* IAOrdering */; };
 		0C8630232EA90ADB0053CB49 /* IAIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = 0C8630222EA90ADB0053CB49 /* IAIntegrations */; };
+		1582BA2E2F150F4900F59501 /* ExampleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582BA2D2F150F4900F59501 /* ExampleTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0C2F75FE2EC4AB9700C13E96 /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SharedConfig.xcconfig; path = ../SharedConfig.xcconfig; sourceTree = SOURCE_ROOT; };
 		0C2F76012EC4B1D200C13E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0C86300C2EA909160053CB49 /* OrderingOnlyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderingOnlyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1582BA2D2F150F4900F59501 /* ExampleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 				0C2F75E72EC4A0A800C13E96 /* OrderingOnlyExampleApp.swift */,
 				0C2F75E82EC4A0A800C13E96 /* OrderingOnlyExampleAppViewModel.swift */,
 				0C2F75E92EC4A0A800C13E96 /* OrderingOnlyExampleIASDKDelegate.swift */,
+				1582BA2C2F150F4300F59501 /* Utils */,
 			);
 			path = OrderingOnlyExample;
 			sourceTree = "<group>";
@@ -84,6 +87,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1582BA2C2F150F4300F59501 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1582BA2D2F150F4900F59501 /* ExampleTab.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			files = (
 				0C2F75EE2EC4A0A800C13E96 /* OrderingOnlyExampleApp.swift in Sources */,
 				0C2F75EF2EC4A0A800C13E96 /* OrderingOnlyExampleAppViewModel.swift in Sources */,
+				1582BA2E2F150F4900F59501 /* ExampleTab.swift in Sources */,
 				0C2F75F02EC4A0A800C13E96 /* OrderingOnlyExampleIASDKDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

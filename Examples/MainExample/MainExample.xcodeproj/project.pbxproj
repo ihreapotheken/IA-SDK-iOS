@@ -35,6 +35,7 @@
 		0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */; };
 		0CB5A9362E3D2AFF00A881E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */; };
 		0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */; };
+		1582B9602F14EBC800F59501 /* View+ExampleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B95F2F14EBC800F59501 /* View+ExampleTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleIASDKDelegate.swift; sourceTree = "<group>"; };
 		0CBA2FDA2E9E9A8C000FC393 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		1582B95F2F14EBC800F59501 /* View+ExampleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ExampleTab.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +119,17 @@
 				0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */,
 				0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */,
 				0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */,
+				1582B95E2F14EBBA00F59501 /* Utils */,
 			);
 			path = MainExample;
+			sourceTree = "<group>";
+		};
+		1582B95E2F14EBBA00F59501 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1582B95F2F14EBC800F59501 /* View+ExampleTab.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA391E92E9E4728006A496D /* ExampleAppViewModel.swift in Sources */,
+				1582B9602F14EBC800F59501 /* View+ExampleTab.swift in Sources */,
 				0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */,
 				0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */,
 			);

@@ -12,8 +12,9 @@ import IAOverTheCounter
 import IAOrdering
 import IAPharmacy
 
-@MainActor @main
+@main
 struct MainExampleApp: App {
+
     @StateObject private var viewModel = ExampleAppViewModel()
 
     init() {
@@ -21,64 +22,80 @@ struct MainExampleApp: App {
         appearance.configureWithOpaqueBackground()
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
-       
+
     var body: some Scene {
         WindowGroup {
-            if viewModel.isLoaded {                    
-                TabView(selection: $viewModel.selectedTab) {   
-                    IAStartScreen()
-                        .tabItem { Text("Start") }
-                        .tag(ExampleTab.start)
-                    
-                    IACartScreen()
-                        .tabItem { Text("Cart") }
-                        .tag(ExampleTab.cart)
-                    
-                    IAPharmacyScreen()
-                        .tabItem { Text("Pharmacy") }
-                        .tag(ExampleTab.pharmacy)
-                    
-                    moreScreen
-                        .tabItem { Text("More") }
-                        .tag(ExampleTab.more)
-                }
-                .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(.gray, for: .tabBar)
-                
-            } else {
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundStyle(.red)
+            Group {
+                if viewModel.isLoaded {
+                    TabView(selection: $viewModel.selectedTab) {
+                        IAStartScreen()
+                            .tab(.start)
+
+                        IACartScreen()
+                            .tab(.cart)
+
+                        IAPharmacyScreen()
+                            .tab(.pharmacy)
+
+                        moreScreen
+                            .tab(.more)
+                    }
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .toolbarBackground(.gray, for: .tabBar)
+
+                } else {
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundStyle(.red)
+                    }
                 }
             }
+            .preferredColorScheme(.light)
+            .tint(.red)
         }
     }
 }
 
-@available(iOS 16.0, *)
 private extension MainExampleApp {
-    @ViewBuilder var moreScreen: some View {
+
+    @ViewBuilder
+    var moreScreen: some View {
         NavigationStack(path: $viewModel.moreNavigationPath) {
             VStack(spacing: 16) {
-                Button("Push search") {
-                    viewModel.moreNavigationPath.append(.search)
+                VStack(spacing: 16) {
+                    Text("Tap on any of these Buttons to navigate to the corespoding Screens")
+
+                    Button("Push Search Screen") {
+                        viewModel.moreNavigationPath.append(.search)
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    Button("Present Search Screen") {
+                        viewModel.moreActiveSheet = .search
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                
-                Button("Present search") {
-                    viewModel.moreActiveSheet = .search
-                }
-                Spacer()
-                
-                Button("Reset Prerequisites and exit app") {
-                    Task { await viewModel.resetPrerequisitesAndExit() }
+                .frame(maxHeight: .infinity)
+
+                Divider()
+
+                VStack(spacing: 16) {
+                    Text("Miscellaneous")
+                        .bold()
+
+                    Button("Reset Prerequisites & Exit Application") {
+                        Task { await viewModel.resetPrerequisitesAndExit() }
+                    }
                 }
             }
+            .padding(16)
+            .multilineTextAlignment(.center)
             // Example (Push): How to push any IA SDK screen.
             .navigationDestination(for: MoreScreenRoute.self) { route in
                 switch route {
                 case .search:
                     IAProductSearchScreen()
-                        .hostEmbedStyle(.navigation(onDismiss: { 
+                        .hostEmbedStyle(.navigation(onDismiss: {
                             viewModel.moreNavigationPath.removeAll()
                         }))
                 }
@@ -88,7 +105,7 @@ private extension MainExampleApp {
                 switch tag {
                 case .search:
                     IAProductSearchScreen()
-                        .hostEmbedStyle(.presentation(onDismiss: { 
+                        .hostEmbedStyle(.presentation(onDismiss: {
                             viewModel.moreActiveSheet = nil
                         }))
                 }

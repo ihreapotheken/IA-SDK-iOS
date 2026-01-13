@@ -14,6 +14,8 @@ import IAOverTheCounter
 
 @MainActor
 final class ExampleAppViewModel: ObservableObject {
+
+    @Published var currentTab: ExampleTab = .tab2
     @Published var errorMessage: String?
     @Published var navigationPath: [Route] = []
     
@@ -40,23 +42,24 @@ final class ExampleAppViewModel: ObservableObject {
         IASDK.setEnvironment(.staging)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
-        IASDK.Pharmacy.setPharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
+        IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
     }
     
-    func initializeSDK() async {
+    func initializeSDKAndOpenStartScreen() async {
         errorMessage = nil
         
         do {
             let prerequisitesOptions = IASDKPrerequisitesOptions(
-                shouldShowIndicator: true, 
                 isCancellable: false, 
                 isAnimated: true, 
                 shouldRunLegal: true, 
                 shouldRunOnboarding: true, 
                 shouldRunApofinder: true
             )
+
+            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled.
             let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled. 
+
             navigationPath.append(.iaStartScreen)
         } catch {
             errorMessage = "Error\n\(error)"

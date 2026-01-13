@@ -21,6 +21,7 @@
 		0C717CDF2EAFBCC600E3C16D /* IAOverTheCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CDE2EAFBCC600E3C16D /* IAOverTheCounter */; };
 		0C717CE12EAFBCC600E3C16D /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CE02EAFBCC600E3C16D /* IAPharmacy */; };
 		0C717CE32EAFBCC600E3C16D /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C717CE22EAFBCC600E3C16D /* IAPrescription */; settings = {ATTRIBUTES = (Required, ); }; };
+		1582BA302F15126300F59501 /* ExampleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582BA2F2F15126300F59501 /* ExampleTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0C1E7E8C2EB26F6C008FA2F1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C2F75FD2EC4AB8A00C13E96 /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SharedConfig.xcconfig; path = ../SharedConfig.xcconfig; sourceTree = SOURCE_ROOT; };
 		0C717CBF2EAFBABF00E3C16D /* UIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1582BA2F2F15126300F59501 /* ExampleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,10 @@
 		0C1E7E802EB26B2D008FA2F1 /* UIKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				0C1E7E752EB26B2D008FA2F1 /* AppDelegate.swift */,
-				0C1E7E7C2EB26B2D008FA2F1 /* SceneDelegate.swift */,
 				0C1E7E7D2EB26B2D008FA2F1 /* UIKitExampleViewController.swift */,
 				0C1E7E7F2EB26B2D008FA2F1 /* UIKitExampleViewModel.swift */,
 				0C1E7E7E2EB26B2D008FA2F1 /* UIKItExampleDelegate.swift */,
+				1582BA312F1512AB00F59501 /* Utils */,
 			);
 			path = UIKitExample;
 			sourceTree = "<group>";
@@ -95,6 +96,16 @@
 				0C717CBF2EAFBABF00E3C16D /* UIKitExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1582BA312F1512AB00F59501 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0C1E7E752EB26B2D008FA2F1 /* AppDelegate.swift */,
+				0C1E7E7C2EB26B2D008FA2F1 /* SceneDelegate.swift */,
+				1582BA2F2F15126300F59501 /* ExampleTab.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1582BA302F15126300F59501 /* ExampleTab.swift in Sources */,
 				0C1E7E812EB26B2D008FA2F1 /* AppDelegate.swift in Sources */,
 				0C1E7E822EB26B2D008FA2F1 /* SceneDelegate.swift in Sources */,
 				0C1E7E832EB26B2D008FA2F1 /* UIKitExampleViewController.swift in Sources */,
