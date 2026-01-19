@@ -72,6 +72,7 @@ Next, you need to enter you API key, client ID and other things you might need. 
 ```swift
 IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
 IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+IASDK.configuration.channelID = 2
 IASDK.setEnvironment(.staging)
 IASDK.Pharmacy.setPharmacyID(2163)        // If you have pharmacy ID, you can set it before you call initialize, otherwise initialize will show Apofinder (if enabled).
 IASDK.setSingleDelegate(sdkDelegate)      // If you use delegate, 
