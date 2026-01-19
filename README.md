@@ -113,6 +113,7 @@ This is full code for example app that has product search on one tab and cart on
 
 ```swift
 import SwiftUI
+import Combine
 import IACore
 import IAIntegrations
 import IAOverTheCounter
@@ -159,6 +160,7 @@ final class ExampleAppViewModel2: ObservableObject {
 
         IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
         IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+        IASDK.configuration.channelID = 2
         IASDK.setEnvironment(.staging)
 
         Task {
