@@ -170,7 +170,6 @@ final class ExampleAppViewModel2: ObservableObject {
     func initializeSDK() async {
         do {
             let prerequisitesOptions = IASDKPrerequisitesOptions(
-                shouldShowIndicator: true, 
                 isCancellable: false, 
                 isAnimated: true, 
                 shouldRunLegal: true, 
