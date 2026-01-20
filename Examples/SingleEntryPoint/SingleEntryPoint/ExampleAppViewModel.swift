@@ -42,7 +42,6 @@ final class ExampleAppViewModel: ObservableObject {
         IASDK.setEnvironment(.staging)
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
-        IASDK.configuration.channelID = 2
         IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
     }
     
