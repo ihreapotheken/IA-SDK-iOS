@@ -65,8 +65,8 @@ private extension ExampleApp {
                     Text("Miscellaneous")
                         .bold()
                     
-                    Button("Reset Prerequisites") {
-                        Task { await viewModel.resetPrerequisites() }
+                    Button("Reset Prerequisites and exit app") {
+                        Task { await viewModel.resetPrerequisitesAndExit() }
                     }
                 }
             }
