@@ -7,10 +7,8 @@
 
 import Foundation
 import SwiftUI
+import IACore
 import IAIntegrations
-import IAOverTheCounter
-import IAOrdering
-import IAPharmacy
 
 @main
 struct MainExampleApp: App {

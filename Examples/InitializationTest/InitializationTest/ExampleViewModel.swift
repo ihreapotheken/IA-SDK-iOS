@@ -36,7 +36,8 @@ final class ExampleViewModel: ObservableObject {
         IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
         IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
         IASDK.register([.integrations,  .apofinder, .overTheCounter, .ordering])
-        IASDK.Pharmacy.setPharmacyID(2163)
+        IASDK.configuration.defaultInitializationOptions = .init(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+        IASDK.Pharmacy.savePharmacyID(2163)
 
         setIsClientIDValid(true)
         setIsPharmacyIDValid(true)
@@ -49,12 +50,7 @@ final class ExampleViewModel: ObservableObject {
     
     func setIsAutoInitializationEnabled(_ value: Bool) {
         isAutoInitializationEnabled = value
-        
-        if isAutoInitializationEnabled {
-            IASDK.configuration.initializationType = .automatic(options: .init(shouldShowIndicator: false, prerequisitesOptions: prerequisitesOptions))
-        } else {
-            IASDK.configuration.initializationType = .manual
-        }
+        IASDK.configuration.isAutoInitializationEnabled = isAutoInitializationEnabled
         updateStatuses()
     }
     
@@ -81,7 +77,7 @@ final class ExampleViewModel: ObservableObject {
     func setIsPharmacyIDValid(_ value: Bool) {
         isPharmacyIDValid = value
         let pharmacyID = isPharmacyIDValid ? 2163 : 9999
-        IASDK.Pharmacy.setPharmacyID(pharmacyID)
+        IASDK.Pharmacy.savePharmacyID(pharmacyID)
         updateStatuses()
     }
     
@@ -108,7 +104,6 @@ final class ExampleViewModel: ObservableObject {
     
     private var prerequisitesOptions: IASDKPrerequisitesOptions {
         .init(
-            shouldShowIndicator: true, 
             isCancellable: false, 
             isAnimated: true, 
             shouldRunLegal: true, 
@@ -135,7 +130,7 @@ final class ExampleViewModel: ObservableObject {
         }
         prerequisitesStatusText = "Prerequisites status: \(prerequisitesText)"
         
-        let autoInitializationText: String = IASDK.configuration.initializationType == .manual ? "Disabled" : "Enabled"
+        let autoInitializationText: String = IASDK.configuration.isAutoInitializationEnabled ? "Enabled" : "Disabled"
         autoInitializationStatusText = "Auto initialization: \(autoInitializationText)"
     }
 }

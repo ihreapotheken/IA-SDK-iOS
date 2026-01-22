@@ -79,7 +79,14 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
         loadPrescriptionFromAssetsAndQueue()
 
         do {
-            try await IAOrderingSDK.transferPrescriptions(images: images, orderID: orderId)
+            try await IASDK.ordering.transferPrescriptions(
+                images: images, 
+                pdfs: nil, 
+                codes: nil, 
+                orderID: orderId,
+                showActivityIndicator: true, 
+                finishAction: .showBottomSheet
+            )
         } catch {
             print("error: \(error)")
         }

@@ -39,7 +39,7 @@ final class ExampleAppViewModel: ObservableObject {
             .overTheCounter,
             .ordering,
             .apofinder, 
-                .pharmacyDetails,
+            .pharmacy,
             .prescription
         ])
         

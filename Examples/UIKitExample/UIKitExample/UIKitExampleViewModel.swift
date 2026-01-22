@@ -82,7 +82,7 @@ private extension UIKitExampleViewModel {
             .overTheCounter,
             .ordering,
             .apofinder,
-            .pharmacyDetails,
+            .pharmacy,
             .prescription
         ])
 

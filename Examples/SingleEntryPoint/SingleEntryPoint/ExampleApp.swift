@@ -8,7 +8,6 @@
 import SwiftUI
 import IACore
 import IAIntegrations
-import IAOverTheCounter
 
 @main
 struct ExampleApp: App {

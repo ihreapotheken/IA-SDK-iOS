@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import IACore
 import IAIntegrations
 import IAOverTheCounter
 import IAPharmacy
