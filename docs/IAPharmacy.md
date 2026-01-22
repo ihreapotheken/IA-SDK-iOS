@@ -5,8 +5,8 @@ This module contains following features:
     
 ## IAPharmacyScreen
 
-* `IAPharmacyScreen` is the primary component exposed by the `IAPharmacy` module. 
-* It shows detailed information about the current pharmacy. 
+* `IAPharmacyScreen` shows detailed information about the current pharmacy. 
+* It is exposed by `IACore` module but you have to register `.pharmacy` to use it. 
 * It uses the pharmacy identifier from the prerequisites flow.
     
 ### Example
@@ -14,6 +14,8 @@ This module contains following features:
 `IAPharmacyScreen` inside a SwiftUI TabView.
 
 ```javascript
+import IACore
+
 TabView {   
     IAPharmacyScreen()
         .tabItem { Text("Pharmacy") }

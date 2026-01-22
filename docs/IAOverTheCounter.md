@@ -13,10 +13,9 @@ This module provides features related to search and products.
 
 ## IAProductSearchScreen
 
-* `IAProductSearchScreen` is the primary component exposed by the `IAOverTheCounter` module. 
-* It handles searching, filtering, and displaying detailed product information, all in one seamless flow. 
-* Allow users to send inquiries to pharmacies about the product.
-
+* `IAProductSearchScreen` handles searching, filtering, and displaying detailed product information, all in one seamless flow.
+* It is exposed by `IACore` module but you have to register `.overTheCounter` to use it. 
+* Allows users to send inquiries to pharmacies about the product.
 * It uses pharmacy identifier from prerequisites flow.
     
 ### Example
@@ -24,6 +23,8 @@ This module provides features related to search and products.
 `IAProductSearchScreen` inside a SwiftUI TabView.
 
 ```javascript
+import IACore
+...
 TabView {   
     IAProductSearchScreen()
         .tabItem { Text("Search") }

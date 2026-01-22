@@ -73,15 +73,14 @@ Next, you need to enter you API key, client ID and other things you might need. 
 IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
 IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
 IASDK.setEnvironment(.staging)
-IASDK.Pharmacy.setPharmacyID(2163)        // If you have pharmacy ID, you can set it before you call initialize, otherwise initialize will show Apofinder (if enabled).
-IASDK.setSingleDelegate(sdkDelegate)      // If you use delegate, 
+IASDK.Pharmacy.savePharmacyID(2163)     // If you have pharmacy ID, you can set it before you call initialize, otherwise initialize will show Apofinder (if enabled).
+IASDK.setDelegate(sdkDelegate)          // If you use delegate, 
 ```
 
 5. **Initialize**  
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. This will fetch all required data and enable your modules for running.
 ```
 let prerequisitesOptions = IASDKPrerequisitesOptions(
-    shouldShowIndicator: true, 
     isCancellable: false, 
     isAnimated: true,
     shouldRunLegal: true,
@@ -105,7 +104,7 @@ navigationPath.append(.iaStartScreen)
 [IACardlink](./docs/IACardLink.md)  
 [Presentation](./docs/Presentation.md)  
 [Appearance](./docs/Appearance.md)  
-[SDK Interaction](./docs/Interaction.md)
+[SDK Interaction](./docs/Interaction.md)  
 [Error Codes](./docs/IAErrorCodes.md)
 
 # Full example code

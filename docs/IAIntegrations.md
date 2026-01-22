@@ -12,6 +12,7 @@ This module contains following features:
 ## IAStartScreen
 
 * The `IAStartScreen` acts as the central hub for the IhreApotheken experience, giving users quick access to key features like product search, prescription scanning, and cart management.
+* It is exposed by `IAIntegrations` module and you have to register `.integrations` to use it. 
 * It uses pharmacy identifier from prerequisites flow.
 
 ### Example
@@ -19,6 +20,8 @@ This module contains following features:
 `IAStartScreen` inside a SwiftUI TabView.
 
 ```javascript
+import IAIntegrations
+
 TabView {   
     IAStartScreen()
         .tabItem { Text("Home") }

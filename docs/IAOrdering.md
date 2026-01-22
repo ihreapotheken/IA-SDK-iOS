@@ -15,8 +15,8 @@ This module provides features for cart management, checkout, payment processing,
 
 ## IACartScreen
 
-* The `IACartScreen` is the primary component exposed by the `IAOrdering` module. 
-* It provides a complete, self-managed flow for cart, checkout, and payment. The screen is reactive and integrates seamlessly with other modules—when a product is added to the cart elsewhere in the app, the cart screen automatically reflects the update.
+* The `IACartScreen` provides a complete, self-managed flow for cart, checkout, and payment. The screen is reactive and integrates seamlessly with other modules—when a product is added to the cart elsewhere in the app, the cart screen automatically reflects the update.
+* It is exposed by `IACore` module but you have to register `.ordering` to use it. 
 * It uses pharmacy identifier from prerequisites flow.
   
 
@@ -25,6 +25,8 @@ This module provides features for cart management, checkout, payment processing,
 `IACartScreen` inside a SwiftUI TabView.
 
 ```javascript
+import IACore
+...
 TabView {   
     IACartScreen()
         .tabItem { Text("Cart") }

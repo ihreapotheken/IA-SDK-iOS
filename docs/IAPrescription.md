@@ -6,6 +6,7 @@ This module contains following features:
 ## IAScannerScreen
 
 * The `IAScannerScreen` provides a streamlined interface for submitting prescriptions. 
+* It is exposed by `IACore` module but you have to register `.prescription` to use it. 
 * It supports two input methods: users can either capture a photo of a physical prescription (or select one from their gallery), or scan an electronic prescription (E-Prescription).
 * The prescription is automatically added to the cart for processing.
     
@@ -14,6 +15,8 @@ This module contains following features:
 `IAScannerScreen` inside a SwiftUI TabView.
 
 ```javascript
+import IACore
+...
 TabView {   
     IAScannerScreen()
         .tabItem { Text("Scanner") }

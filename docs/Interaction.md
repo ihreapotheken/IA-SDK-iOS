@@ -1,34 +1,19 @@
 # SDK Interaction
 
-IA SDK allows the host app to receive events and override default behaviors using the delegates. You can set the delegates like this:
+IA SDK allows the host app to receive events and override default behaviors using the delegate. You can set the delegate like this:
 ```
-IASDK.setDelegates(
-    sdk: sdkDelegate,
-    ordering: orderingDelegate,
-    prescription: prescriptionDelegate,
-    cardLink: cardLinkDelegate
-)      
-```
-Or if all your delegates are one object then you can use convenience:
-```
-IASDK.setSingleDelegate(delegate)
+IASDK.setDelegate(sdkDelegate)      
 ```
 > [!TIP]
 > It is best to set delegates immediately after you call *register* function. So you don't miss any events.
 
 
-Following delegates are available:
-- SDKDelegate
-- OrderingDelegate
-- PrescriptionDelegate
-- CardLinkDelegate
-
 ## Example of receiving SDK event
-SDKDelegate calls *hostAppShouldOpenPrivacyPolicy* when privacy button is tapped in the footer, you can implement that function and present your privacy policy.
+SDKDelegate calls *orderingDidUpdateCart* when cart is updated.
 ```
 final class ExampleIASDKDelegate: SDKDelegate {
-    func hostAppShouldOpenPrivacyPolicy() {
-        // Present your privacy policy
+    func orderingDidUpdateCart(cartState: IACartState) {
+        print(cartState.cartDetails?.totalAmountInCart)
     }
 }
 ```
@@ -37,17 +22,23 @@ final class ExampleIASDKDelegate: SDKDelegate {
 > This is just an example, inspect the delegates to see what other events are being sent.
 
 ## Example of overriding default behavior
-SDKDelegate calls *cartButtonWillOpenCartScreen* when the cart button is tapped in any SDK screen.
-If you don’t implement this method, the default behavior is for the SDK to present the cart screen modally over the current screen.
+SDKDelegate calls *sdkWillNavigateToTarget* when some overidable action is performed.
+On example of cart screen, if you don’t implement this method, the default behavior is for the SDK to present the cart screen modally over the current screen.
 
 This behavior is fine in most cases, but if, for example, your app already includes a cart screen embedded inside a tab view, you can override this callback to switch to the cart tab instead of showing a new screen.
 
 ```
 final class ExampleIASDKDelegate: SDKDelegate {
     // We will switch to cart tab in our example app.
-    func cartButtonWillOpenCartScreen() -> HandlingDecision {
-        viewModel?.selectedTab = .cart
-        return .handled
+    func sdkWillNavigateToTarget(_ navigationTarget: IANavigationTarget, decisionHandler: @escaping (HandlingDecision) -> Void) {
+        switch navigationTarget {
+        case .cart: 
+            // Use this to set cart in your app, e.g.:
+            // viewModel?.selectedTab = .cart
+            decisionHandler(.handled)
+        default:
+            decisionHandler(.performDefault)
+        }
     }
 }
 ```

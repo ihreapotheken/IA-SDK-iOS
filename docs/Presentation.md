@@ -11,9 +11,7 @@ You need to specify `hostEmbedStyle`, this determines if SDK screens should show
 
 ## Embed
 ````swift
-struct ExampleView: View {
-    @StateObject var viewModel = HostAppViewModel()
-    
+struct ExampleView: View {    
     var body: some View {
         ZStack {
             TabView {
