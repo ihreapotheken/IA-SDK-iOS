@@ -37,7 +37,7 @@ This design allows flexibility: in some cases, you may want to initialize the SD
 Regardless of how many times you call initialize, the SDK initialization runs only once, while the prerequisites flow runs every time it’s triggered (screens are presented only if needed, first time or something changed).
 
 ## Automatic initialization
-You can enable automatic initialization by setting the following configuration option:
+You can enable automatic initialization by setting the following configuration options:
 ```
 IASDK.configuration.isAutoInitializationEnabled = true
 IASDK.configuration.defaultInitializationOptions = .init(

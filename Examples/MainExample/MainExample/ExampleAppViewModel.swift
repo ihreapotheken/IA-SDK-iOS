@@ -86,7 +86,7 @@ final class ExampleAppViewModel: ObservableObject {
     func resetPrerequisitesAndExit() async {
         try? await IASDK.Prerequisites.resetAllPrerequisites()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Allow user defaults to save
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Allow user defaults to save
             exit(0)
         }
     }

@@ -50,17 +50,18 @@ final class ExampleAppViewModel: ObservableObject {
         
         do {
             let prerequisitesOptions = IASDKPrerequisitesOptions(
-                isCancellable: false, 
+                isCancellable: true, 
                 isAnimated: true, 
                 shouldRunLegal: true, 
                 shouldRunOnboarding: true, 
                 shouldRunApofinder: true
             )
 
-            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled.
-            let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-
-            navigationPath.append(.iaStartScreen)
+            let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+            // We need to check result because we set prerequisitesOptions.isCancellable to true 
+            if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
+                navigationPath.append(.iaStartScreen)
+            }
         } catch {
             errorMessage = "Error\n\(error)"
         }
@@ -73,7 +74,7 @@ final class ExampleAppViewModel: ObservableObject {
     func resetPrerequisitesAndExit() async {
         try? await IASDK.Prerequisites.resetAllPrerequisites()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Allow user defaults to save
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Allow user defaults to save
             exit(0)
         }
     }

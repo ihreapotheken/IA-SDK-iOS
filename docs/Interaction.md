@@ -5,7 +5,7 @@ IA SDK allows the host app to receive events and override default behaviors usin
 IASDK.setDelegate(sdkDelegate)      
 ```
 > [!TIP]
-> It is best to set delegates immediately after you call *register* function. So you don't miss any events.
+> It is best to set delegate immediately after you call *register* function. So you don't miss any events.
 
 
 ## Example of receiving SDK event
@@ -19,7 +19,7 @@ final class ExampleIASDKDelegate: SDKDelegate {
 ```
 
 > [!NOTE]
-> This is just an example, inspect the delegates to see what other events are being sent.
+> This is just an example, inspect the delegate to see what other events are being sent.
 
 ## Example of overriding default behavior
 SDKDelegate calls *sdkWillNavigateToTarget* when some overidable action is performed.
@@ -44,4 +44,4 @@ final class ExampleIASDKDelegate: SDKDelegate {
 ```
 
 > [!NOTE]
-> This is just an example, inspect the delegates to see what else can be overriden.
+> This is just an example, inspect the delegate to see what else can be overriden.
