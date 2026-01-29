@@ -187,5 +187,5 @@ final class ExampleAppViewModel2: ObservableObject {
 
 ## Usage and Testing FAQ
 
-For information on server environments, testing credentials, access requirements, 
-and bug reporting guidelines, see the [Usage and Testing documentation](https://ihreapotheken.github.io/docs/appsdk/common/usage-and-testing).
+For information on server environments, testing credentials, access requirements, and bug reporting guidelines, 
+see the [Usage and Testing documentation](https://ihreapotheken.github.io/docs/appsdk/common/usage-and-testing).
