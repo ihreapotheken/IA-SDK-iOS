@@ -185,6 +185,12 @@ final class ExampleAppViewModel2: ObservableObject {
 }
 ```
 
+# Legal
+
+For legal information and third-party licenses, please see:
+- [Legal folder](./Legal)
+- [Third-party licenses](./licenses.html)
+
 # Usage and Testing FAQ
 
 For information on server environments, testing credentials, access requirements, and bug reporting guidelines, 
