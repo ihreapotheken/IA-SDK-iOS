@@ -65,3 +65,6 @@ Pods/
 
 .swiftpm/configuration/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+## AI
+*.claude/settings.local.json
