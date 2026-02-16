@@ -28,17 +28,17 @@ To add the IA SDK to your Xcode project, follow these steps:
 2.  In the **Search or Enter Package URL** field, enter [https://github.com/ihreapotheken/IA-SDK-iOS](https://github.com/ihreapotheken/IA-SDK-iOS).
     
 3.  Specify the version you want to use and click **Add Package**. We recommend selecting **Exact Version** at this time.  
-    ![](docs/resources/installation_1.png)
-    
+    ![](Docs/resources/installation_1.png)
+
 4.  Choose the package products you need, assign them to your app target, and click **Add Package**.
-    
+
     > ⚠️ You need to select only package products that you will use and for which your API key has entitlements.
 
-    ![](docs/resources/installation_2.png)
+    ![](Docs/resources/installation_2.png)
 
 # Project setup
 1. If you are using apofinder then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
-2. If you are using CardLink then please read [IACardlink](./docs/IACardLink.md)
+2. If you are using CardLink then please read [IACardlink](./Docs/IACardLink.md)
 
 # Usage
 1. **Set bundle identifier**  
@@ -91,21 +91,21 @@ let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisites
 navigationPath.append(.iaStartScreen)
 ```
 > [!TIP]
-> To learn more about initialization, see [Initialization](./docs/Initialization.md).
+> To learn more about initialization, see [Initialization](./Docs/Initialization.md).
 
 # Features
-[All modules and features](./docs/FeatureOverview.md)  
-[Initialization](./docs/Initialization.md)  
-[IAIntegrations](./docs/IAIntegrations.md)  
-[IAOverTheCounter](./docs/IAOverTheCounter.md)  
-[IAOrdering](./docs/IAOrdering.md)  
-[IAPharmacy](./docs/IAPharmacy.md)  
-[IAPrescription](./docs/IAPrescription.md)  
-[IACardlink](./docs/IACardLink.md)  
-[Presentation](./docs/Presentation.md)  
-[Appearance](./docs/Appearance.md)  
-[SDK Interaction](./docs/Interaction.md)  
-[Error Codes](./docs/IAErrorCodes.md)
+[All modules and features](./Docs/FeatureOverview.md)
+[Initialization](./Docs/Initialization.md)
+[IAIntegrations](./Docs/IAIntegrations.md)
+[IAOverTheCounter](./Docs/IAOverTheCounter.md)
+[IAOrdering](./Docs/IAOrdering.md)
+[IAPharmacy](./Docs/IAPharmacy.md)
+[IAPrescription](./Docs/IAPrescription.md)
+[IACardlink](./Docs/IACardLink.md)
+[Presentation](./Docs/Presentation.md)
+[Appearance](./Docs/Appearance.md)
+[SDK Interaction](./Docs/Interaction.md)
+[Error Codes](./Docs/IAErrorCodes.md)
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.

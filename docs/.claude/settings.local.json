@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/danijelhuis/git/git_fourOfThem/Rare/IA-SDK-iOS/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
