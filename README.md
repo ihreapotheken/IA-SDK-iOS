@@ -94,18 +94,18 @@ navigationPath.append(.iaStartScreen)
 > To learn more about initialization, see [Initialization](./Docs/Initialization.md).
 
 # Features
-[All modules and features](./Docs/FeatureOverview.md)
-[Initialization](./Docs/Initialization.md)
-[IAIntegrations](./Docs/IAIntegrations.md)
-[IAOverTheCounter](./Docs/IAOverTheCounter.md)
-[IAOrdering](./Docs/IAOrdering.md)
-[IAPharmacy](./Docs/IAPharmacy.md)
-[IAPrescription](./Docs/IAPrescription.md)
-[IACardlink](./Docs/IACardLink.md)
-[Presentation](./Docs/Presentation.md)
-[Appearance](./Docs/Appearance.md)
-[SDK Interaction](./Docs/Interaction.md)
-[Error Codes](./Docs/IAErrorCodes.md)
+[All modules and features](./Docs/FeatureOverview.md)  
+[Initialization](./Docs/Initialization.md)  
+[IAIntegrations](./Docs/IAIntegrations.md)  
+[IAOverTheCounter](./Docs/IAOverTheCounter.md)  
+[IAOrdering](./Docs/IAOrdering.md)  
+[IAPharmacy](./Docs/IAPharmacy.md)  
+[IAPrescription](./Docs/IAPrescription.md)  
+[IACardlink](./Docs/IACardLink.md)  
+[Presentation](./Docs/Presentation.md)  
+[Appearance](./Docs/Appearance.md)  
+[SDK Interaction](./Docs/Interaction.md)  
+[Error Codes](./Docs/IAErrorCodes.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
