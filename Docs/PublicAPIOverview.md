@@ -1,4 +1,4 @@
-# SDK Public API Overview
+# Public API Overview
 
 This document provides an overview of all public interfaces available in the IA SDK.
 
@@ -68,7 +68,7 @@ This document provides an overview of all public interfaces available in the IA 
 - **IASDKModule.overTheCounter**
   - Use `IASDK.overTheCounter` to access the module interface.
 
-### UI components
+### User Interface
 - IAProductSearchScreen
 
 ## IAOrdering
@@ -77,14 +77,15 @@ This document provides an overview of all public interfaces available in the IA 
 - **IASDKModule.ordering**
   - Use `IASDK.ordering` to access the module interface.
 
-### UI components
+### User Interface
 - IACartScreen
 
 ### Functions (via IASDK.ordering)
-- `deleteCart()` - Deletes cart from internal storage
-- `getCartDetails(allowCached:throwIfNil:shouldEmit:)` - Returns current cart details
-- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)` - Uploads and adds prescriptions to cart
-- `cartStateNotifier(_ type:)` - Returns publisher that emits cart state updates
+See more details [here](Docs/IAOrdering.md)
+- `deleteCart()`
+- `getCartDetails(allowCached:throwIfNil:shouldEmit:)`
+- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)`
+- `cartStateNotifier(_ type:)`
 
 ## IAPharmacy
 
@@ -92,7 +93,7 @@ This document provides an overview of all public interfaces available in the IA 
 - **IASDKModule.pharmacy**
   - Use `IASDK.pharmacy` to access the module interface.
 
-### UI components
+### User Interface
 - IAPharmacyScreen
 
 ## IAPrescription
@@ -101,7 +102,7 @@ This document provides an overview of all public interfaces available in the IA 
 - **IASDKModule.prescription**
   - Use `IASDK.prescription` to access the module interface.
 
-### UI components
+### User Interface
 - IAScannerScreen
 
 ## IACardLink
