@@ -143,3 +143,27 @@ private class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 ```
+
+## Public API
+### CardLink Class
+Public interface for CardLink module (accessed directly via `CardLink` class):
+
+#### Configuration
+- `CardLink.authenticationKey` - Do not use this key, this is legacy implementation. CardLink now uses key from `IASDK.configuration.apiKey`.
+- `CardLink.style` - Style for customizing CardLink appearance
+- `CardLink.environment` - Environment used in CardLink SDK
+- `CardLink.defaultCardLinkConfiguration` - Default configuration when SDK starts CardLink
+
+#### Information
+- `CardLink.version` - Returns CardLink version
+- `CardLink.logsPath` - Path to log files
+
+#### Card Management
+- `CardLink.getSavedCards(userId:)` - Returns stored cards for user
+- `CardLink.deleteCard(userId:name:)` - Deletes a specific card
+- `CardLink.deleteAllCards()` - Deletes all user-saved cards
+- `CardLink.deleteAllUserRelatedData()` - Deletes all user-related data
+
+#### Flow Control
+- `CardLink.start(type:forcePresent:on:configuration:onOutputAction:)` - Starts CardLink flow
+- `CardLink.finish(completion:)` - Finishes CardLink flow
