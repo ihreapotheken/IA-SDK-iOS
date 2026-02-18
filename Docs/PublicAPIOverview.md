@@ -81,7 +81,7 @@ This document provides an overview of all public interfaces available in the IA 
 - IACartScreen
 
 ### Functions (via IASDK.ordering)
-See more details [here](Docs/IAOrdering.md)
+See more details [here](./IAOrdering.md).
 - `deleteCart()`
 - `getCartDetails(allowCached:throwIfNil:shouldEmit:)`
 - `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)`
@@ -111,25 +111,24 @@ See more details [here](Docs/IAOrdering.md)
 - **IASDKModule.cardLink**
   Use `CardLink` to access the module interface.
 
-### CardLink Class
-Public interface for CardLink module (accessed directly via `CardLink` class):
+See more details [here](./IACardLink.md).
 
-#### Configuration
-- `CardLink.authenticationKey` - Do not use this key, this is legacy implementation. CardLink now uses key from `IASDK.configuration.apiKey`.
-- `CardLink.style` - Style for customizing CardLink appearance
-- `CardLink.environment` - Environment used in CardLink SDK
-- `CardLink.defaultCardLinkConfiguration` - Default configuration when SDK starts CardLink
+### Functions (via CardLink class)
+- `CardLink.authenticationKey`
+- `CardLink.style`
+- `CardLink.environment`
+- `CardLink.defaultCardLinkConfiguration`
 
 #### Information
-- `CardLink.version` - Returns CardLink version
-- `CardLink.logsPath` - Path to log files
+- `CardLink.version`
+- `CardLink.logsPath`
 
 #### Card Management
-- `CardLink.getSavedCards(userId:)` - Returns stored cards for user
-- `CardLink.deleteCard(userId:name:)` - Deletes a specific card
-- `CardLink.deleteAllCards()` - Deletes all user-saved cards
-- `CardLink.deleteAllUserRelatedData()` - Deletes all user-related data
+- `CardLink.getSavedCards(userId:)`
+- `CardLink.deleteCard(userId:name:)`
+- `CardLink.deleteAllCards()`
+- `CardLink.deleteAllUserRelatedData()`
 
 #### Flow Control
-- `CardLink.start(type:forcePresent:on:configuration:onOutputAction:)` - Starts CardLink flow
-- `CardLink.finish(completion:)` - Finishes CardLink flow
+- `CardLink.start(type:forcePresent:on:configuration:onOutputAction:)`
+- `CardLink.finish(completion:)`
