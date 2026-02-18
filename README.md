@@ -37,8 +37,8 @@ To add the IA SDK to your Xcode project, follow these steps:
     ![](Docs/resources/installation_2.png)
 
 # Project setup
-1. If .apofinder is registered then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
-2. If .prescription is registered then you need to add **NSCameraUsageDescription** key to your Info.plist.
+1. If `.apofinder` is registered then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
+2. If `.prescription` is registered then you need to add **NSCameraUsageDescription** key to your Info.plist.
 3. If you are using CardLink then please read [IACardlink](./Docs/IACardLink.md)
 
 # Usage

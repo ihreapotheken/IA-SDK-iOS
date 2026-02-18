@@ -27,7 +27,7 @@ This document provides an overview of all public interfaces available in the IA 
 - `IASDK.prescription` - Returns IAPrescriptionSDK instance (throws if module not registered)
 
 #### Pharmacy Management
-- `IASDK.Pharmacy.savePharmacyID(_ pharmacyID:)` - Saves pharmacy ID without validation
+- `IASDK.Pharmacy.savePharmacyID(_ pharmacyID:)` - Saves pharmacy ID without setting it, use it be before initialization only. After initializazion use `setPharmacyID`
 - `IASDK.Pharmacy.setPharmacyID(_ pharmacyID:)` - Changes current pharmacy with validation
 - `IASDK.Pharmacy.getPharmacyID()` - Returns currently selected pharmacy ID
 - `IASDK.Pharmacy.getPharmacy(allowCached:)` - Returns current pharmacy object
@@ -57,38 +57,32 @@ This document provides an overview of all public interfaces available in the IA 
 
 ### Modules
 - **IASDKModule.integrations**
-  - Mandatory module containing various features used in SDK
-  - Provides IAStartScreen implementation
-
 - **IASDKModule.apofinder**
-  - Allows users to change pharmacy from list or map
-  - Shows Apofinder as part of the prerequisites flow
-  - Available from IAPharmacyScreen
+
+### UI components
+- IAStartScreen
 
 ## IAOverTheCounter
 
 ### Modules
 - **IASDKModule.overTheCounter**
-  - Product grids (products of the month, current offers) shown on IACartScreen and IAStartScreen
-  - Product search and details accessible from IAStartScreen, IACartScreen, etc.
-  - Provides IAProductSearchScreen implementation
 
 ### Access
 Use `IASDK.overTheCounter` to access the module interface (IAOverTheCounterSDK protocol).
+
+### UI components
+- IAProductSearchScreen
 
 ## IAOrdering
 
 ### Modules
 - **IASDKModule.ordering**
-  - Users can add products to cart
-  - Cart button displayed on product list, grids, and details
-  - Round cart button shown on IAStartScreen, IAProductSearchScreen, and IAPharmacyScreen
-  - Express delivery section shown on IAStartScreen
-  - Recent orders section shown on IAStartScreen
-  - Provides IACartScreen implementation
 
 ### Access
 Use `IASDK.ordering` to access the module interface (IAOrderingSDK protocol).
+
+### UI components
+- IACartScreen
 
 ### Functions (via IASDK.ordering)
 - `deleteCart()` - Deletes cart from internal storage
@@ -101,29 +95,28 @@ Use `IASDK.ordering` to access the module interface (IAOrderingSDK protocol).
 
 ### Modules
 - **IASDKModule.pharmacy**
-  - IAPharmacyScreen can be opened from IAStartScreen and IACartScreen
-  - Provides IAPharmacyScreen implementation
 
 ### Access
 Use `IASDK.pharmacy` to access the module interface (IAPharmacySDK protocol).
+
+### UI components
+- IAPharmacyScreen
 
 ## IAPrescription
 
 ### Modules
 - **IASDKModule.prescription**
-  - Users can add prescriptions to cart (scan QR code and take photo)
-  - Accessible from IAStartScreen, IACartScreen, and product details
-  - Provides IAScannerScreen implementation
 
 ### Access
 Use `IASDK.prescription` to access the module interface (IAPrescriptionSDK protocol).
+
+### UI components
+- IAScannerScreen
 
 ## IACardLink
 
 ### Modules
 - **IASDKModule.cardLink**
-  - Users can scan electronic health cards and add prescriptions to cart
-  - Accessible from IAStartScreen, IACartScreen, and product details
 
 ### CardLink Class
 Public interface for CardLink module (accessed directly via `CardLink` class):
