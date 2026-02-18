@@ -19,19 +19,6 @@ This module provides features for cart management, checkout, payment processing,
 * It is exposed by `IACore` module but you have to register `.ordering` to use it. 
 * It uses pharmacy identifier from prerequisites flow.
 
-### Functions
-Deletes cart from internal storage.
-- `deleteCart()`
-
-Returns current cart.
-- `getCartDetails(allowCached:throwIfNil:shouldEmit:)`
-
-Uploads prescriptions and adds them to the cart.
-- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)`
-
-Returns a publisher that emits cart state updates.
-- `cartStateNotifier(_ type:)`
-
   
 ### Example
 
@@ -64,5 +51,18 @@ TabView {
   * Pharmacy details screen shows the cart icon.
 * **IAIntegrations**:
   * Start screen shows the cart icon.
+ 
+### Public API
+Deletes cart from internal storage.
+- `deleteCart()`
+
+Returns current cart.
+- `getCartDetails(allowCached:throwIfNil:shouldEmit:)`
+
+Uploads prescriptions and adds them to the cart.
+- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)`
+
+Returns a publisher that emits cart state updates.
+- `cartStateNotifier(_ type:)`
 
   
