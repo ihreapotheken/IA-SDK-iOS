@@ -1,7 +1,7 @@
 # IAIntegrations
 
 This module contains following features:
-* **Prerequisites**: Explained [here](./Prerequisites.md) in more details.
+* **Prerequisites**: Explained [here](./Initialization.md) in more details.
 * **Start screen**: Serves as home screen for major IhreApotheken features. Users can:
   * Search and filter products ([IAOverTheCounter](./IAOverTheCounter.md)) 
   * Scan prescriptions ([IAPrescription](./IAPrescription.md)) 
@@ -12,8 +12,8 @@ This module contains following features:
 ## IAStartScreen
 
 * The `IAStartScreen` acts as the central hub for the IhreApotheken experience, giving users quick access to key features like product search, prescription scanning, and cart management.
-* It is exposed by `IAIntegrations` module and you have to register `.integrations` to use it. 
-* It uses pharmacy identifier from prerequisites flow.
+* It is exposed by IACore module but you have to register .integrations to use it. 
+* It uses pharmacy identifier from the prerequisites flow.
 
 ### Example
 
