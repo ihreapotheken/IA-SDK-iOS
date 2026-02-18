@@ -11,16 +11,6 @@ The Cardlink SDK provides a seamless process for users to scan their health card
 ## Requirements
 iOS 15
 
-## Installation
-To add the CardLink SDK to your Xcode project, follow these steps:
-1. Open your Xcode project (or workspace), then go to **File > Add Package Dependencies...**
-2. Enter https://github.com/ihreapotheken/CardLinkSDK-iOS into **Search or Enter Package URL** field. 
-3. Specify a version and choose Target.
-<img width="692" height="329" alt="setup1" src="https://github.com/user-attachments/assets/d401c7e0-c3be-43ff-bd0a-51ba73d07d69" />
-   
-5. Click **Add Package**
-6. From the **Choose Package Products** window, verify that your main target is selected and click **Add Package**.
-
 ## Project setup
 #### NFC setup
 CardLink uses NFC, you will need to add some permissions to the host app so that SDK can use NFC capabilities.
@@ -38,7 +28,10 @@ You will need to add **LocalizableNFC.xcstrings** file to your main target and d
 Use `IASDK.configuration.apiKey`. Do not use `CardLink.authenticationKey`.
 
 ## Configuration
-Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function. You need to provide configuration object only if you are calling CardLink manually from your app.
+Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function.
+
+> [!IMPORTANT]
+> You need to provide configuration object only if you are calling CardLink manually from your app (meaning you call CardLink.start).
 
 ```swift
 var configuration = CardLinkConfiguration(
@@ -80,9 +73,11 @@ A flag indicating whether the "Save Card" feature is enabled. When enabled, user
 - *appID: String?*(Optional):
 Used to open AppStore page of your app from one of the info screens.
 
-## Start CardLink process
+## Manually Start CardLink process
+This is needed only if you want to start CardLink manually from your app, otherwise CardLink is called automatically from the SDK.
+
 > [!IMPORTANT]
-> Make sure that `.cardlink` module is registered as explained [here](./../README.md). Also make sure that SDK has been initialized and prerequsites were shown before calling this, read more [here](./Initialization.md).
+> Make sure that `.cardlink` module is registered as explained [here](./../README.md). Also make sure that SDK has been initialized and prerequsites were shown before calling this, read more [here](./Initialization.md). 
 
 After constructing your configuration, you are ready to start the CardLink process by calling *CardLink.start* and passing the configuration you created earlier. This will present CardLink’s initial screen on the given *rootViewController*. 
 
