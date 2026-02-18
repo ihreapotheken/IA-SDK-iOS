@@ -42,7 +42,7 @@ This document provides an overview of all public interfaces available in the IA 
 - `IASDK.Prerequisites.resetLegalDisclaimer()` - Resets legal acceptance flags
 - `IASDK.Prerequisites.setIsOnboardingShown(_ value:)` - Sets onboarding shown flag
 
-### Public Screens (IACore)
+### UI components
 
 - **IAStartScreen** - Starting point or home screen with product grids, recent orders, and express delivery
 - **IAProductSearchScreen** - Product search with filters
