@@ -52,7 +52,7 @@ TabView {
 * **IAIntegrations**:
   * Start screen shows the cart icon.
  
-### Public API
+## Public API
 Deletes cart from internal storage.
 - `deleteCart()`
 
