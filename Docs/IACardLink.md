@@ -35,7 +35,7 @@ You will need to add **LocalizableNFC.xcstrings** file to your main target and d
 [here](resources/LocalizableNFC.xcstrings)
 
 ## Authentication key
-Use `IASDK.configuration.apiKey'. Do not use `CardLink.authenticationKey`.
+Use `IASDK.configuration.apiKey`. Do not use `CardLink.authenticationKey`.
 
 ## Configuration
 Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function.
