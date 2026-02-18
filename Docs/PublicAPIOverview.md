@@ -66,9 +66,7 @@ This document provides an overview of all public interfaces available in the IA 
 
 ### Modules
 - **IASDKModule.overTheCounter**
-
-### Access
-Use `IASDK.overTheCounter` to access the module interface (IAOverTheCounterSDK protocol).
+  - Use `IASDK.overTheCounter` to access the module interface.
 
 ### UI components
 - IAProductSearchScreen
@@ -77,9 +75,7 @@ Use `IASDK.overTheCounter` to access the module interface (IAOverTheCounterSDK p
 
 ### Modules
 - **IASDKModule.ordering**
-
-### Access
-Use `IASDK.ordering` to access the module interface (IAOrderingSDK protocol).
+  - Use `IASDK.ordering` to access the module interface.
 
 ### UI components
 - IACartScreen
@@ -90,14 +86,11 @@ Use `IASDK.ordering` to access the module interface (IAOrderingSDK protocol).
 - `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)` - Uploads and adds prescriptions to cart
 - `cartStateNotifier(_ type:)` - Returns publisher that emits cart state updates
 
-
 ## IAPharmacy
 
 ### Modules
 - **IASDKModule.pharmacy**
-
-### Access
-Use `IASDK.pharmacy` to access the module interface (IAPharmacySDK protocol).
+  - Use `IASDK.pharmacy` to access the module interface.
 
 ### UI components
 - IAPharmacyScreen
@@ -106,9 +99,7 @@ Use `IASDK.pharmacy` to access the module interface (IAPharmacySDK protocol).
 
 ### Modules
 - **IASDKModule.prescription**
-
-### Access
-Use `IASDK.prescription` to access the module interface (IAPrescriptionSDK protocol).
+  - Use `IASDK.prescription` to access the module interface.
 
 ### UI components
 - IAScannerScreen
@@ -117,6 +108,7 @@ Use `IASDK.prescription` to access the module interface (IAPrescriptionSDK proto
 
 ### Modules
 - **IASDKModule.cardLink**
+  Use `CardLink` to access the module interface.
 
 ### CardLink Class
 Public interface for CardLink module (accessed directly via `CardLink` class):
