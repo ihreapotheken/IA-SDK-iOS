@@ -19,11 +19,8 @@ This module provides features for cart management, checkout, payment processing,
 * It is exposed by `IACore` module but you have to register `.ordering` to use it. 
 * It uses pharmacy identifier from prerequisites flow.
 
-### Functions (via IASDK.ordering)
-- `deleteCart()` - Deletes cart from internal storage
-- `getCartDetails(allowCached:throwIfNil:shouldEmit:)` - Returns current cart details
-- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)` - Uploads and adds prescriptions to cart
-- `cartStateNotifier(_ type:)` - Returns publisher that emits cart state updates
+### Functions
+- see [Public API Overview](./PublicAPIOverview.md)
   
 ### Example
 
