@@ -38,7 +38,8 @@ You will need to add **LocalizableNFC.xcstrings** file to your main target and d
 Use `IASDK.configuration.apiKey`. Do not use `CardLink.authenticationKey`.
 
 ## Configuration
-Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function.
+Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function. You need to provide configuration object only if you are calling CardLink manually from your app.
+
 ```swift
 var configuration = CardLinkConfiguration(
     pharmacyId: ...,
@@ -53,25 +54,31 @@ var configuration = CardLinkConfiguration(
 
 **Parameters**
 - *pharmacyId: String* (Required):
-The unique identifier for the pharmacy. This ID is used for authorization and identifying the pharmacy for card linking.
+Use value returned from `IASDK.getPharmacyID`.
 
 - *consentStatus: CardLinkConsentStatus* (Required):
 Defines whether the consent screen should be shown or if the consent has already been accepted or declined. Possible values:
   - *undetermined*: SDK will show consent.
   - *accepted*: SDK will not show consent, phone number will be available to SDK.
   - *declined*: SDK will not show consent, phone number will not be used.
+
+- *canCode: String?* (Optional):
+The CAN code from the user's health card. If provided, SDK will skip screen for inputing CAN number.
+
 - *phoneNumber: String* (Required):
 The phone number associated with the user. If consent is given, this number will be passed for verification. If not provided, the phone number can be entered within the SDK.
-- *environment: CLEnvironment* (Required):
-Specifies the environment in which the SDK operates. Possible values:
-  - *production*: The live production environment.
-  - debug: The environment for testing and debugging purposes.
+
+- *userId: String* (Required):
+Used only for card saving feature, it saves and returns card for this userId.
+
+- *cardName: String?* (Optional):
+If set it will use saved card.
 
 - *isSaveCardEnabled: Bool *(Required):
 A flag indicating whether the "Save Card" feature is enabled. When enabled, users can save their card information for future use.
 
-- *canCode: String?* (Optional):
-The CAN code from the user's health card. If provided, SDK will skip screen for inputing CAN number.
+- *appID: String?*(Optional):
+Used to open AppStore page of your app from one of the info screens.
 
 ## Start CardLink process
 After constructing your configuration, you are ready to start the CardLink process by calling *CardLink.start* and passing the configuration you created earlier. This will present CardLink’s initial screen on the given *rootViewController*. 
