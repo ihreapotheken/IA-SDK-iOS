@@ -40,13 +40,14 @@ Use `IASDK.configuration.apiKey`. Do not use `CardLink.authenticationKey`.
 ## Configuration
 Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function.
 ```swift
-let configuration = CardLinkConfiguration(
-    pharmacyId: "", 
-    consentStatus: .undetermined, 
-    phoneNumber: "", 
-    environment: .production, 
-    isSaveCardEnabled: true, 
-    canCode: ""
+var configuration = CardLinkConfiguration(
+    pharmacyId: ...,
+    consentStatus: ...,
+    canCode: ...,
+    phoneNumber: ...,
+    userId: ...,
+    cardName: ...,
+    appID: ...
 )
 ```
 
