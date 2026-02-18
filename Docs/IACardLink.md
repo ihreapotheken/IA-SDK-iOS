@@ -35,10 +35,7 @@ You will need to add **LocalizableNFC.xcstrings** file to your main target and d
 [here](resources/LocalizableNFC.xcstrings)
 
 ## Authentication key
-Set authentication key before calling *CardLink.start* method:
-```swift
-CardLink.authenticationKey = "YOUR_AUTHENTICATION_KEY"
-```
+Use `IASDK.configuration.apiKey'. Do not use `CardLink.authenticationKey`.
 
 ## Configuration
 Configuration object serves as a input to the CardLink SDK. It is used in CardLink.start function.
