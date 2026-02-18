@@ -114,7 +114,7 @@ This document provides an overview of all public interfaces available in the IA 
 Public interface for CardLink module (accessed directly via `CardLink` class):
 
 #### Configuration
-- `CardLink.authenticationKey` - Authentication key (must be set before calling start)
+- `CardLink.authenticationKey` - Do not use this key, this is legacy implementation. CardLink now uses key from `IASDK.configuration.apiKey`.
 - `CardLink.style` - Style for customizing CardLink appearance
 - `CardLink.environment` - Environment used in CardLink SDK
 - `CardLink.defaultCardLinkConfiguration` - Default configuration when SDK starts CardLink
