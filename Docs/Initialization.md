@@ -3,14 +3,17 @@
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. This is the basic case. In the sections below, we’ll cover more advanced scenarios.
 ```
 let prerequisitesOptions = IASDKPrerequisitesOptions(
-    isCancellable: false, 
+    isCancellable: true, 
     isAnimated: true,
     shouldRunLegal: true,
     shouldRunOnboarding: true, 
     shouldRunApofinder: true
 )
 let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-navigationPath.append(.iaStartScreen)
+// We have to check result only if `isCancellable` flag is true.
+if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
+    // Proceed with SDK, e.g. navigationPath.append(.iaStartScreen)
+}
 ```
 
 Calling *initialize* will do the following:
@@ -53,6 +56,17 @@ IASDK.configuration.defaultInitializationOptions = .init(
 ```
 With this configuration, the initialize function will run automatically when you display any SDK screen.
 However, it’s important to note that automatic initialization only occurs when a screen is presented. If you call any SDK function that requires initialization or prerequisites before showing a screen, an error will be thrown.
+
+## Cancellable and Non-cancellable prerequisites
+- Controlled by `IASDKPrerequisitesOptions.isCancellable` flag (passed in `IASDK.initialize` function).
+- Cancellable: There is dismiss ("X") button on every screen, tapping that button will cancel the prerequisites flow. Host app must check the initialization result and if prerequisites is cancelled then it must not show any IASDK components.
+```
+let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
+    // Proceed, e.g. navigationPath.append(.iaStartScreen)
+}
+```
+- Non-cancellable: There is dismiss ("X") button only on Onboarding screen but that doesn't cacnel the prerequisites flow, it only skips onboarding. Other screens don't have dismiss button meaning SDK will not allow user to go back or cancel the prerequisites.
 
 ## Common scenarios
 Here we will cover some common scenarios and how to best handle initialization and prerequisites.
