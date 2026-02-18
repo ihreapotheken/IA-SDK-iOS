@@ -20,7 +20,18 @@ This module provides features for cart management, checkout, payment processing,
 * It uses pharmacy identifier from prerequisites flow.
 
 ### Functions
-- see [Public API Overview](./PublicAPIOverview.md)
+Deletes cart from internal storage.
+- `deleteCart()`
+
+Returns current cart.
+- `getCartDetails(allowCached:throwIfNil:shouldEmit:)`
+
+Uploads prescriptions and adds them to the cart.
+- `transferPrescriptions(images:pdfs:codes:orderID:showActivityIndicator:finishAction:)`
+
+Returns a publisher that emits cart state updates.
+- `cartStateNotifier(_ type:)`
+
   
 ### Example
 
