@@ -81,6 +81,9 @@ A flag indicating whether the "Save Card" feature is enabled. When enabled, user
 Used to open AppStore page of your app from one of the info screens.
 
 ## Start CardLink process
+> [!IMPORTANT]
+> Make sure that `.cardlink` module is registered as explained here [here](./../Initialization.md). Also make sure that SDK has been initialized and prerequsites were shown before calling this, read more [here](./Initialization.md).
+
 After constructing your configuration, you are ready to start the CardLink process by calling *CardLink.start* and passing the configuration you created earlier. This will present CardLink’s initial screen on the given *rootViewController*. 
 
 Note: if *rootViewController* is a *UINavigationController* then the SDK will **push** initial screen, otherwise it will **present** it.
