@@ -68,6 +68,17 @@ if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.is
 ```
 - Non-cancellable: There is dismiss ("X") button only on Onboarding screen but that doesn't cacnel the prerequisites flow, it only skips onboarding. Other screens don't have dismiss button meaning SDK will not allow user to go back or cancel the prerequisites.
 
+## Transferring SDKv1 User Data to SDKv2
+If you've used IA SDKv1 before, you can transfer some of the data used in SDKv1 to be later used in SDKv2.
+
+The following list of User Data can be transferred from SDKv1 to SDKv2 (the current SDK version)
+- guest user's salutation, first name, last name, email and telephone number
+- Apofinder and product search history
+- Pharmacy history
+- currently selected Pharmacy.
+
+You do this by calling `IASDK.transferSDKv1UserData()` **before** you run any SDK initialization. This function performs a check if the transfer was previously called and will only perform it once.
+
 ## Common scenarios
 Here we will cover some common scenarios and how to best handle initialization and prerequisites.
 
