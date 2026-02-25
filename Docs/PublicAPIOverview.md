@@ -36,6 +36,7 @@ This document provides an overview of all public interfaces available in the IA 
 - `IASDK.setUserData(_ userData:)` - Sets user data for checkout
 - `IASDK.deleteUser()` - Deletes all stored user data
 - `IASDK.clearAllData()` - Deletes all user-related data from SDK
+- `IASDK.transferSDKv1UserData()` - Transfers SDKv1 User Data to SDKv2
 
 #### Prerequisites Management
 - `IASDK.Prerequisites.resetAllPrerequisites()` - Resets all prerequisite-related data
