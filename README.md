@@ -12,6 +12,10 @@ To use IA SDK, you will need an API key and Client ID. The API key is bound to s
 
 IA SDK is developed in Swift/SwiftUI.
 
+# Latest version
+
+Latest stable version of IA SDK is `2.0.0`
+
 # Requirements
 
 * iOS 15 or above
