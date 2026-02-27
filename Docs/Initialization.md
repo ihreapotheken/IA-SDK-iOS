@@ -1,7 +1,7 @@
 # Initialization
 
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. This is the basic case. In the sections below, we’ll cover more advanced scenarios.
-```
+```swift
 let prerequisitesOptions = IASDKPrerequisitesOptions(
     isCancellable: true, 
     isAnimated: true,
@@ -41,7 +41,7 @@ Regardless of how many times you call initialize, the SDK initialization runs on
 
 ## Automatic initialization
 You can enable automatic initialization by setting the following configuration options:
-```
+```swift
 IASDK.configuration.isAutoInitializationEnabled = true
 IASDK.configuration.defaultInitializationOptions = .init(
     shouldShowIndicator: false, 
@@ -78,6 +78,21 @@ The following list of User Data can be transferred from SDKv1 to SDKv2 (the curr
 - currently selected Pharmacy.
 
 You do this by calling `IASDK.transferSDKv1UserData()` **before** you run any SDK initialization. This function performs a check if the transfer was previously called and will only perform it once.
+
+```swift
+func setupSDK() async throws {
+    // SDK configuration setup 
+
+    await IASDK.transferSDKv1UserData()
+
+    let result = try await IASDK.initialize(
+        shouldShowIndicator: true, 
+        prerequisitesOptions: prerequisitesOptions
+    )
+
+    // initalization result handling below
+}
+```
 
 ## Common scenarios
 Here we will cover some common scenarios and how to best handle initialization and prerequisites.
