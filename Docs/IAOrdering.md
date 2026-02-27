@@ -24,10 +24,10 @@ This module provides features for cart management, checkout, payment processing,
 
 `IACartScreen` inside a SwiftUI TabView.
 
-```javascript
+```swift
 import IACore
 ...
-TabView {   
+TabView {
     IACartScreen()
         .tabItem { Text("Cart") }
 }

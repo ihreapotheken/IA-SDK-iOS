@@ -14,10 +14,10 @@ This module contains following features:
 
 `IAScannerScreen` inside a SwiftUI TabView.
 
-```javascript
+```swift
 import IACore
 ...
-TabView {   
+TabView {
     IAScannerScreen()
         .tabItem { Text("Scanner") }
 }
