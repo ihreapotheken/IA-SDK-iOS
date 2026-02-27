@@ -60,12 +60,19 @@ However, it’s important to note that automatic initialization only occurs when
 ## Cancellable and Non-cancellable prerequisites
 - Controlled by `IASDKPrerequisitesOptions.isCancellable` flag (passed in `IASDK.initialize` function).
 - Cancellable: There is dismiss ("X") button on every screen, tapping that button will cancel the prerequisites flow. Host app must check the initialization result and if prerequisites is cancelled then it must not show any IASDK components.
-```
-let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
-if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
+
+```swift
+let result = try await IASDK.initialize(
+    shouldShowIndicator: true,
+    prerequisitesOptions: prerequisitesOptions
+)
+
+if let prerequisitesResult = result.prerequisitesResult,
+   !prerequisitesResult.isCancelled {
     // Proceed, e.g. navigationPath.append(.iaStartScreen)
 }
 ```
+
 - Non-cancellable: There is dismiss ("X") button only on Onboarding screen but that doesn't cacnel the prerequisites flow, it only skips onboarding. Other screens don't have dismiss button meaning SDK will not allow user to go back or cancel the prerequisites.
 
 ## Transferring SDKv1 User Data to SDKv2
