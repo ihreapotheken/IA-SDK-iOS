@@ -19,10 +19,10 @@ This module contains following features:
 
 `IAStartScreen` inside a SwiftUI TabView.
 
-```javascript
+```swift
 import IAIntegrations
 
-TabView {   
+TabView {
     IAStartScreen()
         .tabItem { Text("Home") }
 }

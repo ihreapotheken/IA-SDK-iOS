@@ -1,8 +1,8 @@
 # SDK Interaction
 
 IA SDK allows the host app to receive events and override default behaviors using the delegate. You can set the delegate like this:
-```
-IASDK.setDelegate(sdkDelegate)      
+```swift
+IASDK.setDelegate(sdkDelegate)
 ```
 > [!TIP]
 > It is best to set delegate immediately after you call *register* function. So you don't miss any events.
@@ -10,7 +10,7 @@ IASDK.setDelegate(sdkDelegate)
 
 ## Example of receiving SDK event
 SDKDelegate calls *orderingDidUpdateCart* when cart is updated.
-```
+```swift
 final class ExampleIASDKDelegate: SDKDelegate {
     func orderingDidUpdateCart(cartState: IACartState) {
         print(cartState.cartDetails?.totalAmountInCart)
@@ -27,12 +27,12 @@ On example of cart screen, if you don’t implement this method, the default beh
 
 This behavior is fine in most cases, but if, for example, your app already includes a cart screen embedded inside a tab view, you can override this callback to switch to the cart tab instead of showing a new screen.
 
-```
+```swift
 final class ExampleIASDKDelegate: SDKDelegate {
     // We will switch to cart tab in our example app.
     func sdkWillNavigateToTarget(_ navigationTarget: IANavigationTarget, decisionHandler: @escaping (HandlingDecision) -> Void) {
         switch navigationTarget {
-        case .cart: 
+        case .cart:
             // Use this to set cart in your app, e.g.:
             // viewModel?.selectedTab = .cart
             decisionHandler(.handled)

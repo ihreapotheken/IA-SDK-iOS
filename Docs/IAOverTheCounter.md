@@ -22,10 +22,10 @@ This module provides features related to search and products.
 
 `IAProductSearchScreen` inside a SwiftUI TabView.
 
-```javascript
+```swift
 import IACore
 ...
-TabView {   
+TabView {
     IAProductSearchScreen()
         .tabItem { Text("Search") }
 }

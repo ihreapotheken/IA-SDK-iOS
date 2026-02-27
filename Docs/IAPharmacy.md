@@ -13,10 +13,10 @@ This module contains following features:
 
 `IAPharmacyScreen` inside a SwiftUI TabView.
 
-```javascript
+```swift
 import IACore
 
-TabView {   
+TabView {
     IAPharmacyScreen()
         .tabItem { Text("Pharmacy") }
 }
