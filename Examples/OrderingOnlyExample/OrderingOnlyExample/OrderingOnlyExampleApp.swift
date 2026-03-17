@@ -12,6 +12,7 @@ import IACore
 
 @main
 struct OrderingOnlyExampleApp: App {
+
     @StateObject private var viewModel = OrderingOnlyExampleAppViewModel()
     
     init() {
@@ -22,44 +23,62 @@ struct OrderingOnlyExampleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if viewModel.isLoaded {
-                TabView(selection: $viewModel.selectedTab) {
-                    startScreen
-                        .tabItem { Text("Start") }
-                        .tag(OrderingOnlyExampleTab.start)
-                    
-                    IACartScreen()
-                        .tabItem { Text("Cart") }
-                        .tag(OrderingOnlyExampleTab.cart)
-                    
-                }
-                .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(.gray, for: .tabBar)
-                
-            } else {
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundStyle(.red)
+            Group {
+                if viewModel.isLoaded {
+                    TabView(selection: $viewModel.selectedTab) {
+                        startScreen
+                            .tab(.start)
+
+                        IACartScreen()
+                            .tab(.cart)
+                    }
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .toolbarBackground(.gray, for: .tabBar)
+
+                } else {
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundStyle(.red)
+                    }
                 }
             }
+            .preferredColorScheme(.light)
+            .tint(.red)
         }
     }
 }
 
-@available(iOS 16.0, *)
 private extension OrderingOnlyExampleApp {
-    @ViewBuilder var startScreen: some View {
-        VStack(spacing: 50) {
-            Text("Start Screen")
-            
-            Button {
-                Task {
-                    await viewModel.addPrescription()
+    
+    var startScreen: some View {
+        VStack(spacing: 16) {
+            VStack(spacing: 16) {
+                Text("Tap on the Button below to add a Prescription to the Cart")
+
+                Button {
+                    Task {
+                        await viewModel.addPrescription()
+                    }
+                } label: {
+                    Text("Add Prescription")
                 }
-            } label: {
-                Text("Add prescription")
+                .buttonStyle(.borderedProminent)
+            }
+            .frame(maxHeight: .infinity)
+
+            Divider()
+
+            VStack(spacing: 16) {
+                Text("Miscellaneous")
+                    .bold()
+
+                Button("Reset Prerequisites & Exit Application") {
+                    Task { await viewModel.resetPrerequisitesAndExit() }
+                }
             }
         }
+        .padding(16)
+        .multilineTextAlignment(.center)
     }
 }
 

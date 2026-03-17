@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Readme.md">
+   </FileRef>
+   <FileRef
+      location = "group:MainExample/MainExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SingleEntryPoint/SingleEntryPoint.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OrderingOnlyExample/OrderingOnlyExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIKitExample/UIKitExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InitializationTest/InitializationTest.xcodeproj">
+   </FileRef>
+</Workspace>

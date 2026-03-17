@@ -12,34 +12,38 @@ import IACore
 import IAIntegrations
 import IAOrdering
 
-
-@MainActor @available(iOS 16.0, *)
 final class OrderingOnlyExampleAppViewModel: ObservableObject {
+
     @Published var isLoaded = false
     @Published var errorMessage: String?
-    @Published var selectedTab: OrderingOnlyExampleTab = .start
+    @Published var selectedTab: ExampleTab = .start
     @Published private(set) var images: [Data] = []
     
     private lazy var delegate = OrderingOnlyExampleIASDKDelegate(viewModel: self)
     private let orderId: String = "order_ID"
     
     init() {
-        assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
-        IASDK.setEnvironment(.staging)
-        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-        IASDK.Pharmacy.setPharmacyID(2163)
-        
+        // Validate that SharedConfig.xcconfig has been properly configured.
+        precondition(
+            Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String != "ENTER YOUR API KEY HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String != "ENTER YOUR CLIENT ID HERE",
+            "Please configure SharedConfig.xcconfig with your bundle identifier, API key, and client ID."
+        )
+                
         IASDK.register([
             .integrations,
             .ordering
         ])
         
         // Example (setup delegate):
-        IASDK.setDelegates(
-            sdk: delegate,
-            ordering: delegate
-        )
+        IASDK.setDelegate(delegate)
+        
+        IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
+        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
+        IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
+
         Task {
             await initializeSDK()
         }
@@ -48,27 +52,24 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
     func initializeSDK() async {
         errorMessage = nil
         
-        do {
-            let options = IASDKInitializationOptions(
-                prerequisitesOptions: .init(
-                    shouldShowIndicator: true,
-                    isCancellable: false,
-                    isAnimated: true
-                )
+        do {            
+            let prerequisitesOptions = IASDKPrerequisitesOptions(
+                isCancellable: false, 
+                isAnimated: true, 
             )
-            let result = try await IASDK.initialize(options: options)
-            if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
-                isLoaded = true
-            } else {
-                errorMessage = "Initialization result failed didAgreeToLegalNotice:\(result.prerequisitesResult.didAgreeToLegalNotice), pharmacy: \(result.prerequisitesResult.pharmacyID)"
-            }
+
+            // We don't need to check initialization result because IASDKPrerequisitesOptions.isCancellable is false. Otherwise we would have to check if cancelled.
+            let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+
+            isLoaded = true
         } catch {
             errorMessage = "Error\n\(error)"
         }
     }
     
     func resetPrerequisitesAndExit() async {
-        try? await IAIntegrationsSDK.Prerequisites.resetAllPrerequisites()
+        try? await IASDK.Prerequisites.resetAllPrerequisites()
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Allow user defaults to save
             exit(0)
         }
@@ -76,44 +77,37 @@ final class OrderingOnlyExampleAppViewModel: ObservableObject {
     
     func addPrescription() async {
         loadPrescriptionFromAssetsAndQueue()
+
         do {
-            try await IAOrderingSDK.transferPrescriptions(images: images, orderID: orderId)
-            _ = delegate.cartButtonWillOpenCartScreen()
+            try await IASDK.ordering.transferPrescriptions(
+                images: images, 
+                pdfs: nil, 
+                codes: nil, 
+                orderID: orderId,
+                showActivityIndicator: true, 
+                finishAction: .showBottomSheet
+            )
         } catch {
             print("error: \(error)")
         }
-    }
-    
-    func goToCart() {
-        self.selectedTab = .cart
     }
 }
 
 // MARK: - Load image from the Assests -
 
-extension OrderingOnlyExampleAppViewModel {
-    private func addImage(_ image: UIImage) {
-        guard let pngData = image.pngData() else {
-            print("Failed to convert UIImage to PNG data.")
-            return
-        }
-        images.append(pngData)
-    }
-    
+private extension OrderingOnlyExampleAppViewModel {
+
     private func loadPrescriptionFromAssetsAndQueue() {
         guard let image = UIImage(named: "prescription") else {
             print("Asset 'prescription' image not found.")
             return
         }
-        addImage(image)
+
+        guard let pngData = image.pngData() else {
+            print("Failed to convert UIImage to PNG data.")
+            return
+        }
+
+        images.append(pngData)
     }
 }
-
-// MARK: - Supporting types -
-
-enum OrderingOnlyExampleTab {
-    case start
-    case cart
-}
-
-

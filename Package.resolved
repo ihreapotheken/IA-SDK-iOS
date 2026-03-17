@@ -1,0 +1,15 @@
+{
+  "originHash" : "618c21f62e9dfc2602918a5d5e9eabf2b1c604296c65372d9b0e8453eca88036",
+  "pins" : [
+    {
+      "identity" : "openssl-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gematik/OpenSSL-Swift",
+      "state" : {
+        "revision" : "bec06b51e306b84b51fe09b7d26acb3b10e5e2e3",
+        "version" : "4.3.1"
+      }
+    }
+  ],
+  "version" : 3
+}

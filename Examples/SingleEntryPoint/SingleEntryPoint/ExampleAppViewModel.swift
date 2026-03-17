@@ -14,6 +14,8 @@ import IAOverTheCounter
 
 @MainActor
 final class ExampleAppViewModel: ObservableObject {
+
+    @Published var currentTab: ExampleTab = .tab2
     @Published var errorMessage: String?
     @Published var navigationPath: [Route] = []
     
@@ -22,38 +24,44 @@ final class ExampleAppViewModel: ObservableObject {
     }
     
     func setup() {
-        assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
-        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
-        
+        // Validate that SharedConfig.xcconfig has been properly configured.
+        precondition(
+            Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String != "ENTER YOUR API KEY HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String != "ENTER YOUR CLIENT ID HERE",
+            "Please configure SharedConfig.xcconfig with your bundle identifier, API key, and client ID."
+        )
+                
         IASDK.register([
             .integrations, 
             .overTheCounter,
             .ordering,
             .apofinder
         ])
+        
+        IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
+        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
+        IASDK.Pharmacy.savePharmacyID(2163)  // Comment this if you want to use apofinder as part of the prerequisites flow.
     }
     
-    func initializeSDK() async {
+    func initializeSDKAndOpenStartScreen() async {
         errorMessage = nil
-
+        
         do {
-            let options = IASDKInitializationOptions(
-                prerequisitesOptions: .init(
-                    shouldShowIndicator: true, 
-                    isCancellable: false, 
-                    isAnimated: true, 
-                    shouldRunLegal: true, 
-                    shouldRunOnboarding: true, 
-                    shouldRunApofinder: true
-                )
+            let prerequisitesOptions = IASDKPrerequisitesOptions(
+                isCancellable: true, 
+                isAnimated: true, 
+                shouldRunLegal: true, 
+                shouldRunOnboarding: true, 
+                shouldRunApofinder: true
             )
-            let result = try await IASDK.initialize(options: options)
-            if result.prerequisitesResult.didAgreeToLegalNotice, result.prerequisitesResult.pharmacyID != nil {
+
+            let result = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptions: prerequisitesOptions)
+            // We need to check result because we set prerequisitesOptions.isCancellable to true 
+            if let prerequisitesResult = result.prerequisitesResult, !prerequisitesResult.isCancelled {
                 navigationPath.append(.iaStartScreen)
-            } else {
-                errorMessage = "Initialization result failed didAgreeToLegalNotice:\(result.prerequisitesResult.didAgreeToLegalNotice), pharmacy: \(result.prerequisitesResult.pharmacyID)"
-            }            
+            }
         } catch {
             errorMessage = "Error\n\(error)"
         }
@@ -62,9 +70,13 @@ final class ExampleAppViewModel: ObservableObject {
     func pop() {
         _ = navigationPath.popLast()
     }
-    
-    func resetPrerequisites() async {
-        try? await IAIntegrationsSDK.Prerequisites.resetAllPrerequisites()
+        
+    func resetPrerequisitesAndExit() async {
+        try? await IASDK.Prerequisites.resetAllPrerequisites()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Allow user defaults to save
+            exit(0)
+        }
     }
 }
 
