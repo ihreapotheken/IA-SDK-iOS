@@ -21,10 +21,16 @@ final class CardLinkExampleViewModel: ObservableObject {
     private var pharmacyID: String?
 
     init() {
-        assert(Bundle.main.bundleIdentifier != "set.your.bundle.id.here", "Please set your bundle ID in Build Settings. Bundle ID must be registered with your API key.")
+        precondition(
+            Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String != "ENTER YOUR API KEY HERE" &&
+            Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String != "ENTER YOUR CLIENT ID HERE",
+            "Please configure SharedConfig.xcconfig with your bundle identifier, API key, and client ID."
+        )        
         
-        IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
-        IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
+        IASDK.setEnvironment(.staging)
+        IASDK.configuration.apiKey = Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String ?? ""
+        IASDK.configuration.clientID = Bundle.main.object(forInfoDictionaryKey: "IASDK_CLIENT_ID") as? String ?? ""
 
         IASDK.register([
             .integrations,
@@ -77,7 +83,8 @@ final class CardLinkExampleViewModel: ObservableObject {
             userId: "example_user_123",
             cardName: nil,
             isSaveCardEnabled: true,
-            source: .unknown,
+            source: .unknown, 
+            finishAction: .uploadPrescriptions,
             appID: nil
         )
 

@@ -73,7 +73,7 @@ private extension UIKitExampleViewController {
             createController(for: .search, content: IAProductSearchScreen()),
             createController(for: .cart, content: IACartScreen()),
             createController(for: .pharmacy, content: IAPharmacyScreen()),
-            createController(for: .scanner, content: IAScannerScreen(type: .prescription))
+            createController(for: .scanner, content: IAPrescriptionScannerScreen(type: .prescription))
         ]
 
         self.tabBar.isHidden = false

@@ -12,6 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C31E9572F719C1E00B04D7E /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SharedConfig.xcconfig; path = ../SharedConfig.xcconfig; sourceTree = SOURCE_ROOT; };
 		0CA81A802F6957A600D602F5 /* CardLinkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardLinkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,10 +50,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C31E9562F719C0400B04D7E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C31E9572F719C1E00B04D7E /* SharedConfig.xcconfig */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0CA81A772F6957A600D602F5 = {
 			isa = PBXGroup;
 			children = (
 				0CA81A822F6957A600D602F5 /* CardLinkExample */,
+				0C31E9562F719C0400B04D7E /* Resources */,
 				0CA81A812F6957A600D602F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 /* Begin XCBuildConfiguration section */
 		0CA81A892F6957A800D602F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C31E9572F719C1E00B04D7E /* SharedConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -273,6 +284,7 @@
 		};
 		0CA81A8C2F6957A800D602F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C31E9572F719C1E00B04D7E /* SharedConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,7 +307,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -331,7 +342,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = set.your.bundle.id.here;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
