@@ -14,7 +14,7 @@ IA SDK is developed in Swift/SwiftUI.
 
 # Latest version
 
-Latest stable version of IA SDK is `2.0.0`
+Latest stable version of IA SDK is `2.1.0`
 
 # Requirements
 
