@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/a4b70668-325b-498b-bc5f-0d185a3a1b7c
-
 # IAOverTheCounter
 
 This module provides features related to search and products.
