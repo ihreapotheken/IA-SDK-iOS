@@ -66,6 +66,9 @@ UIKitNavigationView(shouldUpdateRootView: true) { navigator in
 }
 ```
 
+> [!NOTE]
+> See [IAProductGridExamples](../Examples/MainExample/MainExample/Components/IAProductGridExamples) for a complete example.
+
 ## Interaction with other products
 
 **IAOverTheCounter** is used by:

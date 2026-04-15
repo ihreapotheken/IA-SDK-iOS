@@ -70,6 +70,9 @@ IACartButton {
 }
 ```
 
+> [!NOTE]
+> See [IACartButtonExamples](../Examples/MainExample/MainExample/Components/IACartButtonExamples) for a complete example.
+
 ## Interaction with other products
 
 **IAOrdering** is used by:

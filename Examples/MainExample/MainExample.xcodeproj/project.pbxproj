@@ -32,28 +32,28 @@
 		0C888F5A2E9F0E8800B8B708 /* IAPharmacy in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F592E9F0E8800B8B708 /* IAPharmacy */; };
 		0C888F5C2E9F0E8800B8B708 /* IAPrescription in Frameworks */ = {isa = PBXBuildFile; productRef = 0C888F5B2E9F0E8800B8B708 /* IAPrescription */; };
 		0CA391E92E9E4728006A496D /* ExampleAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */; };
-		CC0000012F9F809600150B3D /* ComponentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000022F9F809600150B3D /* ComponentsScreen.swift */; };
-		CC0000032F9F809600150B3D /* IAProductGridExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000042F9F809600150B3D /* IAProductGridExamples.swift */; };
-		CC0000052F9F809600150B3D /* IACartButtonExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000062F9F809600150B3D /* IACartButtonExamples.swift */; };
 		0CB5A9352E3D2AFF00A881E8 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */; };
 		0CB5A9362E3D2AFF00A881E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */; };
 		0CB5A94D2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */; };
 		1582B9602F14EBC800F59501 /* View+ExampleTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1582B95F2F14EBC800F59501 /* View+ExampleTab.swift */; };
+		CC0000012F9F809600150B3D /* ComponentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000022F9F809600150B3D /* ComponentsScreen.swift */; };
+		CC0000032F9F809600150B3D /* IAProductGridExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000042F9F809600150B3D /* IAProductGridExamples.swift */; };
+		CC0000052F9F809600150B3D /* IACartButtonExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0000062F9F809600150B3D /* IACartButtonExamples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C2F75F72EC4A8CF00C13E96 /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SharedConfig.xcconfig; path = ../SharedConfig.xcconfig; sourceTree = SOURCE_ROOT; };
 		0C2F75FF2EC4B14F00C13E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0CA391E82E9E4728006A496D /* ExampleAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAppViewModel.swift; sourceTree = "<group>"; };
-		CC0000022F9F809600150B3D /* ComponentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsScreen.swift; sourceTree = "<group>"; };
-		CC0000042F9F809600150B3D /* IAProductGridExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAProductGridExamples.swift; sourceTree = "<group>"; };
-		CC0000062F9F809600150B3D /* IACartButtonExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IACartButtonExamples.swift; sourceTree = "<group>"; };
 		0CB5A9222E3D2AF900A881E8 /* MainExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MainExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB5A9302E3D2AFF00A881E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CB5A9322E3D2AFF00A881E8 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		0CB5A94C2E3D2C1A00A881E8 /* ExampleIASDKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleIASDKDelegate.swift; sourceTree = "<group>"; };
 		0CBA2FDA2E9E9A8C000FC393 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		1582B95F2F14EBC800F59501 /* View+ExampleTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ExampleTab.swift"; sourceTree = "<group>"; };
+		CC0000022F9F809600150B3D /* ComponentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsScreen.swift; sourceTree = "<group>"; };
+		CC0000042F9F809600150B3D /* IAProductGridExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAProductGridExamples.swift; sourceTree = "<group>"; };
+		CC0000062F9F809600150B3D /* IACartButtonExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IACartButtonExamples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 			children = (
 				CC0000022F9F809600150B3D /* ComponentsScreen.swift */,
 				0CCD5EFD2F8F80A400150B3D /* IAProductGridExamples */,
-				0CCD5EFE2F8F80B400150B3D /* IACartExamples */,
+				0CCD5EFE2F8F80B400150B3D /* IACartButtonExamples */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,12 +149,12 @@
 			path = IAProductGridExamples;
 			sourceTree = "<group>";
 		};
-		0CCD5EFE2F8F80B400150B3D /* IACartExamples */ = {
+		0CCD5EFE2F8F80B400150B3D /* IACartButtonExamples */ = {
 			isa = PBXGroup;
 			children = (
 				CC0000062F9F809600150B3D /* IACartButtonExamples.swift */,
 			);
-			path = IACartExamples;
+			path = IACartButtonExamples;
 			sourceTree = "<group>";
 		};
 		1582B95E2F14EBBA00F59501 /* Utils */ = {
