@@ -11,7 +11,6 @@ This module provides features for cart management, checkout, payment processing,
 * **PayPal payment:** In-app PayPal integration.
     
 * **Thank You screen:** Overview of the order, users can provide their own thank you screen (not yet available).
-    
 
 ## IACartScreen
 
@@ -36,6 +35,38 @@ TabView {
 
 > [!NOTE]
 > Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+
+## IACartButton
+
+* `IACartButton` is a UI component that displays a cart icon with the current item count, typically placed in a navigation bar or toolbar.
+* It is exposed by `IACore` module but you have to register `.ordering` to use it.
+* By default, tapping the button presents the cart screen automatically and sends `SDKDelegate.sdkWillNavigateToTarget`.
+* Optionally, an `onTap` callback can be provided — in that case the host app is fully responsible for handling the tap and the cart is not opened automatically.
+
+> [!IMPORTANT]
+> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
+
+[IACartButton example video](resources/ia_cart_button_example.mp4)
+
+### Example
+
+`IACartButton` with default behaviour — cart opens automatically on tap.
+
+```swift
+import IACore
+
+IACartButton()
+```
+
+`IACartButton` with a custom tap handler.
+
+```swift
+import IACore
+
+IACartButton {
+    // host app handles tap
+}
+```
 
 ## Interaction with other products
 

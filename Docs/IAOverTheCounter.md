@@ -44,6 +44,8 @@ TabView {
 > [!IMPORTANT]
 > SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
 
+[IAProductGrid example video](resources/ia_product_grid_example.mp4)
+
 ### Example
 
 `IAProductGrid` embedded in a host app screen, without navigation.
