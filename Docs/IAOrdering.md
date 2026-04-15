@@ -46,7 +46,9 @@ TabView {
 > [!IMPORTANT]
 > SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
 
+
 https://github.com/user-attachments/assets/787f1702-af05-4550-94cf-7807382d1998
+
 
 ### Example
 
