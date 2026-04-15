@@ -34,6 +34,36 @@ TabView {
 > [!NOTE]
 > Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
 
+## IAProductGrid
+
+* `IAProductGrid` is a UI component that embeds a grid of pharmacy products directly into your layout.
+* It is exposed by `IACore` module but you have to register `.overTheCounter` to use it.
+* Supports multiple product types: current offers, products of the month, product recommendations, customers also bought, and custom PZN lists.
+* Tapping a product opens product details. If `IAOrdering` is set up, users can add products to the cart.
+
+> [!IMPORTANT]
+> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
+
+### Example
+
+`IAProductGrid` embedded in a host app screen, without navigation.
+
+```swift
+import IACore
+
+IAProductGrid(type: .currentOffers())
+```
+
+`IAProductGrid` with navigation, so connected screens are pushed instead of presented modally.
+
+```swift
+import IACore
+
+UIKitNavigationView(shouldUpdateRootView: true) { navigator in
+    IAProductGrid(type: .currentOffers(), navigator: navigator)
+}
+```
+
 ## Interaction with other products
 
 **IAOverTheCounter** is used by:

@@ -72,6 +72,11 @@ private extension MainExampleApp {
                         viewModel.moreActiveSheet = .search
                     }
                     .buttonStyle(.borderedProminent)
+
+                    Button("Components") {
+                        viewModel.moreNavigationPath.append(.components)
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
                 .frame(maxHeight: .infinity)
 
@@ -96,6 +101,8 @@ private extension MainExampleApp {
                         .hostEmbedStyle(.navigation(onDismiss: {
                             viewModel.moreNavigationPath.removeAll()
                         }))
+                case .components:
+                    ComponentsScreen()
                 }
             }
             // Example (Present): How to present any IA SDK screen.

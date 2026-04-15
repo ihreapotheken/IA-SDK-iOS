@@ -97,6 +97,7 @@ final class ExampleAppViewModel: ObservableObject {
 
 enum MoreScreenRoute: Hashable {
     case search
+    case components
 }
 
 enum MoreActiveSheet: Identifiable {
