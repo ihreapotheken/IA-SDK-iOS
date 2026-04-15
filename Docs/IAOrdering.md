@@ -46,7 +46,7 @@ TabView {
 > [!IMPORTANT]
 > SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
 
-[IACartButton example video](resources/ia_cart_button_example.mp4)
+<video src="resources/ia_cart_button_example.mp4" controls></video>
 
 ### Example
 
