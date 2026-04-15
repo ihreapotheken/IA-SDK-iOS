@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/a4b70668-325b-498b-bc5f-0d185a3a1b7c
+
 # IAOverTheCounter
 
 This module provides features related to search and products.
@@ -44,7 +48,7 @@ TabView {
 > [!IMPORTANT]
 > SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
 
-<video src="resources/ia_product_grid_example.mp4" controls></video>
+https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
 
 ### Example
 
