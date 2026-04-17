@@ -1,3 +1,5 @@
+![Latest Stable](https://img.shields.io/github/v/release/ihreapotheken/IA-SDK-iOS?label=Latest%20Stable)
+
 IA SDK is iOS SDK that helps integrate IhreApotheken into your app by providing plug-and-play UI and communication with backend services.
 
 The SDK consists of the following modules:
@@ -11,10 +13,6 @@ The SDK consists of the following modules:
 To use IA SDK, you will need an API key and Client ID. The API key is bound to specific app Bundle ID(s) and comes with a set of entitlements. Each entitlement enables access to certain features or services within the SDK.
 
 IA SDK is developed in Swift/SwiftUI.
-
-# Latest version
-
-Latest stable version of IA SDK is `2.2.0`
 
 # Requirements
 
