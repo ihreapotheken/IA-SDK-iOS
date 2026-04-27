@@ -40,9 +40,13 @@ TabView {
 * It is exposed by `IACore` module but you have to register `.overTheCounter` to use it.
 * Supports multiple product types: current offers, products of the month, product recommendations, customers also bought, and custom PZN lists.
 * Tapping a product opens product details. If `IAOrdering` is set up, users can add products to the cart.
+* You can use `shouldShowLoading` parameter to control whether you want to hide grid while loading or show shimmer animation.
+* If there is no product to show it will return empty view, you can use `hasContent` binding to determine if it has content.
+> [!CAUTION] 
+> Do NOT use `hasContent` property to show/hide `IAProductGrid` because hiding and showing will destroy its state and will make it reload again. Use `hasContent` property only to adjust padding or other style/layout properties if you need to.
 
 > [!IMPORTANT]
-> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
+> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component. You can run it manually or set `IASDK.configuration.isAutoInitializationEnabled` and it will be automatically perfomed as soon as `IAProductGrid` is added to the view hierarchy. To learn more about initialization, see [Initialization](Initialization.md).
 
 https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
 
