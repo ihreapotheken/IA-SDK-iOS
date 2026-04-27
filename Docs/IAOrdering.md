@@ -44,7 +44,7 @@ TabView {
 * Optionally, an `onTap` callback can be provided — in that case the host app is fully responsible for handling the tap and the cart is not opened automatically.
 
 > [!IMPORTANT]
-> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component.
+> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component. You can run it manually or set `IASDK.configuration.isAutoInitializationEnabled` and it will be automatically perfomed as soon as `IACartButton` is added to the view hierarchy. To learn more about initialization, see [Initialization](Initialization.md).
 
 
 https://github.com/user-attachments/assets/787f1702-af05-4550-94cf-7807382d1998
