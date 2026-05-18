@@ -6,7 +6,7 @@ Acts as the central hub for the IhreApotheken experience, giving users quick acc
 - Module: `IAIntegrations`
 - Dependencies:
   - pharmacy identifier: from the prerequisites flow.
-
+  - Cart: displays a cart button for navigating to the checkout flow.
 
 ## Signature
 ```swift
