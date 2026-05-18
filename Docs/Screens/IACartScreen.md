@@ -11,6 +11,7 @@ Provides a complete, self-managed flow for cart, checkout, and payment. The scre
     - Users can open product details by tapping on the product in the cart.
   - `IAPharmacy` (Optional): Header opens pharmacy details.
   - `IAPrescription` (Optional): Button that allows user to add new prescriptions.
+  - `IACardLink` (Optional): Button that allows user to scan physical electronic cards.
 
 ## Signature
 ```swift
