@@ -6,7 +6,9 @@ Provides a complete, self-managed flow for cart, checkout, and payment. The scre
 - Module: `IAOrdering`
 - Dependencies:
   - Pharmacy Identifier: from the prerequisites flow.
-  - `IAOverTheCounter` (Optional): Button that opens product search. Also users can open product details by tapping on the product in the cart.
+  - `IAOverTheCounter` (Optional):
+    - Button that opens product search.
+    - Users can open product details by tapping on the product in the cart.
   - `IAPharmacy` (Optional): Header opens pharmacy details.
   - `IAPrescription` (Optional): Button that allows user to add new prescriptions.
 
