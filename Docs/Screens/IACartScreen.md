@@ -16,6 +16,8 @@ public init()
 > Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
 
 ## Example
+`IACartScreen` inside a SwiftUI TabView.
+
 ```swift
 import IACore
 ...
