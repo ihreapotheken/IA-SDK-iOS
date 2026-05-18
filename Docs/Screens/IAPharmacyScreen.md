@@ -6,7 +6,7 @@ Shows detailed information about the current pharmacy.
 - Module: `IAPharmacy`
 - Dependencies:
   - Pharmacy Identifier: from the prerequisites flow.
-  - Cart: displays a cart button for navigating to the checkout flow.
+  - `IAOrdering`: displays a cart button for navigating to the checkout flow.
 
 ## Signature
 ```swift
