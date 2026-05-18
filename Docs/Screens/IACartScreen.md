@@ -5,15 +5,12 @@ Provides a complete, self-managed flow for cart, checkout, and payment. The scre
 ## Overview
 - Module: `IAOrdering`
 - Dependencies:
-  - pharmacy identifier: from the prerequisites flow.
+  - Pharmacy Identifier: from the prerequisites flow.
 
 ## Signature
 ```swift
 public init()
 ```
-
-> [!NOTE]
-> Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
 
 ## Example
 `IACartScreen` inside a SwiftUI TabView.
@@ -25,3 +22,6 @@ TabView {
     IACartScreen()
         .tabItem { Text("Cart") }
 ```
+
+> [!NOTE]
+> Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
