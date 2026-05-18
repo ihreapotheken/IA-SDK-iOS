@@ -7,7 +7,7 @@ A screen that allows users to select a pharmacy. Users can select new pharmacy b
 ## Overview
 - Module: `IAIntegrations`
 - Dependencies:
-  - pharmacy identifier: from the prerequisites flow.
+  - None
 
 ## Signature
 ```swift
