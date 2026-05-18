@@ -1,40 +1,35 @@
 # IAApofinderScreen
 
-A screen that allows users to select a pharmacy.
+A screen that allows users to select a pharmacy. Users can select new pharmacy by:
+- Searching and filtering pharmacies (list and map view)
+- Scanning pharmacy code (coming soon)
 
-Supported selection methods:
-- Search and filter pharmacies (list and map view)
-- Scan pharmacy code (coming soon)
-
-## Basic information
-- Implemented in: `IAIntegrations`
-- Defined in: `IACore`
+## Overview
+- Module: `IAIntegrations`
 - Dependencies:
-  - uses pharmacy identifier from the prerequisites flow.
+  - pharmacy identifier: from the prerequisites flow.
 
-## Definition
+## Signature
 ```swift
-public init(isCancellable: Bool, onFinish: @escaping Callback<Pharmacy?>) {
-    self.isCancellable = isCancellable
-    self.onFinish = onFinish
-}
+public init(isCancellable: Bool, onFinish: @escaping Callback<Pharmacy?>)
 ```
 
-- Parameters:
+**Parameters**
   - **isCancellable**: When `false`, users cannot dismiss or go back — they must select a pharmacy. When `true`, a dismiss/back button is shown.
   - **onFinish**: Called when the user selects a pharmacy or dismisses the screen. The `Pharmacy` value is `nil` if the user dismissed without selecting.
 
 > [!NOTE]
-> Read [Presentation](./Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
+> Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
 
 ## Example
 ```swift
 import IACore
 
 IAApofinderScreen(isCancellable: true, onFinish: { pharmacy in
+    // Host app is resposible for dismissing the Apofinder screen screen and determening what to do after pharmacy is selected, in this example we are switching to the start tab.
     viewModel.activeSheetTag = nil
     if pharmacy != nil {
-        DIDemoApp.rootAppViewModel.show(tab: .start)
+        show(tab: .start)
     }
 })
 .hostEmbedStyle(.presentation(onDismiss: { }))
