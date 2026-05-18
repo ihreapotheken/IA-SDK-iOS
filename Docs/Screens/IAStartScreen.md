@@ -5,8 +5,12 @@ Acts as the central hub for the IhreApotheken experience, giving users quick acc
 ## Overview
 - Module: `IAIntegrations`
 - Dependencies:
-  - pharmacy identifier: from the prerequisites flow.
-  - Cart: displays a cart button for navigating to the checkout flow.
+  - Pharmacy Identifier: from the prerequisites flow.
+  - `IAPharmacy` (Optional): Tapping pharmacy header opens the pharmacy details screen.
+  - `IAOverTheCounter`: Integreated search bar.
+  - `IAOrdering` (Optional): Displays a cart button for navigating to the checkout flow.
+  - `IAPrescription` (Optional): Ability to add prescriptions and electronic prescriptions directly from the start screen.
+  - `IACardLink` (Optional): Ability to scan physical electorinic cards directly from the start screen.
 
 ## Signature
 ```swift
