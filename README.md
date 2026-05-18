@@ -111,12 +111,12 @@ navigationPath.append(.iaStartScreen)
 [Error Codes](./Docs/IAErrorCodes.md)  
 
 # Screens
-[IAStartScreen](./Docs/Screens/IAStartScreen.md)
-[IAApofinderScreen](./Docs/Screens/IAApofinderScreen.md)
-[IACartScreen](./Docs/Screens/IACartScreen.md)
-[IAPharmacyScreen](./Docs/Screens/IAPharmacyScreen.md)
-[IAProductSearchScreen](./Docs/Screens/IAProductSearchScreen.md)
-[IAScannerScreen](./Docs/Screens/IAScannerScreen.md)
+[IAStartScreen](./Docs/Screens/IAStartScreen.md)  
+[IAApofinderScreen](./Docs/Screens/IAApofinderScreen.md)  
+[IACartScreen](./Docs/Screens/IACartScreen.md)  
+[IAPharmacyScreen](./Docs/Screens/IAPharmacyScreen.md)  
+[IAProductSearchScreen](./Docs/Screens/IAProductSearchScreen.md)  
+[IAScannerScreen](./Docs/Screens/IAScannerScreen.md)  
 
 
 # Full example code
