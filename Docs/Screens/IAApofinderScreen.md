@@ -18,9 +18,6 @@ public init(isCancellable: Bool, onFinish: @escaping Callback<Pharmacy?>)
   - **isCancellable**: When `false`, users cannot dismiss or go back — they must select a pharmacy. When `true`, a dismiss/back button is shown.
   - **onFinish**: Called when the user selects a pharmacy or dismisses the screen. The `Pharmacy` value is `nil` if the user dismissed without selecting.
 
-> [!NOTE]
-> Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
-
 ## Example
 ```swift
 import IACore
@@ -34,3 +31,6 @@ IAApofinderScreen(isCancellable: true, onFinish: { pharmacy in
 })
 .hostEmbedStyle(.presentation(onDismiss: { }))
 ```
+
+> [!NOTE]
+> Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  
