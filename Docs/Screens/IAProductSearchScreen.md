@@ -6,7 +6,7 @@ Handles searching, filtering, and displaying detailed product information, all i
 - Module: `IAOverTheCounter`
 - Dependencies:
   - pharmacy identifier: from the prerequisites flow.
-  - Cart:
+  - `IAOrdering`:
     - Displays a cart button for navigating to the checkout flow.
     - Add product to the cart from list or product details.
     - Product availability information.
