@@ -43,16 +43,24 @@ This document provides an overview of all public interfaces available in the IA 
 - `IASDK.Prerequisites.resetLegalDisclaimer()` - Resets legal acceptance flags
 - `IASDK.Prerequisites.setIsOnboardingShown(_ value:)` - Sets onboarding shown flag
 
-### UI components
+### Screens and components
 
+- **IAApofinderScreen** - Pharmacy search
 - **IAStartScreen** - Starting point or home screen with product grids, recent orders, and express delivery
 - **IAProductSearchScreen** - Product search with filters
   - `.focusesOnAppear(_ shouldFocusOnStart:)` - Modifier to control search field focus
 - **IACartScreen** - Cart, checkout, and thank you screens
 - **IAPharmacyScreen** - Pharmacy details and information
-- **IAScannerScreen** - Take photo of prescription or scan E-Prescription
+- **IAPrescriptionScannerScreen** - Take photo of prescription or scan E-Prescription
   - `.isCameraOn(_ binding:)` - Modifier to control camera state
   - `.onCameraError(_ errorHandler:)` - Modifier to handle camera errors
+- **IARedeemPrescriptionScreen** - Redeem prescriptions
+- **IAProductGrid** - Product recommendations
+- **IACartButton** - Button with number of items in cart that opens cart
+
+## IACore
+### User Interface
+- IARedeemPrescriptionScreen
 
 ## IAIntegrations
 
@@ -60,8 +68,9 @@ This document provides an overview of all public interfaces available in the IA 
 - **IASDKModule.integrations**
 - **IASDKModule.apofinder**
 
-### UI components
+### User Interface
 - IAStartScreen
+- IAApofinderScreen
 
 ## IAOverTheCounter
 
@@ -71,7 +80,8 @@ This document provides an overview of all public interfaces available in the IA 
 
 ### User Interface
 - IAProductSearchScreen
-
+- IAProductGrid
+- 
 ## IAOrdering
 
 ### Modules
@@ -80,6 +90,7 @@ This document provides an overview of all public interfaces available in the IA 
 
 ### User Interface
 - IACartScreen
+- IACartButton
 
 ### Functions (via IASDK.ordering)
 See more details [here](./IAOrdering.md).
