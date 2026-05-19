@@ -30,6 +30,7 @@ IAApofinderScreen(isCancellable: true, onFinish: { pharmacy in
         show(tab: .start)
     }
 })
+// We are handling dismiss in onFinish above so no need to handle it here.
 .hostEmbedStyle(.presentation(onDismiss: { }))
 ```
 
