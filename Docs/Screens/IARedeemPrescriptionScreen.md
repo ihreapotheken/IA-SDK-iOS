@@ -25,9 +25,9 @@ You can also these delegate methods to get prescription data if you are not usin
 - Module: `IACore`
 - Dependencies:
   - `IAPrescription` (Optional):
-    - Capture photo prescription and scan electronic prescription. See [IAPrescriptionScannerScreen](.IAPrescriptionScannerScreen.md).
+    - Capture photo prescription and scan electronic prescription. See [IAPrescriptionScannerScreen](IAPrescriptionScannerScreen.md).
   - `IACardLink` (Optional):
-    - Scan physical electronic health cards. See [IAPrescriptionScannerScreen](.IAPrescriptionScannerScreen.md).
+    - Read electronic health card via NFC. See [IACardLink](../IACardLink.md).
   - `IAOrdering` (Optional):
     - Upload prescriptions to the cart automatically.
 
