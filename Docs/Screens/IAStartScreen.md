@@ -4,9 +4,9 @@ Acts as the central hub for the IhreApotheken experience, giving users quick acc
   * Pharmacy details
   * Search and filter products
   * Scan prescriptions
-  * See recent orders
-  * Open the cart
-  * See product recommendations
+  * Recent orders
+  * Cart
+  * Product recommendations
 
 
 ## Overview
