@@ -6,12 +6,17 @@ Shows detailed information about the current pharmacy.
 - Module: `IAPharmacy`
 - Dependencies:
   - Pharmacy Identifier: from the prerequisites flow.
-  - `IAOrdering`: displays a cart button for navigating to the checkout flow.
+  - `IAOrdering`: 
+    - Cart button for navigating to the checkout flow.
+  - `IAIntegrations`: 
+    - Apofinder
+    - Appointment Booking
 
 ## Signature
 ```swift
-public init() {}
+public init()
 ```
+
 ## Example
 
 `IAPharmacyScreen` inside a SwiftUI TabView.

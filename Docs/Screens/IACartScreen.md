@@ -8,10 +8,14 @@ Provides a complete, self-managed flow for cart, checkout, and payment. The scre
   - Pharmacy Identifier: from the prerequisites flow.
   - `IAOverTheCounter` (Optional):
     - Button that opens product search.
-    - Users can open product details by tapping on the product in the cart.
-  - `IAPharmacy` (Optional): Header opens pharmacy details.
-  - `IAPrescription` (Optional): Button that allows user to add new prescriptions.
-  - `IACardLink` (Optional): Button that allows user to scan physical electronic cards.
+    - Tapping product in the cart opens product details.
+    - Product grids on empty cart screen.
+  - `IAPharmacy` (Optional): 
+    - Header opens pharmacy details.
+  - `IAPrescription` (Optional): 
+    - Allows users to add new prescriptions directly from the cart screen.
+  - `IACardLink` (Optional): 
+    - Allows users to scan physical electronic cards.
 
 ## Signature
 ```swift
@@ -27,6 +31,7 @@ import IACore
 TabView {
     IACartScreen()
         .tabItem { Text("Cart") }
+}
 ```
 
 > [!NOTE]

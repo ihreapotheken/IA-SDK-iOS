@@ -1,6 +1,6 @@
 # IAApofinderScreen
 
-A screen that allows users to select a pharmacy. Users can select new pharmacy by:
+A screen that allows users to select a pharmacy by:
 - Searching and filtering pharmacies (list and map view)
 - Scanning pharmacy code (coming soon)
 
@@ -23,7 +23,8 @@ public init(isCancellable: Bool, onFinish: @escaping Callback<Pharmacy?>)
 import IACore
 
 IAApofinderScreen(isCancellable: true, onFinish: { pharmacy in
-    // Host app is resposible for dismissing the Apofinder screen screen and determening what to do after pharmacy is selected, in this example we are switching to the start tab.
+    // The host app is responsible for dismissing the screen and handling the result.
+    // In this example, we switch to the start tab after a pharmacy is selected.
     viewModel.activeSheetTag = nil
     if pharmacy != nil {
         show(tab: .start)

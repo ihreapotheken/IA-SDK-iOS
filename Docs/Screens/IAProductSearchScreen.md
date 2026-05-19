@@ -5,17 +5,19 @@ Handles searching, filtering, and displaying detailed product information, all i
 ## Overview
 - Module: `IAOverTheCounter`
 - Dependencies:
-  - pharmacy identifier: from the prerequisites flow.
+  - Pharmacy Identifier: from the prerequisites flow.
   - `IAOrdering`:
-    - Displays a cart button for navigating to the checkout flow.
-    - Add product to the cart from list or product details.
+    - Cart button for navigating to the cart.
+    - Adds products to the cart from list or product details.
     - Product availability information.
+  - `IAPrescription`:
+    - Product scanner.
 
 ## Signature
 ```swift
-public init() {}
+public init()
 ```
-    
+
 ## Example
 
 `IAProductSearchScreen` inside a SwiftUI TabView.
@@ -27,7 +29,7 @@ TabView {
     IAProductSearchScreen()
         .tabItem { Text("Search") }
 }
-
 ```
+
 > [!NOTE]
 > Read [Presentation](./../Presentation.md) in order to understand how IA SDK screens can be presented in your app.  

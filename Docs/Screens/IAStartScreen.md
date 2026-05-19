@@ -7,10 +7,17 @@ Acts as the central hub for the IhreApotheken experience, giving users quick acc
 - Dependencies:
   - Pharmacy Identifier: from the prerequisites flow.
   - `IAPharmacy` (Optional): Tapping pharmacy header opens the pharmacy details screen.
-  - `IAOverTheCounter`: Integreated search bar.
-  - `IAOrdering` (Optional): Displays a cart button for navigating to the checkout flow.
+  - `IAOverTheCounter`: 
+    - Search bar
+    - Product grids
+  - `IAOrdering` (Optional): 
+    - Express delivery section
+    - Recent orders section
+    - Cart button for navigating to the cart.
   - `IAPrescription` (Optional): Ability to add prescriptions and electronic prescriptions directly from the start screen.
-  - `IACardLink` (Optional): Ability to scan physical electorinic cards directly from the start screen.
+  - `IACardLink` (Optional): Ability to scan physical electronic cards directly from the start screen.
+  - `IAIntegrations` (Optional):
+    - Appointment booking section
 
 ## Signature
 ```swift

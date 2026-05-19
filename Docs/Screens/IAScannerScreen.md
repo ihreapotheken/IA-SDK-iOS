@@ -4,12 +4,14 @@ Provides a streamlined interface for submitting prescriptions. It supports two i
 - Capture a photo of a physical prescription (or select one from their gallery)
 - Scan an electronic prescription (E-Prescription)
   
-The prescription is automatically added to the cart for processing (can be overriden in `SDKDelegate`).
+The prescription is automatically added to the cart for processing (can be overridden in `SDKDelegate`).
 
 ## Overview
 - Module: `IAPrescription`
 - Dependencies:
   - Pharmacy Identifier: needed for uploading to cart.
+  - `IAOrdering` (Optional): 
+    - Upload prescriptions to the cart.
 
 ## Signature
 ```swift
