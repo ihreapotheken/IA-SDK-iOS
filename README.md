@@ -96,15 +96,9 @@ navigationPath.append(.iaStartScreen)
 > [!TIP]
 > To learn more about initialization, see [Initialization](./Docs/Initialization.md).
 
-# Features
+# Guides
 [Public API Overview](./Docs/PublicAPIOverview.md)  
 [Initialization](./Docs/Initialization.md)  
-[IAIntegrations](./Docs/IAIntegrations.md)  
-[IAOverTheCounter](./Docs/IAOverTheCounter.md)  
-[IAOrdering](./Docs/IAOrdering.md)  
-[IAPharmacy](./Docs/IAPharmacy.md)  
-[IAPrescription](./Docs/IAPrescription.md)  
-[IACardlink](./Docs/IACardLink.md)  
 [Presentation](./Docs/Presentation.md)  
 [Appearance](./Docs/Appearance.md)  
 [SDK Interaction](./Docs/Interaction.md)  
@@ -118,6 +112,18 @@ navigationPath.append(.iaStartScreen)
 [IAProductSearchScreen](./Docs/Screens/IAProductSearchScreen.md)  
 [IAPrescriptionScannerScreen](./Docs/Screens/IAPrescriptionScannerScreen.md)  
 [IARedeemPrescriptionScreen](./Docs/Screens/IARedeemPrescriptionScreen.md)  
+
+# Components
+[IAProductGrid](./Docs/Components/IAProductGrid.md)  
+[IACartButton](./Docs/Components/IACartButton.md)  
+
+# Modules
+[IAIntegrations](./Docs/IAIntegrations.md)  
+[IAOverTheCounter](./Docs/IAOverTheCounter.md)  
+[IAOrdering](./Docs/IAOrdering.md)  
+[IAPharmacy](./Docs/IAPharmacy.md)  
+[IAPrescription](./Docs/IAPrescription.md)  
+[IACardlink](./Docs/IACardLink.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.

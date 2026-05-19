@@ -1,6 +1,11 @@
 # IAProductSearchScreen
 
-Handles searching, filtering, and displaying detailed product information, all in one seamless flow. Allows users to send inquiries to pharmacies about the product.
+This screen serves as a starting point for product search. It offers following features:
+* **Search screen**: Search bar with list of products, allows filtering and sorting.
+* **Product details**: Displays details of a selected product.
+* **Product inquiry**: Enables the user to send an email to pharmacies and inquire about the product.
+* **Cart integration**: The cart is integrated into the list and details if the `IAOrdering` module is set up.
+* **Product scanner**: Users can simply scan the product instead of searching it.
 
 ## Overview
 - Module: `IAOverTheCounter`

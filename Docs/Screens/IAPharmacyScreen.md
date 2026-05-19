@@ -1,6 +1,6 @@
 # IAPharmacyScreen
 
-Shows detailed information about the current pharmacy. 
+Displays detailed information about the currently selected pharmacy.
 
 ## Overview
 - Module: `IAPharmacy`
