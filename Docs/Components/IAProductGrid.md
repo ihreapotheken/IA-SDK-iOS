@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
 
 
 ## Overview
-- Module: `IAOrdering`
+- Module: `IAOverTheCounter`
 - Dependencies:
   - `IAOrdering` (Optional):
     - Add product to the cart.
