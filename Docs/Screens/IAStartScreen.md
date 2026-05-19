@@ -29,7 +29,7 @@ public init()
 `IAStartScreen` inside a SwiftUI TabView.
 
 ```swift
-import IAIntegrations
+import IACore
 ...
 TabView {
     IAStartScreen()

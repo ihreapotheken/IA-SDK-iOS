@@ -116,8 +116,8 @@ navigationPath.append(.iaStartScreen)
 [IACartScreen](./Docs/Screens/IACartScreen.md)  
 [IAPharmacyScreen](./Docs/Screens/IAPharmacyScreen.md)  
 [IAProductSearchScreen](./Docs/Screens/IAProductSearchScreen.md)  
-[IAScannerScreen](./Docs/Screens/IAScannerScreen.md)  
-
+[IAPrescriptionScannerScreen](./Docs/Screens/IAPrescriptionScannerScreen.md)  
+[IARedeemPrescriptionScreen](./Docs/Screens/IARedeemPrescriptionScreen.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
