@@ -1,7 +1,7 @@
 # IAStartScreen
 
 Acts as the central hub for the IhreApotheken experience, giving users quick access to:
-  * Open pharmacy details
+  * Pharmacy details
   * Search and filter products
   * Scan prescriptions
   * See recent orders
