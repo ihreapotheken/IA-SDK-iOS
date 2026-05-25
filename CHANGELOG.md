@@ -1,3 +1,14 @@
+## 2.4.1
+
+### Features
+- Added force update support during SDK initialization, displaying a native alert when the SDK version is below the required minimum version, with soft updates allowing continued usage and hard updates blocking initialization.
+
+### Fixes
+- None
+
+### Breaking changes
+- Removed CardLinkConfiguration.appID (Use IASDK.configuration.appStoreID).
+
 ## 2.4.0
 
 ### Features
