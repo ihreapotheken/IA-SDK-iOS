@@ -1,3 +1,14 @@
+## 2.4.2
+
+### Features
+- None
+
+### Fixes
+- Fixed email validation to better comply with standard email address formatting rules.
+
+### Breaking changes
+- None
+
 ## 2.4.1
 
 ### Features
