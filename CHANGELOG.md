@@ -1,3 +1,25 @@
+## 2.5.0
+
+### Features
+- Added appointment booking for vaccinations and other pharmaceutical services at selected pharmacies. Users can now schedule appointments and receive support and medical advice from their chosen pharmacy.
+- Added support for prefilling billing and delivery addresses for guest users, allowing the host app to provide address data that will be pre-populated in the address form during checkout.
+- Added informational countdown and retry guidance during SMS/OTP delivery in the CardLink flow, including messaging for delayed or failed SMS delivery and warnings after multiple unsuccessful attempts.
+- Beta version suffix is now shown as 'b' instead of 'beta' (e.g. 2.5.0(b1)).
+- Exposed the pharmacy selection flow (Apofinder) as a standalone module, allowing host apps to integrate and place the pharmacy selection experience at any point in their app.
+- Added support for selecting a pharmacy via code scan.
+- Added an exposed module for prescription redemption, allowing SDK partners to integrate a fully configurable prescription redemption entry point directly into their host app.
+
+### Fixes
+- Fixed test pharmacies not being selectable on the apofinder type selection screen
+- Fixed an issue on the product details screen where the bottom portion of the screen could not be scrolled or tapped after adding a product to the cart.
+- Removed the deletion confirmation bottom sheet when removing an unavailable product.
+- Fixed auto-scrolling issues on iOS 16.
+- Fixed Keyboard Toolbar background not appearing consistently when the SDK is used in cross-platform environments.
+- Updated the display of manufacturer name for own PZN prescriptions to correctly show the registered trade name alongside the manufacturer name when third-party manufacturing is selected.
+
+### Breaking changes
+- None
+
 ## 2.4.2
 
 ### Features
