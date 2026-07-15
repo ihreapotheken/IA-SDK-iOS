@@ -1,3 +1,21 @@
+## 2.6.0
+
+### Features
+- Added search functionality to the Log Entry Details screen on iOS.
+- Added an error screen during the prerequisites flow when the previously selected pharmacy has been deleted, allowing users to navigate to select a new pharmacy.
+- Updated the availability status text on the Product Detail Page for products that are only available by inquiry.
+- Added price display for pharmaceutical care services (PDL), showing the applicable cost for both public and private insurance types when a price is available.
+- Added an informational hint box to the CardLink NFC scan screen to guide users to the FAQ when scanning is not possible.
+- Added haptic feedback support for various interactions, with an option for partners to enable or disable the feature.
+- Expanded Report a Problem with the ability to view orders and contact the pharmacy, suggest new features, and leave general comments
+- Updated the CardLink saved medical cards screens with improved navigation, a redesigned edit screen for managing card details (name, phone number, CAN code), a reorder button for the cards list, a search option when more than 10 cards are saved, and various UI label and layout adjustments.
+
+### Fixes
+- Improved text field behavior including text selection and autocomplete handling.
+
+### Breaking changes
+- CardLinkConfiguration.coreAppLogFileURL has been removed. Use IASDK.configuration.hostAppLogFileURL.
+
 ## 2.5.0
 
 ### Features
