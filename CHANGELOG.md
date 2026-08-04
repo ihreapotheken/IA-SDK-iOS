@@ -1,3 +1,24 @@
+## 2.7.0
+
+### Features
+- Changed title text for soft registration screens in the appointment booking flow.
+- Updated product detail screen to display both availability and Instant Delivery labels when a product qualifies for both.
+- Added support for displaying the total price sum of available products only when the cart contains unavailable items during checkout.
+- Changed the default pharmacy finder view from map to list view for all entry points.
+- Added an error message to the product grid screen when no products are available to display.
+- Updated CardLink flow to display distinct error messages when the pharmacy does not support e-prescription submission via health card, differentiating between internal and partner service unavailability.
+- Added support for Delivery & Pick-Up Machines functionality.
+- Added IASDK.configuration.uiConfiguration.shouldShowMascotIllustrations that controls mascot illustrations on CardLink Report-A-Problem.
+
+### Fixes
+- Fixed an issue where the money loader incorrectly showed free delivery when delivery was not available.
+- Fixed an issue where reporting a problem could fail when both SDK and host app log files were included, by sending them as separate files instead of a single combined archive.
+- Fixed problems with sorting on IAProductGrid when given duplicate PZNs.
+- Fixed an issue when adding a product to the cart from the start screen grid after changing the pharmacy.
+
+### Breaking changes
+- None
+
 ## 2.6.0
 
 ### Features
