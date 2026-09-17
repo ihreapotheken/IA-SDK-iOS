@@ -1,3 +1,14 @@
+## 2.8.1
+
+### Features
+- None
+
+### Fixes
+- None
+
+### Breaking changes
+- None
+
 ## 2.7.0
 
 ### Features
