@@ -1,3 +1,27 @@
+## 2.9.0
+
+### Features
+- Added tappable toast messages to the Scanner experience.
+- Added QR code and Data Matrix code display support for prescription details.
+- The Report a Problem free-text fields now show a character counter and stop at 255 characters, the limit the backend accepts.
+- Report a Problem now sends the user's stored e-mail address automatically; the e-mail input is only shown to users who have no address on file.
+- Appointment Booking PDL Improvements.
+- Added address book functionality allowing users to manage and store multiple addresses locally.
+- CardLink saved cards design updates.
+- Updated the CardLink flow with improvements to the user experience.
+
+### Fixes
+- Fixed input length limit label alignment when no hint is provided in text input fields.
+- Fixed VoiceOver accessibility support across lab test screens, bottom sheets, and list items.
+- The general comment could be written past the length the backend accepts, so sending it failed.
+- Fixed incorrect co-payment status display for prescriptions, where medications were incorrectly shown as exempt from co-payment.
+- Fixed an issue where barcode scanners continued scanning while a bottom sheet was visible on top of them.
+- Fixed incorrect coupon height in the cart when Accessibility Large Text is enabled.
+- Fixed incorrect coupon height in the cart when Accessibility Large Text is enabled.
+
+### Breaking changes
+- None
+
 ## 2.8.1
 
 ### Features
