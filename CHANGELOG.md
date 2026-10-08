@@ -17,7 +17,6 @@
 - Fixed incorrect co-payment status display for prescriptions, where medications were incorrectly shown as exempt from co-payment.
 - Fixed an issue where barcode scanners continued scanning while a bottom sheet was visible on top of them.
 - Fixed incorrect coupon height in the cart when Accessibility Large Text is enabled.
-- Fixed incorrect coupon height in the cart when Accessibility Large Text is enabled.
 
 ### Breaking changes
 - None
