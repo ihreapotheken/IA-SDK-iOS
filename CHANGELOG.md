@@ -1,11 +1,11 @@
 ## 2.9.1
 
 ### Features
-- Synced flutter plugin with SDK 2.9.1
+- Synced flutter plugin with SDK 2.9.1.
 - Added analytics events.
 
 ### Fixes
-- Small fixes for flutter plugin
+- Small fixes for flutter plugin.
 - Fixed keyboard covering the cart bottom sheet on Product Search.
 - Fixed problems with keyboard on Product Inquiry.
 
