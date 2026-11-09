@@ -1,3 +1,23 @@
+## 2.10.0
+
+### Features
+- Updated the background color to use a blue-grey tone for a refreshed visual appearance.
+- Removed opening times display from the pharmacy box in the cart.
+- Added real-time CardLink availability check when opening the Redeem Prescriptions screen, ensuring pharmacy subscription status is up to date before displaying redemption options.
+- Updated the Product Detail Page with a redesigned header area, new availability cards, updated bottom sheets, and a new add-to-cart button.
+- Updated the primary CTA button label in the address confirmation screen to 'Use Address' when no changes have been made to an existing address.
+- Added automatic expiry of CardLink prescriptions from the basket after 24 hours to prevent accidental over-ordering and sending already-dispensed prescriptions.
+- Updated the appointment booking date picker to default to the first available date on or after the configured service start date.
+- Added support for configuring 'Versand' as a quick filter option in Apofinder, allowing partners to replace the default 'Botendienst' quick filter with 'Versand'.
+
+### Fixes
+- Fixed inconsistent product availability labels on the product detail page to correctly reflect the actual availability status.
+- Fixed an issue on iOS with LiquidGlass enabled where focusing and unfocusing an input field inside a bottom sheet caused the keyboard to unexpectedly reappear or a bottom sheet to open without user interaction.
+- Improved error handling in CardLink flow to properly display an error message when a generic error without a message is received.
+
+### Breaking changes
+- None
+
 ## 2.9.1
 
 ### Features
