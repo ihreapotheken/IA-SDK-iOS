@@ -4,7 +4,7 @@
 - None
 
 ### Fixes
-- CardLink: Clearer step-by-step messages in the NFC scan sheet, with reading progress and specific error hints.
+- CardLink: Clearer step-by-step messages in the NFC scan sheet, with reading progress and specific error hints. The health card illustration now shows more accurately where the NFC chip sits.
 
 ### Breaking changes
 - None
