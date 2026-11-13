@@ -4,7 +4,7 @@
 - None
 
 ### Fixes
-- CardLink: Clearer step-by-step messages in the NFC scan sheet, with reading progress and specific error hints. The health card illustration now shows more accurately where the NFC chip sits.
+- CardLink: Clearer step-by-step messages in the NFC scan sheet, with reading progress and specific error hints. The health card illustration now shows more accurately where the NFC chip sits. LocalizableNFC.xcstrings was updated, host apps should download it and update it in their Xcode projects. https://github.com/ihreapotheken/IA-SDK-iOS/blob/main/Docs/resources/LocalizableNFC.xcstrings.
 
 ### Breaking changes
 - None
