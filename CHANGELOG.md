@@ -4,7 +4,7 @@
 - None
 
 ### Fixes
-- None
+- CardLink: Clearer step-by-step messages in the NFC scan sheet, with reading progress and specific error hints.
 
 ### Breaking changes
 - None
