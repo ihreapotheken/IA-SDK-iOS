@@ -1,3 +1,14 @@
+## 2.10.1
+
+### Features
+- None
+
+### Fixes
+- None
+
+### Breaking changes
+- None
+
 ## 2.10.0
 
 ### Features
