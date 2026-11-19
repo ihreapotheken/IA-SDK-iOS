@@ -4,7 +4,9 @@ This guide covers the iOS project setup the IA SDK needs: Info.plist keys, capab
 
 ## 1. Permissions
 
-Add the following keys to your `Info.plist` file. Location and camera are always required, NFC only with the CardLink module:
+Add the following keys to your `Info.plist` file. Location and camera are always required, NFC only with the CardLink module.
+
+In Xcode, open `Info.plist` in the property list editor and add a row for each key below; you can type the raw key names, Xcode shows them by their display names (e.g. "Privacy - Camera Usage Description"). Alternatively, open the file as source code (right-click > **Open As > Source Code**) and add the keys inside the top-level `<dict>`, but first check that none of them already exist, since duplicate keys are not allowed.
 
 ```xml
 <!-- Location permission - always required, used by Apofinder (pharmacy search) -->
