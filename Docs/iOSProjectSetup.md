@@ -45,8 +45,8 @@ In Xcode, open `Info.plist` in the property list editor and add a row for each k
 Skip this section if you don't use the CardLink module.
 
 - **NFC permission**: Add the NFC keys from [Permissions](#1-permissions).
-- **NFC capability**: Add the "Near Field Communication Tag Reading" capability in your app target's **Signing & Capabilities**.
-  Make sure the reader session formats in the target's `.entitlements` file include `TAG`:
+- **NFC capability**: In your app target's **Signing & Capabilities**, click **+ Capability**, add **NFC Tag Reading** and select **Tag** in its formats.
+  This adds the following to the target's `.entitlements` file:
   ```xml
   <key>com.apple.developer.nfc.readersession.formats</key>
   <array>
