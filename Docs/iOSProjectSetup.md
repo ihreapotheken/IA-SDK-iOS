@@ -18,6 +18,8 @@ Add the following keys to your `Info.plist` file. Location and camera are always
 <!-- NFC permission - required for CardLink module -->
 <key>NFCReaderUsageDescription</key>
 <string>NFC is used to read your health insurance card for prescription redemption.</string>
+
+<!-- NFC card application identifiers (AIDs) - required for CardLink module, used to communicate with German health insurance cards (eGK) -->
 <key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 <array>
     <string>D2760001448000</string>
@@ -33,15 +35,7 @@ Add the following keys to your `Info.plist` file. Location and camera are always
 </array>
 ```
 
-| Permission | Key (name in Xcode) | Required For | Purpose |
-|------------|---------------------|--------------|---------|
-| Location (When In Use) | `NSLocationWhenInUseUsageDescription` (Privacy - Location When In Use Usage Description) | Always (Apofinder) | Find nearby pharmacies and get directions |
-| Camera | `NSCameraUsageDescription` (Privacy - Camera Usage Description) | Always (pharmacy code scanner, product scanner, prescription scanner) | Scan pharmacy codes, products and prescriptions |
-| NFC | `NFCReaderUsageDescription` (Privacy - NFC Scan Usage Description) | CardLink module | Read health insurance cards via NFC for prescription redemption |
-
 The description texts above are examples. Write your own texts that fit your app; they are shown to the user when the permission is requested.
-
-**Note:** The `com.apple.developer.nfc.readersession.iso7816.select-identifiers` key (ISO7816 application identifiers for NFC Tag Reader Session) with the listed AIDs is required for CardLink to communicate with German health insurance cards (eGK) and related secure messaging protocols.
 
 ## 2. CardLink (NFC)
 
