@@ -4,7 +4,7 @@ UIKitExample is an UIKit application that showcases how to integrate IhreApothek
 
 Initialization: UIKitExampleViewModel configures the IA SDK (API key, client ID, module registration) and runs IASDK.initialize.
 
-Core setup: the app embeds IA SDK screens such as IAStartScreen, IACartScreen, and IAScannerScreen.
+Core setup: the app embeds IA SDK screens such as IAStartScreen, IACartScreen, and IAPrescriptionScannerScreen.
 
 State handling: TabBarController listens to the initialization state and presents either the tab bar or an error overlay via SwiftUI views hosted with `UIHostingController`.
 

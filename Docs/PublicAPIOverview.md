@@ -58,10 +58,6 @@ This document provides an overview of all public interfaces available in the IA 
 - **IAProductGrid** - Product recommendations
 - **IACartButton** - Button with number of items in cart that opens cart
 
-## IACore
-### User Interface
-- IARedeemPrescriptionScreen
-
 ## IAIntegrations
 
 ### Modules
@@ -115,7 +111,7 @@ See more details [here](./IAOrdering.md).
   - Use `IASDK.prescription` to access the module interface.
 
 ### User Interface
-- IAScannerScreen
+- IAPrescriptionScannerScreen
 
 ## IACardLink
 
