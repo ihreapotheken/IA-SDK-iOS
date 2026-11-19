@@ -8,6 +8,9 @@ Add the following keys to your `Info.plist` file. Location and camera are always
 
 In Xcode, open `Info.plist` in the property list editor and add a row for each key below; you can type the raw key names, Xcode shows them by their display names (e.g. "Privacy - Camera Usage Description"). Alternatively, open the file as source code (right-click > **Open As > Source Code**) and add the keys inside the top-level `<dict>`, but first check that none of them already exist, since duplicate keys are not allowed.
 
+> [!NOTE]
+> The description texts below are examples. Write your own texts that fit your app; they are shown to the user when the permission is requested.
+
 ```xml
 <!-- Location permission - always required, used by Apofinder (pharmacy search) -->
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -37,8 +40,6 @@ In Xcode, open `Info.plist` in the property list editor and add a row for each k
 </array>
 ```
 
-The description texts above are examples. Write your own texts that fit your app; they are shown to the user when the permission is requested.
-
 ## 2. CardLink (NFC)
 
 Skip this section if you don't use the CardLink module.
@@ -59,32 +60,18 @@ Skip this section if you don't use the CardLink module.
 
 ## 3. Orientation
 
-The IA SDK supports only portrait mode, so restrict your app to portrait. In your target's **General > Deployment Info**, select only **Portrait**, or set it in your `Info.plist`:
-
-```xml
-<key>UISupportedInterfaceOrientations</key>
-<array>
-    <string>UIInterfaceOrientationPortrait</string>
-</array>
-<key>UISupportedInterfaceOrientations~ipad</key>
-<array>
-    <string>UIInterfaceOrientationPortrait</string>
-</array>
-<!-- iPad only: without it, iPad multitasking requires all orientations -->
-<key>UIRequiresFullScreen</key>
-<true/>
-```
+The IA SDK supports only portrait mode.
 
 ## 4. Liquid Glass
 
-The IA SDK supports Liquid Glass, starting from iOS 26.0. To enable it, set `UIDesignRequiresCompatibility` to `false` in your `Info.plist`:
+On iOS 26 and later, your app and the IA SDK use Liquid Glass. Apps built with Xcode 26 can opt out and run in compatibility mode by setting `UIDesignRequiresCompatibility` to `true` in your `Info.plist`:
 
 ```xml
 <key>UIDesignRequiresCompatibility</key>
-<false/>
+<true/>
 ```
 
-Then also enable it in the SDK configuration, see [Appearance](Appearance.md#liquid-glass).
+In that case also disable Liquid Glass in the SDK configuration, see [Appearance](Appearance.md#liquid-glass). Once you build with Xcode 27 or later, remove the key, because iOS 27 ignores it for those apps and always uses Liquid Glass.
 
 ## Platform specifics
 

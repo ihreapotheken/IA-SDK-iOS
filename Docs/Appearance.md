@@ -4,15 +4,15 @@ Make sure you make any adjustments to the UI **before** running the `Prerequisit
 
 ## Liquid Glass
 
-IA SDKs support Liquid Glass, starting from iOS 26.0.
+IA SDKs support Liquid Glass, starting from iOS 26.0, and use it by default.
 
-To enable it, make sure you set `UIDesignRequiresCompatibility` to `false` in your `Info.plist` (see [Liquid Glass](iOSProjectSetup.md#4-liquid-glass) in the iOS Project Setup guide). Then, before using any of IA SDK provided UI components, make sure you edit your configuration like so:
+If your app runs in compatibility mode (`UIDesignRequiresCompatibility` set to `true` in your `Info.plist`, see [Liquid Glass](iOSProjectSetup.md#4-liquid-glass) in the iOS Project Setup guide), then before using any of IA SDK provided UI components, make sure you edit your configuration like so:
 
 ```swift
-IASDK.configuration.uiConfiguration.supportsLiquidGlass = true
+IASDK.configuration.uiConfiguration.supportsLiquidGlass = false
 ```
 
-**Note**: If you do not set `supportsLiquidGlass` to `true`, there will be some visual artifacts. 
+**Note**: If your app runs in compatibility mode and you do not set `supportsLiquidGlass` to `false`, there will be some visual artifacts. Once you build with Xcode 27 or later, remove `UIDesignRequiresCompatibility` from your `Info.plist` and keep `supportsLiquidGlass` at its default value `true`, because iOS 27 ignores the key for those apps and always uses Liquid Glass.
 
 ## Bouncy ScrollViews
 
