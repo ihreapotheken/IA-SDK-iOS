@@ -17,29 +17,10 @@ iOS 15+
 Before using CardLink, ensure that:
 1. **SDK Initialization**: The IASDK must be initialized by calling IASDK.initialize().
 2. **Prerequisites Shown**: All SDK prerequisites must be completed before starting CardLink.
-3. **Module Registration**: The .cardlink module must be registered using IASDKModule.cardLink.register().
+3. **Module Registration**: The `.cardLink` module must be registered using `IASDK.register([.cardLink])`.
 
 ## Project setup
-#### NFC setup
-CardLink uses NFC, you will need to add some permissions to the host app so that SDK can use NFC capabilities.
-
-1. Select your target and open **Signing and capabilities**. Click **+ Capability** and search for "Near Field Communication Tag Reading". Add it.
-2. Add **Privacy - NFC Scan Usage Description** to your Info.plist and write description text for it.
-3. Add **ISO7816 application identifiers for NFC Tag Reader Session** and add following strings to it:
-- D2760001448000
-- D27600014601
-- D27600014606
-- D27600000102
-- A000000167455349474E
-- D27600006601
-- D27600014602
-- E828BD080FA000000167455349474E
-- E828BD080FD27600006601
-- D27600014603
-
-#### Localization
-You will need to add **LocalizableNFC.xcstrings** file to your main target and define strings that SDK displays during the scanning process. Example of this file is 
-[here](resources/LocalizableNFC.xcstrings)
+See [iOS Project Setup](iOSProjectSetup.md).
 
 ## Authentication key
 Use `IASDK.configuration.apiKey`. Do not use `CardLink.authenticationKey`.
@@ -103,7 +84,7 @@ Used to open App Store page of your app from one of the info screens.
 This is needed only if you want to start CardLink manually from your app, otherwise CardLink is called automatically from the SDK.
 
 > [!IMPORTANT]
-> Make sure that the `.cardlink` module is registered by calling IASDKModule.cardLink.register().
+> Make sure that the `.cardLink` module is registered by calling `IASDK.register([.cardLink])`.
 > Ensure that the SDK has been initialized and prerequisites have been shown before calling this.
 
 After constructing your configuration, you are ready to start the CardLink process by calling *CardLink.start* and passing the configuration you created earlier. This will present CardLink’s initial screen on the given *rootViewController*. 
@@ -200,20 +181,6 @@ All parameters are optional (UIColor? or Color?):
 - textLinkColor: The color used for text links.
 - bottomNavigationColor: The color used for the bottom navigation bar.
 You can initialize CardLinkStyle with either UIColor or SwiftUI Color types.
-
-## Orientation
-CardLink can run only in portrait mode so it is needed to restrict it from AppDelegate.
-
-```swift
- private class AppDelegate: NSObject, UIApplicationDelegate {
-      func application(
-          _ application: UIApplication, 
-          supportedInterfaceOrientationsFor window: UIWindow?
-      ) -> UIInterfaceOrientationMask {
-          InterfaceOrientationCoordinator.shared.supportedOrientations
-      }
-  }
-```
 
 ## Environment
 You can set the CardLink environment to specify which backend environment to use:

@@ -5,11 +5,11 @@ How to setup example project:
 4. Drag SharedConfig.xcconfig file to Resources folder, do not copy it, only reference it. Also do not add it to target.
 5. Tap on project -> Select target -> Info -> Add following keys and values to Info.plist:
 - IASDK_API_KEY: $(IASDK_API_KEY)
-- IASDK_CLIEND_ID: $(IASDK_CLIENT_ID)
-6. Tap on project -> Select project -> Info: Set all configurations to SharedConfiguration.xcconfig
-7. Target -> Build Settings -> Search "Bundle product identifier", select row and delete it. That will make it use value from SharedConfiguration.
+- IASDK_CLIENT_ID: $(IASDK_CLIENT_ID)
+6. Tap on project -> Select project -> Info: Set all configurations to SharedConfig.xcconfig
+7. Target -> Build Settings -> Search "Bundle product identifier", select row and delete it. That will make it use value from SharedConfig.xcconfig.
 8. Use following code:
-```
+```swift
 precondition(
     Bundle.main.bundleIdentifier != "ENTER YOUR BUNDLE IDENTIFIER HERE" &&
     Bundle.main.object(forInfoDictionaryKey: "IASDK_API_KEY") as? String != "ENTER YOUR API KEY HERE" &&

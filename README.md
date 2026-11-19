@@ -8,7 +8,7 @@ The SDK consists of the following modules:
 * **IAOrdering**: Cart, checkout, payment.
 * **IAPharmacy**: Pharmacy details.
 * **IAPrescription**: Prescription scanner.
-* **IACardLink**: Scanning prescriptions from electornic health cards.
+* **IACardLink**: Scanning prescriptions from electronic health cards.
 
 To use IA SDK, you will need an API key and Client ID. The API key is bound to specific app Bundle ID(s) and comes with a set of entitlements. Each entitlement enables access to certain features or services within the SDK.
 
@@ -17,6 +17,7 @@ IA SDK is developed in Swift/SwiftUI.
 # Requirements
 
 * iOS 15 or above
+* Xcode 26.2
 * API key
 * Client ID
 
@@ -39,9 +40,7 @@ To add the IA SDK to your Xcode project, follow these steps:
     ![](Docs/resources/installation_2.png)
 
 # Project setup
-1. If `.apofinder` is registered then you need to add **NSLocationWhenInUseUsageDescription** key to your Info.plist.
-2. If `.prescription` is registered then you need to add **NSCameraUsageDescription** key to your Info.plist.
-3. If you are using CardLink then please read [IACardlink](./Docs/IACardLink.md)
+See [iOS Project Setup](./Docs/iOSProjectSetup.md).
 
 # Usage
 1. **Set bundle identifier**  
@@ -77,12 +76,12 @@ IASDK.configuration.apiKey = "ENTER YOUR API KEY HERE"
 IASDK.configuration.clientID = "ENTER YOUR CLIENT ID HERE"
 IASDK.setEnvironment(.staging)
 IASDK.Pharmacy.savePharmacyID(2163)     // If you have pharmacy ID, you can set it before you call initialize, otherwise initialize will show Apofinder (if enabled).
-IASDK.setDelegate(sdkDelegate)          // If you use delegate, 
+IASDK.setDelegate(sdkDelegate)          // Optional, set it if you want to receive events from the SDK.
 ```
 
 5. **Initialize**  
 Before using any SDK features, you must ensure that required conditions are met. Call the `initialize` function once your UI is ready. This will fetch all required data and enable your modules for running.
-```
+```swift
 let prerequisitesOptions = IASDKPrerequisitesOptions(
     isCancellable: false, 
     isAnimated: true,
@@ -97,6 +96,7 @@ navigationPath.append(.iaStartScreen)
 > To learn more about initialization, see [Initialization](./Docs/Initialization.md).
 
 # Guides
+[iOS Project Setup](./Docs/iOSProjectSetup.md)  
 [Public API Overview](./Docs/PublicAPIOverview.md)  
 [Initialization](./Docs/Initialization.md)  
 [Presentation](./Docs/Presentation.md)  
@@ -123,7 +123,7 @@ navigationPath.append(.iaStartScreen)
 [IAOrdering](./Docs/IAOrdering.md)  
 [IAPharmacy](./Docs/IAPharmacy.md)  
 [IAPrescription](./Docs/IAPrescription.md)  
-[IACardlink](./Docs/IACardLink.md)  
+[IACardLink](./Docs/IACardLink.md)  
 
 # Full example code
 This is full code for example app that has product search on one tab and cart on another. These two features will internally communicate, e.g. when you add some product from search or any other screen, it will be added to cart.
