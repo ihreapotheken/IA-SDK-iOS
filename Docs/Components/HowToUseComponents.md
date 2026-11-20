@@ -70,10 +70,8 @@ You might not want prerequisites screens (e.g. onboarding) to appear where the c
 
 ### Check if prerequisites are completed
 Use `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` and show the component only if `areAllCompleted` is `true`.
-* It never presents any screen, it only checks the stored state, so it also works after an app restart.
 * Pass the same values you use for `shouldRunOnboarding` and `shouldRunLegal` in your SDK entry point. The pharmacy is always checked.
 * It throws `IASDKError.sdkNotInitialized` if the SDK is not initialized. Initialize first, **without** `prerequisitesOptions`, so that no prerequisites screens are presented.
-* Don't use automatic initialization (option 3) in this case, it would present prerequisites screens as soon as the component appears.
 
 ```swift
 let _ = try await IASDK.initialize(shouldShowIndicator: false, prerequisitesOptions: nil)
