@@ -20,6 +20,16 @@ https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
   - `IAOrdering` (Optional):
     - Add product to the cart.
 
+## Parameters
+- `type`: Product collection to display, see `IAProductGridType`. Some types take a product identifier (PZN), e.g.
+  `.productRecommendations(pzn:)` shows recommendations based on that product.
+- `shouldShowLoading`: If `true` (default), shows a placeholder grid with a shimmer animation while loading. If
+  `false`, the grid is hidden while loading.
+- `hasContent`: Binding that is set to `true` when the grid has content to display. Use it only to adjust layout,
+  see the caution above.
+- `navigator`: Used to push connected screens (e.g. product details) into your navigation. Without it, they are
+  presented modally. See the example below.
+
 ## Example
 
 `IAProductGrid` embedded in a host app screen, without navigation.
