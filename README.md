@@ -114,6 +114,7 @@ navigationPath.append(.iaStartScreen)
 [IARedeemPrescriptionScreen](./Docs/Screens/IARedeemPrescriptionScreen.md)  
 
 # Components
+[How to use components](./Docs/Components/HowToUseComponents.md)  
 [IAProductGrid](./Docs/Components/IAProductGrid.md)  
 [IACartButton](./Docs/Components/IACartButton.md)  
 
