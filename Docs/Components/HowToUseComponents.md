@@ -66,7 +66,7 @@ IASDK.configuration.defaultInitializationOptions = .init(
 
 ## Prerequisites
 
-You might not want prerequisites screens (e.g. onboarding) to appear where the component is shown, e.g. on the first tab. Instead, you might want to show the component only if the user has already completed prerequisites in your SDK entry point.
+If you don't want prerequisites screens (e.g. onboarding) to appear where the component is shown, e.g. on the first tab, you can show the component only if the user has already completed prerequisites in your SDK entry point.
 
 ### Check if prerequisites are completed
 Use `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` and show the component only if `areAllCompleted` is `true`.
