@@ -15,6 +15,10 @@ https://github.com/user-attachments/assets/787f1702-af05-4550-94cf-7807382d1998
 - Dependencies:
   - None
 
+## Parameters
+- `onTap`: Called when the button is tapped. If set, the cart is not presented automatically and
+  `SDKDelegate.sdkWillNavigateToTarget` is not sent.
+
 ## Example
 
 `IACartButton` with default behaviour — cart opens automatically on tap.
