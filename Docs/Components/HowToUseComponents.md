@@ -1,12 +1,14 @@
 # How to use components
 
-IA SDK components (`IAProductGrid`, `IACartButton`) can be embedded anywhere in your app's UI. Like every IA SDK screen, they require:
+IA SDK components (e.g. `IAProductGrid`) can be embedded anywhere in your app's UI. Like every IA SDK screen, they require:
 * **SDK initialization** to be finished.
-* **Prerequisites** (onboarding, legal opt-in, pharmacy selection) to be completed.
+* **Prerequisites** (e.g. pharmacy selection) to be completed.
 
 Until both are done, a component shows only a loading indicator.
 
-This is easy to handle when you have one SDK entry point and show components only after it. It gets trickier when a component lives somewhere else in your app, for example:
+This is easy to handle if you call `IASDK.initialize` with `prerequisitesOptions` before any component is shown, e.g. when your app starts.
+
+It gets trickier when a component can be shown before you call `IASDK.initialize`, for example:
 
 > Your app has a single SDK entry point on the third tab, where you call `IASDK.initialize`. Now you want to add `IAProductGrid` to the first tab, which the user sees first.
 
@@ -64,7 +66,7 @@ IASDK.configuration.defaultInitializationOptions = .init(
 
 ## Prerequisites
 
-You might not want prerequisites screens (onboarding, legal opt-in, Apofinder) to appear where the component is shown, e.g. on the first tab. Instead, you might want to show the component only if the user has already completed prerequisites in your SDK entry point.
+You might not want prerequisites screens (e.g. onboarding) to appear where the component is shown, e.g. on the first tab. Instead, you might want to show the component only if the user has already completed prerequisites in your SDK entry point.
 
 ### Check if prerequisites are completed
 Use `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` and show the component only if `areAllCompleted` is `true`.
