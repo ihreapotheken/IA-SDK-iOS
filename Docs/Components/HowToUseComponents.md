@@ -42,7 +42,7 @@ let _ = try await IASDK.initialize(shouldShowIndicator: true, prerequisitesOptio
 Call `IASDK.initialize` with `prerequisitesOptions` once when your app starts. After that, components and screens can be used anywhere in the app.
 
 > [!NOTE]
-> This presents prerequisites screens at app start (only if needed). If you don't want that, see [Prerequisites](#prerequisites) below.
+> This presents prerequisites screens at app start (only if needed). If you don't want that, use option 1 or 3.
 
 ### Option 3: Automatic initialization
 Enable automatic initialization. The component then initializes the SDK and runs prerequisites by itself when it appears, using `defaultInitializationOptions`.
@@ -70,6 +70,7 @@ If you don't want prerequisites screens (e.g. onboarding) to appear where the co
 
 ### Check if prerequisites are completed
 Use `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` and show the component only if `areAllCompleted` is `true`.
+* It is a one-time check that returns the current state. Call it every time the screen with the component appears (e.g. in `onAppear`), so the component shows up once the user has completed prerequisites in your SDK entry point.
 * Pass the same values you use for `shouldRunOnboarding` and `shouldRunLegal` in your SDK entry point. The pharmacy is always checked.
 * It throws `IASDKError.sdkNotInitialized` if the SDK is not initialized. Initialize first, **without** `prerequisitesOptions`, so that no prerequisites screens are presented.
 
@@ -84,8 +85,8 @@ if status.areAllCompleted {
 }
 ```
 
-### Show the component as soon as prerequisites are completed (optional)
-`prerequisitesCompletionStatus` returns the state at the moment you call it. If the user completes prerequisites later (e.g. in your SDK entry point on the third tab), you can observe `IASDK.initializationStatePublisher` and show the component as soon as `summary` becomes `.initializationAndPrerequisitesFinished`.
+> [!NOTE]
+> `IASDK.initializationStatePublisher` is not a replacement for this check. It reports only what happened in the current app session: after an app restart, it doesn't report prerequisites as completed until `IASDK.initialize` with `prerequisitesOptions` runs again, even if the user completed them before. `prerequisitesCompletionStatus` checks the stored state, so it also works after an app restart.
 
 > [!CAUTION]
 > Use this check only to decide whether to add the component to your layout. Don't use it to hide and show the component repeatedly, as that destroys its state and makes it reload.
