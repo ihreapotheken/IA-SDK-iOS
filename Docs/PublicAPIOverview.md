@@ -42,6 +42,7 @@ This document provides an overview of all public interfaces available in the IA 
 - `IASDK.Prerequisites.resetAllPrerequisites()` - Resets all prerequisite-related data
 - `IASDK.Prerequisites.resetLegalDisclaimer()` - Resets legal acceptance flags
 - `IASDK.Prerequisites.setIsOnboardingShown(_ value:)` - Sets onboarding shown flag
+- `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` - Returns whether prerequisites are already completed, without presenting any screen
 
 ### Screens and components
 

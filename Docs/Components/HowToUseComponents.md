@@ -62,13 +62,12 @@ IASDK.configuration.defaultInitializationOptions = .init(
 ```
 
 > [!NOTE]
-> With automatic initialization, prerequisites screens are presented as soon as the component appears (only if needed). If you don't want that, see [Prerequisites](#prerequisites) below.
+> With automatic initialization, prerequisites screens are presented as soon as the component appears (only if needed). If you don't want that, see [Prerequisites check](#prerequisites-check) below.
 
-## Prerequisites
+## Prerequisites check
 
 If you don't want prerequisites screens (e.g. onboarding) to appear where the component is shown, e.g. on the first tab, you can show the component only if the user has already completed prerequisites in your SDK entry point.
 
-### Check if prerequisites are completed
 Use `IASDK.Prerequisites.prerequisitesCompletionStatus(runOnboardingIfNeeded:runLegalIfNeeded:)` and show the component only if `areAllCompleted` is `true`.
 * It is a one-time check that returns the current state. Call it every time the screen with the component appears (e.g. in `onAppear`), so the component shows up once the user has completed prerequisites in your SDK entry point.
 * Pass the same values you use for `shouldRunOnboarding` and `shouldRunLegal` in your SDK entry point. The pharmacy is always checked.
