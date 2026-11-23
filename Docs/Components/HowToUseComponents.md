@@ -19,7 +19,7 @@ It gets trickier when a component can be shown before you call `IASDK.initialize
 
 This guide shows how to handle initialization and prerequisites in such cases.
 
-## Initialization
+## Initialization and prerequisites
 
 Choose one of the following options.
 
