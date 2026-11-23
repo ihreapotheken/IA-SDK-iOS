@@ -9,7 +9,7 @@
 > Do NOT use `hasContent` property to show/hide `IAProductGrid` because hiding and showing will destroy its state and will make it reload again. Use `hasContent` property only to adjust padding or other style/layout properties if you need to.
 
 > [!IMPORTANT]
-> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component. You can run it manually or set `IASDK.configuration.isAutoInitializationEnabled` and it will be automatically perfomed as soon as `IAProductGrid` is added to the view hierarchy. To learn more about initialization, see [Initialization](Initialization.md).
+> SDK initialization and prerequisites (pharmacy selection) must be completed before using this component. You can run it manually or set `IASDK.configuration.isAutoInitializationEnabled` and it will be automatically perfomed as soon as `IAProductGrid` is added to the view hierarchy. To learn more, see [How to use components](HowToUseComponents.md).
 
 https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
 
@@ -19,6 +19,16 @@ https://github.com/user-attachments/assets/f0a33e8e-a4ec-406b-a793-053d9732d386
 - Dependencies:
   - `IAOrdering` (Optional):
     - Add product to the cart.
+
+## Parameters
+- `type`: Product collection to display, see `IAProductGridType`. Some types take a product identifier (PZN), e.g.
+  `.productRecommendations(pzn:)` shows recommendations based on that product.
+- `shouldShowLoading`: If `true` (default), shows a placeholder grid with a shimmer animation while loading. If
+  `false`, the grid is hidden while loading.
+- `hasContent`: Binding that is set to `true` when the grid has content to display. Use it only to adjust layout,
+  see the caution above.
+- `navigator`: Used to push connected screens (e.g. product details) into your navigation. Without it, they are
+  presented modally. See the example below.
 
 ## Example
 
